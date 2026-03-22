@@ -111,7 +111,7 @@ export default function Home() {
             </div>
 
             {/* Animation — right */}
-            <div className="mx-auto w-full max-w-sm">
+            <div className="mx-auto w-full max-w-[380px]">
               <HeroAnimation />
             </div>
           </div>
