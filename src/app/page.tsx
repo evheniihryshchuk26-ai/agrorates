@@ -10,6 +10,7 @@ import {
   CalendarDays,
   ArrowRightLeft,
 } from 'lucide-react';
+import { HeroAnimation } from '@/components/hero-animation';
 
 const clusters = [
   {
@@ -83,27 +84,35 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
-              Free Agricultural Calculators
-            </p>
-            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              Plan smarter.{' '}
-              <span className="text-primary">Farm better.</span>
-            </h1>
-            <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-              184 free calculators for fertilizer rates, seed rates, crop yields,
-              livestock management, irrigation, and farm economics.
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link
-                href="/calculators/fertilizer"
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
-              >
-                Browse Calculators
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            {/* Text — left */}
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+                Free Agricultural Calculators
+              </p>
+              <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                Plan smarter.{' '}
+                <span className="text-primary">Farm better.</span>
+              </h1>
+              <p className="mt-4 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
+                184 free calculators for fertilizer rates, seed rates, crop yields,
+                livestock management, irrigation, and farm economics.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/calculators"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+                >
+                  Browse Calculators
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Animation — right */}
+            <div className="mx-auto w-full max-w-sm">
+              <HeroAnimation />
             </div>
           </div>
         </div>
