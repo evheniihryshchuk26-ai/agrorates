@@ -39,9 +39,17 @@ export async function generateMetadata({
   const clusterInfo = getCluster(cluster);
   if (!clusterInfo) return {};
 
+  const url = `https://agrorates.com/calculators/${cluster}`;
   return {
     title: `${clusterInfo.title} Calculators — ${clusterInfo.count} Free Tools`,
     description: clusterInfo.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${clusterInfo.title} Calculators — ${clusterInfo.count} Free Tools`,
+      description: clusterInfo.description,
+      url,
+      type: 'website',
+    },
   };
 }
 

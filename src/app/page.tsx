@@ -79,9 +79,41 @@ const clusters = [
   },
 ];
 
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'AgroRates',
+  url: 'https://agrorates.com',
+  logo: 'https://agrorates.com/og.png',
+  description:
+    'Free agricultural calculator platform for farmers, agronomists, and farm managers. 184 calculators across 8 categories.',
+};
+
+const webSiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'AgroRates',
+  url: 'https://agrorates.com',
+  description:
+    'Free farming calculators for fertilizer rates, seed rates, crop yields, livestock, and more.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://agrorates.com/calculators?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteLd) }}
+      />
       {/* Hero */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">

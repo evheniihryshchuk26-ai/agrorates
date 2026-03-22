@@ -10,12 +10,41 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://agrorates.com'),
   title: {
     default: 'AgroRates — Free Agricultural Calculators for Farmers',
     template: '%s | AgroRates',
   },
   description:
     'Free farming calculators for fertilizer rates, seed rates, crop yields, livestock, and more. Plan smarter, farm better.',
+  openGraph: {
+    title: 'AgroRates — Free Agricultural Calculators for Farmers',
+    description:
+      'Free farming calculators for fertilizer rates, seed rates, crop yields, livestock, and more. 184 tools to plan smarter and farm better.',
+    url: 'https://agrorates.com',
+    siteName: 'AgroRates',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'AgroRates — Free Agricultural Calculators',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AgroRates — Free Agricultural Calculators for Farmers',
+    description:
+      'Free farming calculators for fertilizer rates, seed rates, crop yields, livestock, and more.',
+    images: ['/og.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

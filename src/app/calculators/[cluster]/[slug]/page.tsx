@@ -17,13 +17,22 @@ export async function generateMetadata({
 }: {
   params: Promise<{ cluster: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { cluster, slug } = await params;
   const calc = getCalculator(slug);
   if (!calc) return {};
+
+  const url = `https://agrorates.com/calculators/${cluster}/${slug}`;
 
   return {
     title: calc.seo.title,
     description: calc.seo.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: calc.seo.title,
+      description: calc.seo.description,
+      url,
+      type: 'website',
+    },
   };
 }
 
@@ -83,11 +92,30 @@ export default async function CalculatorPage({
         }
       : null;
 
+  const webAppLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: calculator.title,
+    description: calculator.description,
+    url: `https://agrorates.com/calculators/${cluster}/${slug}`,
+    applicationCategory: 'UtilityApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppLd) }}
       />
       {faqLd && (
         <script
