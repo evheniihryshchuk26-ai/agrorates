@@ -206,7 +206,7 @@ export function HeroAnimation() {
         {/* Content */}
         <div
           className={`relative overflow-hidden px-5 py-5 transition-opacity duration-300 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
-          style={{ height: 260 }}
+          style={{ height: 300 }}
         >
           {step === 'category' && (
             <div className="animate-fade-in">
