@@ -52,6 +52,9 @@ const cropLinks = [
 const companyLinks = [
   { title: 'About Us', href: '/about/' },
   { title: 'All Calculators', href: '/calculators/' },
+  { title: 'Calculators by Crop', href: '/crops/' },
+  { title: 'Farming Guides', href: '/guides/' },
+  { title: 'Glossary', href: '/glossary/' },
   { title: 'Contact', href: '/contact/' },
   { title: 'Privacy Policy', href: '/privacy/' },
 ];
