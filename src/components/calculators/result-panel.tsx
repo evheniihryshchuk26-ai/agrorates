@@ -1,6 +1,7 @@
 'use client';
 
-import { Calculator } from 'lucide-react';
+import { useState } from 'react';
+import { Calculator, Share2, Printer, Check } from 'lucide-react';
 import type { CalculatorResult } from '@/lib/calculators/types';
 
 const DEFAULT_COLORS = [
@@ -25,9 +26,7 @@ const COLOR_MAP: Record<string, { text: string; bg: string }> = {
 };
 
 function getColorClasses(color: string | undefined, index: number) {
-  if (color && COLOR_MAP[color]) {
-    return COLOR_MAP[color];
-  }
+  if (color && COLOR_MAP[color]) return COLOR_MAP[color];
   return DEFAULT_COLORS[index % DEFAULT_COLORS.length];
 }
 
@@ -38,12 +37,9 @@ type ResultPanelProps = {
   totalUnit: string;
 };
 
-export function ResultPanel({
-  results,
-  totalLabel,
-  totalValue,
-  totalUnit,
-}: ResultPanelProps) {
+export function ResultPanel({ results, totalLabel, totalValue, totalUnit }: ResultPanelProps) {
+  const [copied, setCopied] = useState(false);
+
   if (!results) {
     return (
       <div className="flex min-h-[440px] flex-col items-center justify-center rounded-xl border border-border bg-white p-8">
@@ -59,16 +55,55 @@ export function ResultPanel({
   }
 
   const gridCols =
-    results.length <= 2
-      ? 'grid-cols-2'
-      : results.length === 3
-        ? 'grid-cols-3'
-        : 'grid-cols-2 sm:grid-cols-3';
+    results.length <= 2 ? 'grid-cols-2'
+    : results.length === 3 ? 'grid-cols-3'
+    : 'grid-cols-2 sm:grid-cols-3';
+
+  const handleShare = async () => {
+    const text = results
+      .map((r) => `${r.label}: ${r.value.toLocaleString()} ${r.unit}`)
+      .join('\n');
+    const summary = `${totalLabel}: ${totalValue.toLocaleString()} ${totalUnit}\n\n${text}`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: document.title, text: summary, url: window.location.href });
+      } catch { /* user cancelled */ }
+    } else {
+      await navigator.clipboard.writeText(`${summary}\n\nCalculated at ${window.location.href}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
 
   return (
     <div className="rounded-xl border border-border bg-white">
-      <div className="border-b border-border px-6 py-4">
+      <div className="flex items-center justify-between border-b border-border px-6 py-4">
         <h2 className="text-lg font-semibold text-foreground">Results</h2>
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={handleShare}
+            className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-2xs font-medium text-muted transition-colors hover:bg-accent hover:text-foreground"
+            title="Share results"
+          >
+            {copied ? <Check className="h-3.5 w-3.5 text-primary" /> : <Share2 className="h-3.5 w-3.5" />}
+            {copied ? 'Copied' : 'Share'}
+          </button>
+          <button
+            type="button"
+            onClick={handlePrint}
+            className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-2xs font-medium text-muted transition-colors hover:bg-accent hover:text-foreground"
+            title="Print results"
+          >
+            <Printer className="h-3.5 w-3.5" />
+            Print
+          </button>
+        </div>
       </div>
 
       <div className="px-6 py-5">
@@ -76,13 +111,8 @@ export function ResultPanel({
           {results.map((result, i) => {
             const colors = getColorClasses(result.color, i);
             return (
-              <div
-                key={result.label}
-                className={`rounded-lg p-3 ${colors.bg}`}
-              >
-                <p className={`text-2xs font-medium ${colors.text} opacity-70`}>
-                  {result.label}
-                </p>
+              <div key={result.label} className={`rounded-lg p-3 ${colors.bg}`}>
+                <p className={`text-2xs font-medium ${colors.text} opacity-70`}>{result.label}</p>
                 <p className={`mt-0.5 text-lg font-bold ${colors.text}`}>
                   {result.value.toLocaleString()}{' '}
                   <span className="text-xs font-medium">{result.unit}</span>
@@ -93,9 +123,7 @@ export function ResultPanel({
         </div>
 
         <div className="mt-4 flex items-center justify-between rounded-lg bg-accent px-4 py-3">
-          <span className="text-sm font-medium text-foreground">
-            {totalLabel}
-          </span>
+          <span className="text-sm font-medium text-foreground">{totalLabel}</span>
           <span className="text-sm font-bold text-foreground">
             {totalValue.toLocaleString()} {totalUnit}
           </span>

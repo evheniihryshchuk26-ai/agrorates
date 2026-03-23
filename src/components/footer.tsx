@@ -55,6 +55,7 @@ const companyLinks = [
   { title: 'Calculators by Crop', href: '/crops/' },
   { title: 'Farming Guides', href: '/guides/' },
   { title: 'Glossary', href: '/glossary/' },
+  { title: 'Embed on Your Site', href: '/embed/' },
   { title: 'Contact', href: '/contact/' },
   { title: 'Privacy Policy', href: '/privacy/' },
 ];
