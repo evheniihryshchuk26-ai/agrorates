@@ -5,7 +5,7 @@ import './globals.css';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
+const GA_ID = 'G-96119180P2';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
