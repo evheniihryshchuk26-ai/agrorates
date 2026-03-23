@@ -132,6 +132,13 @@ function clampDOY(d: number): number {
   return Math.round(d);
 }
 
+const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function doyToDate(doy: number): string {
+  const d = new Date(2025, 0, doy);
+  return `${MONTH_NAMES[d.getMonth()]} ${d.getDate()}`;
+}
+
 function createPlantingDateConfig(p: PlantingDateParams): CalculatorConfig {
   const indoorWeeks = p.indoorStartWeeks ?? (p.frostTolerance === 'tender' || p.frostTolerance === 'very-tender' ? 6 : 4);
   const depth = p.plantingDepth ?? '1/2 inch';
@@ -173,20 +180,20 @@ function createPlantingDateConfig(p: PlantingDateParams): CalculatorConfig {
 
       if (method === 'transplant' || method === 'both') {
         results.push(
-          { label: 'Start Seeds Indoors', value: indoorStartDOY, unit: 'day of year', color: '#8b5cf6' },
-          { label: 'Transplant Outdoors', value: transplantDOY, unit: 'day of year', color: '#22c55e' },
+          { label: 'Start Seeds Indoors', value: indoorStartDOY, unit: doyToDate(indoorStartDOY), color: 'purple' },
+          { label: 'Transplant Outdoors', value: transplantDOY, unit: doyToDate(transplantDOY), color: 'green' },
         );
       }
 
       if (method === 'direct-sow' || method === 'both') {
         results.push(
-          { label: 'Direct Sow Date', value: directSowDOY, unit: 'day of year', color: '#f59e0b' },
+          { label: 'Direct Sow Date', value: directSowDOY, unit: doyToDate(directSowDOY), color: 'amber' },
         );
       }
 
       results.push(
-        { label: 'Fall Planting Date', value: fallPlantingDOY, unit: 'day of year', color: '#ef4444' },
-        { label: 'Growing Season Needed', value: seasonLength, unit: 'days', color: '#3b82f6' },
+        { label: 'Fall Planting Date', value: fallPlantingDOY, unit: doyToDate(fallPlantingDOY), color: 'rose' },
+        { label: 'Growing Season Needed', value: seasonLength, unit: 'days', color: 'blue' },
       );
 
       return {
