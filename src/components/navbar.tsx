@@ -5,10 +5,12 @@ const navLinks = [
   { title: 'All Calculators', href: '/calculators' },
   { title: 'Fertilizer', href: '/calculators/fertilizer' },
   { title: 'Seeding', href: '/calculators/seeding' },
+  { title: 'Planting Date', href: '/calculators/planting-date' },
   { title: 'Yield', href: '/calculators/yield' },
   { title: 'Livestock', href: '/calculators/livestock' },
   { title: 'Irrigation', href: '/calculators/irrigation' },
   { title: 'Economics', href: '/calculators/economics' },
+  { title: 'Conversions', href: '/calculators/conversions' },
 ];
 
 export function Navbar() {

@@ -35,9 +35,13 @@ const seedRate: CalculatorConfig = {
     { question: 'What is a good germination rate?', answer: 'Certified seed typically has 85-95% germination. Always check your seed tag for the actual tested rate.' },
   ],
   relatedCalculators: [
-    { title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing' },
-    { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre' },
-    { title: 'Seed Cost Calculator', href: '/calculators/seeding/seed-cost' },
+    { title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing/' },
+    { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre/' },
+    { title: 'Seed Cost Calculator', href: '/calculators/seeding/seed-cost/' },
+    { title: 'Germination Rate Calculator', href: '/calculators/seeding/germination-rate/' },
+    { title: 'Corn Seeding Rate', href: '/calculators/seeding/corn/' },
+    { title: 'Wheat Seeding Rate', href: '/calculators/seeding/wheat/' },
+    { title: 'Soybeans Seeding Rate', href: '/calculators/seeding/soybeans/' },
   ],
   howToSteps: [
     'Enter your total field size in acres.',
@@ -93,8 +97,12 @@ const plantSpacing: CalculatorConfig = {
     { question: 'How many plants per acre at 30-inch rows, 8-inch spacing?', answer: 'At 30" rows and 8" spacing: 43,560 sq ft / (2.5 ft × 0.667 ft) = about 26,136 plants per acre.' },
   ],
   relatedCalculators: [
-    { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' },
-    { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre' },
+    { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre/' },
+    { title: 'Seed Cost Calculator', href: '/calculators/seeding/seed-cost/' },
+    { title: 'Germination Rate Calculator', href: '/calculators/seeding/germination-rate/' },
+    { title: 'Corn Seeding Rate', href: '/calculators/seeding/corn/' },
+    { title: 'Soybeans Seeding Rate', href: '/calculators/seeding/soybeans/' },
   ],
   howToSteps: [
     'Enter your row spacing in inches.',
@@ -147,7 +155,14 @@ const germinationRate: CalculatorConfig = {
   faqs: [
     { question: 'How do I do a germination test?', answer: 'Place 100 seeds between moist paper towels in a sealed bag. Keep at 70-80°F for 7-14 days. Count sprouted seeds — that number is your germination percentage.' },
   ],
-  relatedCalculators: [{ title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' }],
+  relatedCalculators: [
+    { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing/' },
+    { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre/' },
+    { title: 'Seed Cost Calculator', href: '/calculators/seeding/seed-cost/' },
+    { title: 'Corn Seeding Rate', href: '/calculators/seeding/corn/' },
+    { title: 'Wheat Seeding Rate', href: '/calculators/seeding/wheat/' },
+  ],
   howToSteps: [
     'Count out a sample of seeds (100 is recommended for accuracy).',
     'Enter the number of seeds tested and the number that germinated.',
@@ -198,7 +213,14 @@ const seedsPerAcre: CalculatorConfig = {
   faqs: [
     { question: 'How many seeds per acre at 30-inch rows, 7-inch spacing?', answer: 'About 29,900 seeds per acre (43,560 / (2.5 × 0.583)).' },
   ],
-  relatedCalculators: [{ title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing' }, { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' }],
+  relatedCalculators: [
+    { title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing/' },
+    { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Seed Cost Calculator', href: '/calculators/seeding/seed-cost/' },
+    { title: 'Germination Rate Calculator', href: '/calculators/seeding/germination-rate/' },
+    { title: 'Corn Seeding Rate', href: '/calculators/seeding/corn/' },
+    { title: 'Wheat Seeding Rate', href: '/calculators/seeding/wheat/' },
+  ],
   howToSteps: [
     'Enter your row spacing in inches.',
     'Input the seed spacing within the row in inches.',
@@ -254,7 +276,14 @@ const seedCost: CalculatorConfig = {
   faqs: [
     { question: 'How much does corn seed cost per acre?', answer: 'Corn seed typically costs $100-150 per acre at 32,000-34,000 seeds/acre depending on traits and brand.' },
   ],
-  relatedCalculators: [{ title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' }, { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost' }],
+  relatedCalculators: [
+    { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing/' },
+    { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre/' },
+    { title: 'Germination Rate Calculator', href: '/calculators/seeding/germination-rate/' },
+    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Corn Seeding Rate', href: '/calculators/seeding/corn/' },
+  ],
   howToSteps: [
     'Enter your total field size in acres.',
     'Input the seeding rate in seeds per acre and the number of seeds per unit (bag).',
@@ -397,7 +426,7 @@ const nonCrossClusterSlugs = new Set(['grass-seed', 'cover-crops']);
 
 function createCropSeedConfig(slug: string, data: CropSeedData): CalculatorConfig {
   const allSlugs = Object.keys(cropSeedData).filter(s => s !== slug);
-  const related = allSlugs.slice(0, 4);
+  const related = allSlugs.slice(0, 6);
   const isGenericCrop = nonCrossClusterSlugs.has(slug);
   const plantingDateHref = seedCropsWithPlantingDate.has(slug)
     ? `/calculators/planting-date/${slug}-planting-date/`
@@ -442,10 +471,13 @@ function createCropSeedConfig(slug: string, data: CropSeedData): CalculatorConfi
     ],
     tips: data.tips,
     relatedCalculators: [
-      { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' },
-      { title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing' },
+      { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate/' },
+      { title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing/' },
+      { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre/' },
+      { title: 'Seed Cost Calculator', href: '/calculators/seeding/seed-cost/' },
+      { title: 'Germination Rate Calculator', href: '/calculators/seeding/germination-rate/' },
     ],
-    relatedCrops: related.map(s => ({ title: cropSeedData[s].name, href: `/calculators/seeding/${s}` })),
+    relatedCrops: related.map(s => ({ title: cropSeedData[s].name, href: `/calculators/seeding/${s}/` })),
     faqs: data.faqs.map(([q, a]) => ({ question: q, answer: a })),
     howToSteps: [
       `Enter your ${data.name.toLowerCase()} field size in acres.`,

@@ -108,7 +108,7 @@ const cropsWithPlantingDate = new Set([
 ]);
 
 function createCropFertConfig(slug: string, data: CropData): CalculatorConfig {
-  const similarCrops = crops.filter(c => c !== slug).slice(0, 4);
+  const similarCrops = crops.filter(c => c !== slug).slice(0, 6);
   const plantingDateHref = cropsWithPlantingDate.has(slug)
     ? `/calculators/planting-date/${slug}-planting-date/`
     : '/calculators/planting-date/';
@@ -158,13 +158,16 @@ function createCropFertConfig(slug: string, data: CropData): CalculatorConfig {
     ],
     tips: data.tips,
     relatedCalculators: [
-      { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
-      { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost' },
-      { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen' },
+      { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
+      { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+      { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen/' },
+      { title: 'Lime Application Rate', href: '/calculators/fertilizer/lime/' },
+      { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+      { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn/' },
     ],
     relatedCrops: similarCrops.map(c => ({
       title: cropData[c].name,
-      href: `/calculators/fertilizer/${c}`,
+      href: `/calculators/fertilizer/${c}/`,
     })),
     faqs: data.faqs.map(([q, a]) => ({ question: q, answer: a })),
     howToSteps: [
@@ -224,10 +227,13 @@ const npk: CalculatorConfig = {
   },
   tips: ['Always base fertilizer rates on a current soil test (within 2-3 years).', 'Split nitrogen applications improve efficiency and reduce leaching.', 'Consider previous crop credits when calculating nitrogen needs.', 'Phosphorus and potassium can be applied in fall or spring.'],
   relatedCalculators: [
-    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost' },
-    { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen' },
-    { title: 'Lime Application Rate', href: '/calculators/fertilizer/lime' },
-    { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn' },
+    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen/' },
+    { title: 'Lime Application Rate', href: '/calculators/fertilizer/lime/' },
+    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+    { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn/' },
+    { title: 'Wheat Fertilizer Calculator', href: '/calculators/fertilizer/wheat/' },
+    { title: 'Soybeans Fertilizer Calculator', href: '/calculators/fertilizer/soybeans/' },
   ],
   faqs: [
     { question: 'What does NPK stand for?', answer: 'NPK stands for Nitrogen (N), Phosphorus (P₂O₅), and Potassium (K₂O) — the three primary macronutrients essential for plant growth.' },
@@ -297,8 +303,12 @@ const fertilizerCost: CalculatorConfig = {
     { question: 'Is bulk fertilizer cheaper than bagged?', answer: 'Yes. Bulk fertilizer is typically 20-40% cheaper per pound than bagged. It requires a spreader but saves significantly on large fields.' },
   ],
   relatedCalculators: [
-    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
-    { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen' },
+    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
+    { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen/' },
+    { title: 'Lime Application Rate', href: '/calculators/fertilizer/lime/' },
+    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+    { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn/' },
+    { title: 'Wheat Fertilizer Calculator', href: '/calculators/fertilizer/wheat/' },
   ],
   howToSteps: [
     'Enter your total field size in acres.',
@@ -369,8 +379,12 @@ const lime: CalculatorConfig = {
     { question: 'How long does it take for lime to work?', answer: 'Finely ground lime begins working within weeks, but full reaction takes 6-12 months. Apply in fall for spring crops.' },
   ],
   relatedCalculators: [
-    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
-    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost' },
+    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
+    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen/' },
+    { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn/' },
+    { title: 'Wheat Fertilizer Calculator', href: '/calculators/fertilizer/wheat/' },
   ],
   howToSteps: [
     'Enter your field size in acres.',
@@ -432,8 +446,12 @@ const compost: CalculatorConfig = {
     { question: 'How thick should compost be applied?', answer: 'For garden beds, apply 1-3 inches and incorporate. For established lawns, apply 0.25-0.5 inches as topdressing.' },
   ],
   relatedCalculators: [
-    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
-    { title: 'Lime Application Rate', href: '/calculators/fertilizer/lime' },
+    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
+    { title: 'Lime Application Rate', href: '/calculators/fertilizer/lime/' },
+    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen/' },
+    { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn/' },
+    { title: 'Tomatoes Fertilizer Calculator', href: '/calculators/fertilizer/tomatoes/' },
   ],
   howToSteps: [
     'Enter the area you want to amend in square feet.',
@@ -507,9 +525,13 @@ const nitrogen: CalculatorConfig = {
     { question: 'What is the N factor for corn?', answer: 'Corn typically uses 1.0-1.2 lbs N per bushel of expected yield. Use 1.0 for high-organic-matter soils and 1.2 for low-OM soils.' },
   ],
   relatedCalculators: [
-    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
-    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost' },
-    { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn' },
+    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
+    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Lime Application Rate', href: '/calculators/fertilizer/lime/' },
+    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+    { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn/' },
+    { title: 'Wheat Fertilizer Calculator', href: '/calculators/fertilizer/wheat/' },
+    { title: 'Soybeans Fertilizer Calculator', href: '/calculators/fertilizer/soybeans/' },
   ],
   howToSteps: [
     'Enter your field size in acres and your yield goal in bushels per acre.',

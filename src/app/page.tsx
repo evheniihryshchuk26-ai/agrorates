@@ -191,6 +191,50 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Most Popular Calculators */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
+          <div className="mb-10 text-center">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Most popular calculators
+            </h2>
+            <p className="mt-2 text-base text-muted">
+              The tools farmers use most — jump straight to the calculator you need.
+            </p>
+          </div>
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Mulch Calculator', desc: 'Cubic yards and bags for any area', href: '/calculators/conversions/mulch-calculator/' },
+              { title: 'NPK Fertilizer Calculator', desc: 'Nitrogen, phosphorus, and potassium rates', href: '/calculators/fertilizer/npk/' },
+              { title: 'Compost Calculator', desc: 'Volume and weight for garden beds', href: '/calculators/fertilizer/compost/' },
+              { title: 'Cattle Weight Calculator', desc: 'Estimate weight from girth and length', href: '/calculators/livestock/cattle-weight/' },
+              { title: 'Soil Volume Calculator', desc: 'Raised beds, gardens, and fill', href: '/calculators/conversions/soil-volume/' },
+              { title: 'Seed Rate Calculator', desc: 'Pounds of seed per acre', href: '/calculators/seeding/seed-rate/' },
+              { title: 'Hay Bale Calculator', desc: 'Bales needed for winter feeding', href: '/calculators/livestock/hay-bale/' },
+              { title: 'Farm Loan Calculator', desc: 'Monthly payment and total interest', href: '/calculators/economics/farm-loan/' },
+              { title: 'Bushels to Tons Converter', desc: 'Grain weight by crop type', href: '/calculators/conversions/bushels-to-tons/' },
+              { title: 'Corn Fertilizer Calculator', desc: 'NPK rates for corn per acre', href: '/calculators/fertilizer/corn/' },
+              { title: 'Lime Application Rate', desc: 'Tons of lime from soil pH', href: '/calculators/fertilizer/lime/' },
+              { title: 'Plant Spacing Calculator', desc: 'Plants per acre from row spacing', href: '/calculators/seeding/plant-spacing/' },
+            ].map((calc) => (
+              <Link
+                key={calc.href}
+                href={calc.href}
+                className="group flex items-center justify-between rounded-xl border border-border bg-white px-5 py-4 transition-all hover:border-primary/30 hover:shadow-sm"
+              >
+                <div>
+                  <p className="text-[0.9375rem] font-semibold text-foreground transition-colors group-hover:text-primary">
+                    {calc.title}
+                  </p>
+                  <p className="mt-0.5 text-[0.8125rem] text-muted">{calc.desc}</p>
+                </div>
+                <ArrowRight className="h-4 w-4 shrink-0 text-muted opacity-0 transition-all group-hover:text-primary group-hover:opacity-100" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
