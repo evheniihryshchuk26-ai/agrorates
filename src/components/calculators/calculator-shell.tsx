@@ -56,6 +56,55 @@ export function CalculatorShell({ config, clusterTitle }: CalculatorShellProps) 
 
       {/* SEO Content Sections */}
       <div className="mt-14 max-w-3xl space-y-10">
+        {config.howToUse && (
+          <div>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              How to Use This Calculator
+            </h2>
+            <p className="text-[0.9375rem] leading-relaxed text-muted">
+              {config.howToUse}
+            </p>
+          </div>
+        )}
+
+        {config.whyItMatters && (
+          <div>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              Why This Matters
+            </h2>
+            <p className="text-[0.9375rem] leading-relaxed text-muted">
+              {config.whyItMatters}
+            </p>
+          </div>
+        )}
+
+        {config.methodology && (
+          <div>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              Methodology
+            </h2>
+            <p className="text-[0.9375rem] leading-relaxed text-muted">
+              {config.methodology}
+            </p>
+          </div>
+        )}
+
+        {config.commonMistakes && config.commonMistakes.length > 0 && (
+          <div>
+            <h2 className="mb-3 text-xl font-bold text-foreground">
+              Common Mistakes to Avoid
+            </h2>
+            <ul className="space-y-2">
+              {config.commonMistakes.map((mistake, i) => (
+                <li key={i} className="flex items-start gap-2.5 text-[0.9375rem] text-muted">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-400" />
+                  {mistake}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {config.tips && config.tips.length > 0 && (
           <TipsList tips={config.tips} />
         )}

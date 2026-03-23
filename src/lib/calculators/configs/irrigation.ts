@@ -55,6 +55,15 @@ const irrigationWaterNeed: CalculatorConfig = {
     { title: 'Rainfall Deficit Calculator', href: '/calculators/irrigation/rainfall-deficit' },
     { title: 'Fuel Cost Per Acre', href: '/calculators/economics/fuel-cost' },
   ],
+  howToUse: 'Enter your field size in acres and the daily evapotranspiration rate from your local weather station or crop ET table. Select your irrigation system type to account for application efficiency. Subtract any recent rainfall to see net irrigation needs.',
+  whyItMatters: 'Under-irrigating reduces crop yield and quality, while over-irrigating wastes water, increases pumping costs, and can cause nutrient leaching and root diseases. Matching irrigation to actual crop water demand saves 20-40% on water costs.',
+  methodology: 'Net irrigation need = (ET × days) - effective rainfall. Gross need = Net / system efficiency. One acre-inch equals 27,154 gallons. Drip systems are 90-95% efficient, sprinklers 75-85%, and flood/furrow 50-70%.',
+  commonMistakes: [
+    'Using a fixed irrigation schedule instead of adjusting for actual ET and rainfall.',
+    'Not accounting for system efficiency — sprinklers lose 15-25% to evaporation and wind.',
+    'Ignoring soil type — sandy soils need more frequent, lighter irrigations than clay soils.',
+    'Watering during the heat of the day when evaporation losses are highest.',
+  ],
 };
 
 const dripIrrigation: CalculatorConfig = {
@@ -100,6 +109,15 @@ const dripIrrigation: CalculatorConfig = {
     { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
     { title: 'Pipe Flow Rate', href: '/calculators/irrigation/pipe-flow' },
   ],
+  howToUse: 'Enter the total row length and number of rows in your field. Set the emitter spacing (typically 12-18 inches for vegetables, 24-36 inches for row crops) and the emitter flow rate in gallons per hour. The calculator shows total emitters needed and system flow requirements.',
+  whyItMatters: 'Drip irrigation delivers water directly to the root zone with 90-95% efficiency, reducing water use by 30-50% compared to sprinklers. Proper system sizing prevents pressure loss, uneven watering, and emitter clogging that lead to crop stress and yield loss.',
+  methodology: 'Emitters per row = Row length (ft) / (Emitter spacing (in) / 12). Total emitters = Emitters per row × Number of rows. Total GPH = Total emitters × Emitter flow rate. GPM = GPH / 60. These values determine pump and mainline sizing.',
+  commonMistakes: [
+    'Undersizing the water supply — total GPM demand must not exceed pump or well capacity.',
+    'Using emitter spacing that does not match crop root zone width.',
+    'Skipping pressure regulation — pressure variations cause uneven water distribution.',
+    'Not installing filters, which leads to clogged emitters and dead plants.',
+  ],
 };
 
 const sprinklerCoverage: CalculatorConfig = {
@@ -144,6 +162,15 @@ const sprinklerCoverage: CalculatorConfig = {
     { title: 'Pipe Flow Rate', href: '/calculators/irrigation/pipe-flow' },
     { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
   ],
+  howToUse: 'Enter the number of sprinkler heads in your system and the throw radius of each head in feet. Set the spacing between heads and the flow rate per head in GPM. The calculator shows effective coverage area and total system flow demand.',
+  whyItMatters: 'Poor sprinkler layout creates dry spots that stress crops and wet spots that promote disease. Proper head spacing and overlap ensure uniform water distribution, which directly affects crop uniformity, yield consistency, and water use efficiency.',
+  methodology: 'Effective coverage per head uses spacing × spacing rather than the full circular area, because heads must overlap. Total coverage = Number of heads × Spacing². Total flow = Number of heads × Flow per head (GPM). Overlap of 50-60% of diameter ensures uniform application.',
+  commonMistakes: [
+    'Spacing heads too far apart — gaps cause dry spots and uneven crop growth.',
+    'Not accounting for wind drift, which reduces effective radius by 10-30%.',
+    'Running too many heads on one zone, exceeding available water pressure and flow.',
+    'Using mismatched nozzle sizes across a zone, creating uneven precipitation rates.',
+  ],
 };
 
 const waterCost: CalculatorConfig = {
@@ -187,6 +214,15 @@ const waterCost: CalculatorConfig = {
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
     { title: 'Cost Per Acre', href: '/calculators/economics/cost-per-acre' },
   ],
+  howToUse: 'Enter the total water volume you plan to use in gallons and the price per 1,000 gallons from your water supplier or estimated pumping cost. Optionally enter your field size to see cost per acre. The calculator shows total cost and acre-inches applied.',
+  whyItMatters: 'Water is often the second-largest variable cost in irrigated agriculture after fertilizer. Knowing your exact cost per acre-inch helps you compare irrigation methods, justify efficiency upgrades, and budget accurately for the growing season.',
+  methodology: 'Total cost = (Gallons / 1,000) × Price per 1,000 gallons. Cost per acre = Total cost / Acres. Acre-inches = Gallons / 27,154. Municipal water typically costs $2-8 per 1,000 gallons, while well water pumping costs $0.50-2.00 per 1,000 gallons.',
+  commonMistakes: [
+    'Forgetting to include electricity or diesel pumping costs for well water.',
+    'Not tracking water use by field — some fields may cost far more to irrigate than they return.',
+    'Ignoring seasonal rate increases from municipal water suppliers during peak demand.',
+    'Failing to factor in water cost when comparing drip vs sprinkler system investments.',
+  ],
 };
 
 const pipeFlow: CalculatorConfig = {
@@ -227,6 +263,15 @@ const pipeFlow: CalculatorConfig = {
     { title: 'Well Yield Calculator', href: '/calculators/irrigation/well-yield' },
     { title: 'Drip Irrigation Calculator', href: '/calculators/irrigation/drip-irrigation' },
     { title: 'Sprinkler Coverage', href: '/calculators/irrigation/sprinkler-coverage' },
+  ],
+  howToUse: 'Enter the inside diameter of your pipe in inches and the water velocity in feet per second. If you do not know the velocity, use 5 ft/sec as a common design target. The calculator converts pipe cross-section and velocity into flow rate in GPM, GPH, and CFS.',
+  whyItMatters: 'Undersized pipe creates excessive friction loss, reducing pressure at sprinklers or emitters and causing uneven irrigation. Oversized pipe wastes money on materials. Correct pipe sizing ensures adequate flow and pressure throughout the entire system.',
+  methodology: 'Flow area = π × (Diameter/2)² in square feet. Flow rate (CFS) = Area × Velocity. GPM = CFS × 448.83. GPH = GPM × 60. Recommended velocity is 3-5 ft/sec for PVC to minimize friction loss and water hammer risk.',
+  commonMistakes: [
+    'Using nominal pipe size instead of actual inside diameter — a 4-inch PVC pipe has a 4.026-inch ID.',
+    'Designing for velocity above 5 ft/sec in PVC, which increases water hammer and pipe failure risk.',
+    'Not accounting for friction loss over long pipe runs — pressure drops significantly over distance.',
+    'Ignoring elevation changes, which add or subtract 0.433 PSI per foot of elevation difference.',
   ],
 };
 
@@ -270,6 +315,15 @@ const rainfallDeficit: CalculatorConfig = {
     { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
     { title: 'Pond Size Calculator', href: '/calculators/irrigation/pond-size' },
   ],
+  howToUse: 'Enter the weekly crop evapotranspiration (ET) from your local extension office or weather station data. Enter the average weekly rainfall for the same period. Set the growing season length in weeks. The calculator shows how much supplemental irrigation you need.',
+  whyItMatters: 'Rainfall rarely matches crop water demand perfectly. Knowing your seasonal deficit helps you plan water storage, well capacity, and irrigation system sizing before the growing season starts, preventing mid-season water shortages that devastate yields.',
+  methodology: 'Weekly deficit = Weekly ET - Weekly rainfall (minimum 0). Season total deficit = Weekly deficit × Number of weeks. Gallons per acre = Total deficit (inches) × 27,154. Not all rainfall is effective — only 50-75% of heavy rain infiltrates the root zone.',
+  commonMistakes: [
+    'Assuming all rainfall is effective — heavy storms produce runoff, not root zone moisture.',
+    'Using annual average rainfall instead of weekly data during the actual growing season.',
+    'Not adjusting ET for crop growth stage — peak water demand occurs at reproductive stages.',
+    'Ignoring that ET varies significantly by region, crop, and time of year.',
+  ],
 };
 
 const pondSize: CalculatorConfig = {
@@ -308,6 +362,15 @@ const pondSize: CalculatorConfig = {
     { title: 'Water Tank Calculator', href: '/calculators/irrigation/water-tank' },
     { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
     { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
+  ],
+  howToUse: 'Enter the surface area of your pond in square feet and the average depth in feet. For irregular ponds, estimate the average depth by measuring several points. The calculator converts dimensions to volume in gallons, acre-feet, and cubic feet.',
+  whyItMatters: 'Farm ponds are critical for irrigation water storage, livestock watering, and fire protection. Accurate volume estimation ensures you have enough water to cover irrigation needs through dry periods and helps size pumps and delivery systems correctly.',
+  methodology: 'Volume (cu ft) = Surface area (sq ft) × Average depth (ft). Gallons = Cubic feet × 7.481. Acre-feet = Cubic feet / 43,560. One acre-foot equals 325,851 gallons and can irrigate roughly 1 acre with 12 inches of water.',
+  commonMistakes: [
+    'Overestimating average depth — ponds are typically shallower at edges than the center.',
+    'Not accounting for evaporation loss, which can be 3-6 feet per year in arid climates.',
+    'Forgetting that sediment accumulation reduces usable volume by 1-3% per year.',
+    'Assuming the full pond volume is available — you cannot pump below the intake level.',
   ],
 };
 
@@ -355,6 +418,15 @@ const waterTank: CalculatorConfig = {
     { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
     { title: 'Well Yield Calculator', href: '/calculators/irrigation/well-yield' },
   ],
+  howToUse: 'Select the tank shape — round (cylindrical) or rectangular. For round tanks, enter the diameter and height. For rectangular tanks, enter the length, width, and height. All dimensions should be in feet. The calculator shows capacity in gallons and cubic feet.',
+  whyItMatters: 'Knowing your exact tank capacity prevents overflows, ensures adequate water storage for irrigation cycles, and helps you calculate how long stored water will last at your planned application rate. Proper sizing also avoids wasting money on oversized tanks.',
+  methodology: 'Round tank volume = π × (Diameter/2)² × Height in cubic feet. Rectangular tank volume = Length × Width × Height. Gallons = Cubic feet × 7.481. One cubic foot holds 7.481 gallons. A 10-ft diameter, 8-ft tall round tank holds about 4,696 gallons.',
+  commonMistakes: [
+    'Confusing radius and diameter — make sure you enter the full diameter, not the radius.',
+    'Not allowing for 10-15% headspace to prevent overflow.',
+    'Forgetting that elevated tanks lose capacity to the stand height but gain pressure.',
+    'Ignoring the weight of water — water weighs 8.34 lbs/gallon, so a 5,000-gallon tank weighs over 20 tons when full.',
+  ],
 };
 
 const wellYield: CalculatorConfig = {
@@ -394,6 +466,15 @@ const wellYield: CalculatorConfig = {
     { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
     { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+  ],
+  howToUse: 'Run a timed pump test by pumping into a container of known volume or using a flow meter. Enter the total gallons pumped and the test duration in minutes. The calculator converts your test data into gallons per minute, per hour, and per day.',
+  whyItMatters: 'Well yield determines whether your water source can support your irrigation system. A well that cannot keep up with demand causes pump cavitation, well damage, and crop stress. Testing during dry periods gives the most conservative and reliable estimate.',
+  methodology: 'GPM = Gallons pumped / Test duration (minutes). GPH = GPM × 60. GPD = GPH × 24. A proper sustained yield test should run 4-8 hours to account for aquifer drawdown. Short tests overestimate actual sustainable yield.',
+  commonMistakes: [
+    'Running a pump test for only 15-30 minutes — short tests overestimate sustainable yield by 20-50%.',
+    'Testing in spring when water tables are high instead of late summer when demand is greatest.',
+    'Not monitoring drawdown — if water level drops steadily, the well may not sustain that rate.',
+    'Sizing the irrigation system to maximum well yield with no safety margin for drought years.',
   ],
 };
 

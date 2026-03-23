@@ -209,6 +209,15 @@ function createPlantingDateConfig(p: PlantingDateParams): CalculatorConfig {
       { title: 'Frost Date Calculator', href: '/calculators/frost-date' },
     ],
     faqs: p.faqs,
+    howToUse: `Select your USDA hardiness zone and the month of your last expected spring frost. Choose whether you plan to direct sow or start ${p.cropName.toLowerCase()} transplants indoors. The calculator uses frost tolerance data and days to maturity to recommend optimal planting windows.`,
+    whyItMatters: `Planting ${p.cropName.toLowerCase()} at the right time is critical for success. Planting too early exposes ${p.frostTolerance === 'tender' || p.frostTolerance === 'very-tender' ? 'frost-sensitive' : 'young'} plants to cold damage, while planting too late shortens the growing season and reduces yield. Timing varies significantly by USDA zone.`,
+    methodology: `This calculator uses USDA hardiness zone frost date tables and crop-specific data: ${p.cropName} requires ${p.daysToMaturity} days to maturity, has ${p.frostTolerance} frost tolerance, and needs soil temperatures of at least ${p.optimalSoilTemp}°F. Indoor start dates are calculated by subtracting transplant lead time from the last frost date.`,
+    commonMistakes: [
+      'Planting based on calendar date rather than soil temperature and frost risk.',
+      `Not hardening off ${p.cropName.toLowerCase()} transplants before moving them outdoors.`,
+      'Ignoring microclimates — low-lying areas frost later in spring and earlier in fall.',
+      `Forgetting that ${p.cropName.toLowerCase()} needs ${p.daysToMaturity} days to reach maturity when planning fall plantings.`,
+    ],
     howToSteps: [
       'Select your USDA hardiness zone (3-10).',
       'Choose the month of your last expected spring frost.',

@@ -52,6 +52,15 @@ const yieldPerAcre: CalculatorConfig = {
     { title: 'Grain Moisture Calculator', href: '/calculators/yield/grain-moisture' },
     { title: 'Grain Bin Storage', href: '/calculators/yield/grain-bin-storage' },
   ],
+  howToUse: 'Enter your total field size in acres and the total weight harvested in pounds. Select your grain type so the calculator uses the correct test weight per bushel. Results show yield in bushels, pounds, and tons per acre.',
+  whyItMatters: 'Knowing your exact yield per acre is essential for evaluating seed performance, planning next year\'s inputs, and making marketing decisions. Yield data also determines your Actual Production History (APH) for crop insurance.',
+  methodology: 'Yield is calculated as: Bushels/acre = (Total lbs / Test weight) / Acres. Standard test weights are defined by the USDA: corn 56 lbs/bu, wheat and soybeans 60 lbs/bu, oats 32 lbs/bu.',
+  commonMistakes: [
+    'Not accounting for moisture shrink when comparing to standard yields.',
+    'Using estimated field size instead of GPS-measured acres.',
+    'Forgetting to subtract tare weight from truck scale tickets.',
+    'Comparing yields across fields without accounting for different soil types.',
+  ],
 };
 
 const harvestLoss: CalculatorConfig = {
@@ -101,6 +110,15 @@ const harvestLoss: CalculatorConfig = {
     { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Yield Per Acre', href: '/calculators/yield/yield-per-acre' }, { title: 'Grain Moisture', href: '/calculators/yield/grain-moisture' }],
+  howToUse: 'Enter your field size, expected yield from scouting or historical data, and actual harvested yield in bushels per acre. Add the current market price to see the dollar value of losses.',
+  whyItMatters: 'Harvest losses of 3-5% are common but often go unmeasured. Identifying where losses occur — header, threshing, or separation — lets you adjust combine settings and recover thousands of dollars per season.',
+  methodology: 'Loss is calculated as: (Expected Yield - Actual Yield) × Acres × Market Price. Loss percentage is the difference divided by expected yield. Industry benchmarks target less than 3% total harvest loss.',
+  commonMistakes: [
+    'Overestimating expected yield, which inflates the apparent loss percentage.',
+    'Not checking losses behind the combine with a drop pan at multiple locations.',
+    'Blaming the combine when losses are actually pre-harvest (lodging, ear drop, shatter).',
+    'Ignoring small per-acre losses that add up to significant totals on large fields.',
+  ],
 };
 
 const grainMoisture: CalculatorConfig = {
@@ -145,6 +163,15 @@ const grainMoisture: CalculatorConfig = {
     { title: 'Seeding Rate Calculator', href: '/calculators/seeding/seeding-rate/' },
   ],
   relatedCalculators: [{ title: 'Grain Bin Storage', href: '/calculators/yield/grain-bin-storage' }, { title: 'Yield Per Acre', href: '/calculators/yield/yield-per-acre' }],
+  howToUse: 'Enter the wet weight of your grain in pounds and the current moisture reading from your tester. Set the target moisture for storage or sale. The calculator shows the adjusted dry weight, total shrink, and shrink percentage.',
+  whyItMatters: 'Grain elevators discount or reject grain above standard moisture levels. Understanding shrink helps you decide whether to dry in the field, use on-farm drying, or sell at harvest moisture and accept the dock.',
+  methodology: 'Dry weight = Wet weight × (100 - Current moisture%) / (100 - Target moisture%). This formula conserves the dry matter content while accounting for the water removed during drying.',
+  commonMistakes: [
+    'Testing moisture on a single sample instead of averaging multiple probe readings.',
+    'Not calibrating the moisture tester regularly against a known standard.',
+    'Forgetting that drying costs money — sometimes selling at harvest moisture nets more.',
+    'Ignoring the difference between whole-grain and ground-grain moisture readings.',
+  ],
 };
 
 const grainBinStorage: CalculatorConfig = {
@@ -194,6 +221,15 @@ const grainBinStorage: CalculatorConfig = {
     { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Grain Moisture', href: '/calculators/yield/grain-moisture' }, { title: 'Bushels to Tons', href: '/calculators/conversions/bushels-to-tons' }],
+  howToUse: 'Enter your grain bin diameter and eave height in feet, then select the grain type to set the correct test weight. The calculator shows capacity in bushels, tons, and cubic feet.',
+  whyItMatters: 'Knowing your exact storage capacity prevents over-filling (which damages structures) and helps you plan harvest logistics. Accurate capacity figures are also needed for grain inventory and insurance purposes.',
+  methodology: 'Capacity is calculated as: Volume = π × (Diameter/2)² × Height, then converted to bushels using a packing factor of 0.8 (1 bushel = 1.244 cubic feet). Tonnage uses the selected test weight per bushel.',
+  commonMistakes: [
+    'Not accounting for the cone-shaped peak or hopper bottom when calculating usable space.',
+    'Forgetting to subtract headspace needed for aeration fans and leveling.',
+    'Using inside diameter instead of outside diameter (or vice versa) for the measurement.',
+    'Ignoring structural load limits — weight capacity may be lower than volume capacity.',
+  ],
 };
 
 const plantsPerAcre: CalculatorConfig = {
@@ -235,6 +271,15 @@ const plantsPerAcre: CalculatorConfig = {
     { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Yield Per Acre', href: '/calculators/yield/yield-per-acre' }, { title: 'Plant Spacing', href: '/calculators/seeding/plant-spacing' }],
+  howToUse: 'Enter row spacing in inches (e.g., 30 inches for standard corn rows) and the in-row plant spacing in inches. The calculator converts these measurements into plants per acre, plants per 1000 feet of row, and square feet per plant.',
+  whyItMatters: 'Plant population directly affects yield potential and competition for light, water, and nutrients. Too few plants leave yield on the table; too many increase lodging risk and reduce individual plant performance.',
+  methodology: 'Plants per acre = 43,560 sq ft / (Row spacing in ft × Plant spacing in ft). This formula assumes uniform spacing. Actual field stands should be verified by counting plants in measured row lengths at multiple locations.',
+  commonMistakes: [
+    'Confusing row spacing with plant spacing — row spacing is between rows, plant spacing is within a row.',
+    'Not accounting for emergence losses — actual stand is typically 90-95% of seeds planted.',
+    'Using the same population target for dryland and irrigated fields without adjusting.',
+    'Measuring spacing from inconsistent points on the plant instead of stem to stem at ground level.',
+  ],
 };
 
 // Crop-specific yield calculators
@@ -389,6 +434,15 @@ function createCropYieldConfig(slug: string, data: CropYieldData): CalculatorCon
     ],
     relatedCrops: others.map(s => ({ title: cropYieldData[s].name, href: `/calculators/yield/${s}` })),
     faqs: data.faqs.map(([q, a]) => ({ question: q, answer: a })),
+    howToUse: `Enter the total acres planted with ${data.name.toLowerCase()}, the estimated plants per acre, and expected yield per plant in pounds. The calculator estimates total harvest in pounds and tons per acre so you can compare against the US average of ${data.avgYield.toLocaleString()} ${data.yieldUnit}.`,
+    whyItMatters: `Accurate ${data.name.toLowerCase()} yield estimation helps with harvest planning, storage logistics, and marketing decisions. Comparing your projected yield to the US average of ${data.avgYield.toLocaleString()} ${data.yieldUnit} reveals whether your management practices are on track or need adjustment.`,
+    methodology: `Yield is estimated as: Plants per acre × Yield per plant = Pounds per acre. Total harvest = Pounds per acre × Acres. This approach works best when combined with field scouting during the ${data.harvestWindow} harvest window to validate per-plant yield assumptions.`,
+    commonMistakes: [
+      `Using a single plant sample to estimate per-plant yield instead of averaging across multiple field locations.`,
+      `Not adjusting plant population for actual stand count — emergence losses reduce the planted population.`,
+      `Forgetting to account for harvest losses, which typically reduce recoverable yield by 1-5%.`,
+      `Comparing yields without normalizing for moisture content — always convert to standard moisture before comparing.`,
+    ],
   };
 }
 

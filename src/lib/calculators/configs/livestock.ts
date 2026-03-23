@@ -39,6 +39,15 @@ const cattleWeight: CalculatorConfig = {
     { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Feed Conversion', href: '/calculators/livestock/feed-conversion' }, { title: 'Stocking Rate', href: '/calculators/livestock/stocking-rate' }],
+  howToUse: 'Measure the heart girth by wrapping a tape measure around the animal just behind the front legs. Then measure body length from the point of shoulder to the pin bone. Enter both measurements in inches.',
+  whyItMatters: 'Accurate weight estimation is essential for calculating feed rations, medication dosages, and market readiness. A scale is ideal but not always available — the heart girth method provides estimates within 3-5% accuracy for mature cattle.',
+  methodology: 'Weight (lbs) = (Heart Girth² × Body Length) / 300. This formula, known as the Schaeffer formula, is widely used by veterinarians and livestock producers. It is most accurate for mature cattle between 400-1400 lbs.',
+  commonMistakes: [
+    'Measuring heart girth too loosely — pull the tape snug but not tight.',
+    'Taking measurements while the animal is moving or not standing squarely.',
+    'Using this formula for very young calves or extremely fat/thin animals where accuracy drops.',
+    'Not measuring at the same time of day — gut fill changes weight by 3-5%.',
+  ],
 };
 
 const feedConversion: CalculatorConfig = {
@@ -76,6 +85,15 @@ const feedConversion: CalculatorConfig = {
     { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Feed Cost', href: '/calculators/livestock/feed-cost' }, { title: 'Cattle Weight', href: '/calculators/livestock/cattle-weight' }],
+  howToUse: 'Enter the total pounds of feed consumed over a period and the total weight gained by the animal or group during that same period. The calculator returns the feed conversion ratio and feed efficiency percentage.',
+  whyItMatters: 'Feed conversion ratio is the single most important metric for profitability in livestock finishing operations. Feed typically represents 60-70% of production costs, so even small FCR improvements translate to significant savings.',
+  methodology: 'FCR = Total Feed Consumed (lbs) / Total Weight Gain (lbs). Feed Efficiency = (Weight Gain / Feed Consumed) × 100. Lower FCR means better efficiency. Typical benchmarks: beef cattle 6-8:1, pigs 3-4:1, broilers 1.6-2.0:1.',
+  commonMistakes: [
+    'Not accounting for feed waste — spilled or refused feed inflates the FCR.',
+    'Comparing FCR across species without understanding that each has different biological efficiency.',
+    'Measuring over too short a period, which gives unreliable results due to gut fill variation.',
+    'Ignoring feed quality differences — a lower FCR on expensive feed may not improve profitability.',
+  ],
 };
 
 const stockingRate: CalculatorConfig = {
@@ -123,6 +141,15 @@ const stockingRate: CalculatorConfig = {
     { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale' }, { title: 'Feed Cost', href: '/calculators/livestock/feed-cost' }],
+  howToUse: 'Enter your total pasture acreage, estimated annual forage yield in pounds of dry matter per acre, and the utilization rate (typically 50% for continuous grazing). Then enter daily intake per animal and the length of your grazing season.',
+  whyItMatters: 'Overstocking degrades pastures, reduces forage productivity, and increases supplemental feed costs. Understocking leaves forage unused and reduces revenue. Calculating the correct stocking rate balances animal performance with long-term pasture health.',
+  methodology: 'Carrying capacity = (Forage yield × Acres × Utilization rate) / (Daily intake × Grazing days). Utilization rate accounts for trampling, fouling, and the need to leave residual forage for plant recovery and soil protection.',
+  commonMistakes: [
+    'Using 100% utilization rate — never graze more than 50-60% of available forage to maintain pasture health.',
+    'Not adjusting stocking rate for drought years when forage production drops significantly.',
+    'Treating all acres equally when forage production varies by soil type, slope, and moisture.',
+    'Forgetting that animal daily intake increases during lactation and cold weather.',
+  ],
 };
 
 const hayBale: CalculatorConfig = {
@@ -170,6 +197,15 @@ const hayBale: CalculatorConfig = {
     { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Hay Storage', href: '/calculators/livestock/hay-storage' }, { title: 'Feed Cost', href: '/calculators/livestock/feed-cost' }],
+  howToUse: 'Enter the number of animals, daily hay consumption per animal in pounds, and the feeding period length in days. Set the bale weight for your bale type and adjust the waste percentage based on your feeding method.',
+  whyItMatters: 'Running out of hay mid-winter forces emergency purchases at premium prices. Overbuying ties up capital and risks spoilage. Accurate hay budgeting ensures you have enough feed while minimizing waste and storage costs.',
+  methodology: 'Total hay needed = (Animals × Daily intake × Days) / (1 - Waste%). Bales needed = Total hay / Bale weight. Waste percentages vary by feeder type: hay rings 15-20%, unprotected ground feeding 30-40%, rack feeders 5-10%.',
+  commonMistakes: [
+    'Underestimating waste — round bales fed on the ground without a ring can lose 30-40%.',
+    'Not testing hay quality and assuming all bales have the same nutritional value.',
+    'Forgetting to account for animals that eat more in cold weather (intake increases 10-20%).',
+    'Using last year\'s bale weights without re-weighing — bale weight varies with moisture and density.',
+  ],
 };
 
 const hayStorage: CalculatorConfig = {
@@ -222,6 +258,15 @@ const hayStorage: CalculatorConfig = {
     { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost/' },
   ],
   relatedCalculators: [{ title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale' }],
+  howToUse: 'Enter your barn or storage structure dimensions — length, width, and stacking height in feet. Select the bale type to match your operation. The calculator shows how many bales fit and the total weight capacity.',
+  whyItMatters: 'Knowing your storage capacity helps you plan hay purchases, schedule deliveries, and decide whether you need additional storage before buying season. Proper storage under cover prevents 20-30% dry matter losses compared to outdoor storage.',
+  methodology: 'Bale capacity is calculated by dividing barn dimensions by individual bale dimensions for each bale type. Round 5×5 bales occupy a 5×5×5 ft space, large square bales occupy 8×3×3 ft, and small squares occupy 3×1.5×1.17 ft.',
+  commonMistakes: [
+    'Not leaving space for airflow between bales and walls, which leads to mold and spoilage.',
+    'Stacking round bales more than 3 high, which creates safety hazards and structural stress.',
+    'Forgetting to account for access aisles needed to retrieve bales during feeding.',
+    'Ignoring floor load capacity — hay weight can exceed what some barn floors support.',
+  ],
 };
 
 const feedCost: CalculatorConfig = {
@@ -266,6 +311,15 @@ const feedCost: CalculatorConfig = {
     { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Feed Conversion', href: '/calculators/livestock/feed-conversion' }, { title: 'Hay Bale', href: '/calculators/livestock/hay-bale' }],
+  howToUse: 'Enter the number of animals, daily feed consumption per animal in pounds, and the feed price per ton. The calculator projects daily, monthly, and annual feed expenses for your entire operation.',
+  whyItMatters: 'Feed is the largest single expense in most livestock operations, typically 60-70% of total production costs. Projecting feed costs accurately helps with cash flow planning, loan applications, and deciding when to buy or sell feed.',
+  methodology: 'Daily cost = (Head × Daily feed lbs) / 2000 × Price per ton. Monthly and annual costs are extrapolated from daily cost. This gives a baseline estimate — actual costs vary with seasonal feed price fluctuations and changing animal needs.',
+  commonMistakes: [
+    'Using as-fed weight instead of dry matter weight, which overstates actual nutrient delivery.',
+    'Not updating feed prices seasonally — grain and hay prices can swing 30-50% through the year.',
+    'Forgetting supplemental costs like minerals, salt, and protein blocks that add 5-10% to total feed cost.',
+    'Assuming all animals eat the same amount regardless of age, weight, and production stage.',
+  ],
 };
 
 const gestation: CalculatorConfig = {
@@ -318,6 +372,15 @@ const gestation: CalculatorConfig = {
     { title: 'Stocking Rate Calculator', href: '/calculators/livestock/stocking-rate/' },
   ],
   relatedCalculators: [{ title: 'Cattle Weight', href: '/calculators/livestock/cattle-weight' }, { title: 'Feed Cost', href: '/calculators/livestock/feed-cost' }],
+  howToUse: 'Select the breeding month and enter the breeding day. Choose the species to set the correct gestation period. The calculator adds the gestation days to the breeding date and shows the estimated due month and day.',
+  whyItMatters: 'Knowing the expected due date lets you prepare birthing facilities, schedule veterinary checks, and adjust nutrition during the critical late-gestation period. Proper preparation reduces dystocia and neonatal mortality.',
+  methodology: 'Due date = Breeding date + Gestation days. Standard gestation periods: cattle 283 days, sheep/goats 150 days, pigs 114 days, horses 340 days. Individual animals may vary by 1-2 weeks from the average.',
+  commonMistakes: [
+    'Not recording the exact breeding date — even a few days of uncertainty shifts the due window.',
+    'Assuming the first breeding attempt was successful without confirming pregnancy.',
+    'Using average gestation length without knowing that breed and individual variation can shift it by 1-2 weeks.',
+    'Not preparing the birthing area until after the due date, leaving no margin for early deliveries.',
+  ],
 };
 
 // Animal-specific calculators
@@ -480,6 +543,26 @@ function createAnimalConfig(slug: string, data: AnimalData): CalculatorConfig {
     ],
     relatedCrops: others.map(s => ({ title: animalData[s].name, href: `/calculators/livestock/${s}` })),
     faqs: data.faqs.map(([q, a]) => ({ question: q, answer: a })),
+    howToUse: isBees
+      ? 'Enter the number of hives in your operation, the current sugar price per pound, and the estimated fall feed amount per hive. The calculator shows total sugar needed, feeding cost, and projected annual honey production.'
+      : `Enter the number of ${data.name.toLowerCase()} in your operation and their average weight (default: ${data.avgWeight} lbs). Adjust the daily feed percentage of body weight if needed, then enter the feed price per ton to see daily, monthly, and annual feed costs.`,
+    whyItMatters: isBees
+      ? 'Adequate fall feeding ensures colonies have enough stores to survive winter. Underfed colonies starve or emerge weak in spring, reducing honey production and pollination capacity the following season.'
+      : `Feed is the largest ongoing expense for ${data.name.toLowerCase()} operations. Accurately projecting feed requirements prevents both shortages that hurt animal performance and overbuying that wastes capital. With a typical FCR of ${data.fcr}, every improvement in feed efficiency directly boosts profitability.`,
+    methodology: isBees
+      ? 'Total sugar = Hives × Pounds per hive. Cost = Total sugar × Price per pound. Honey estimate uses 45 lbs per hive per year as a conservative average for managed colonies in most US regions.'
+      : `Daily feed = Average weight × Feed percentage (${data.feedPct}% of body weight). Annual feed = Daily feed × 365 days. Annual cost = (Annual feed / 2000) × Price per ton. The ${data.feedPct}% default is a standard guideline for ${data.name.toLowerCase()} and should be adjusted for production stage and environment.`,
+    commonMistakes: isBees ? [
+      'Feeding too late in fall when bees cannot process syrup before cold weather arrives.',
+      'Using thin syrup (1:1) for fall feeding instead of thick syrup (2:1) which bees store faster.',
+      'Not checking stored honey frames before deciding how much supplemental feed is needed.',
+      'Ignoring regional differences — northern hives need significantly more winter stores than southern hives.',
+    ] : [
+      `Using a single average weight for all ${data.name.toLowerCase()} when weights vary significantly by age and condition.`,
+      `Not adjusting feed percentage for production stage — lactating, growing, and finishing animals have different needs.`,
+      `Forgetting that feed wastage (typically 5-15%) adds to the actual amount you need to purchase.`,
+      `Projecting annual costs from a single month without accounting for seasonal price and consumption changes.`,
+    ],
   };
 }
 

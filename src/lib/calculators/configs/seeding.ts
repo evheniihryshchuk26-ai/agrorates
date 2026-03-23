@@ -50,6 +50,15 @@ const seedRate: CalculatorConfig = {
     { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
     { title: 'Plan Planting Date', href: '/calculators/planting-date/' },
   ],
+  howToUse: 'Enter your field size in acres, then input the desired plant population per acre and the seeds per pound for your crop variety. Set the germination rate from your seed tag. The calculator adjusts for germination losses and converts to total pounds and bags needed.',
+  whyItMatters: 'Planting the correct seeding rate is critical for achieving optimal plant stands. Too few plants reduce yield potential, while too many cause competition for water, light, and nutrients. Accounting for germination rate ensures you purchase enough seed to hit your target population.',
+  methodology: 'Seeds needed = (Desired population / Germination rate) × Acres. Seed weight (lbs) = Seeds needed / Seeds per pound. Bags = Seed weight / 50, rounded up. This formula compensates for seeds that fail to germinate so the final stand matches your target.',
+  commonMistakes: [
+    'Using the germination rate from a previous year\'s seed tag instead of testing current seed viability.',
+    'Not adjusting seeding rate upward for no-till or poor seedbed conditions.',
+    'Confusing seeds per pound with seeds per unit — seed corn is sold by the kernel, not by weight.',
+    'Forgetting to increase rate 10-15% when planting late or into cold soils.',
+  ],
 };
 
 const plantSpacing: CalculatorConfig = {
@@ -98,6 +107,15 @@ const plantSpacing: CalculatorConfig = {
     { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
     { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
   ],
+  howToUse: 'Enter your row spacing and in-row plant spacing in inches, then input the total area in square feet. The calculator determines how many plants fit in your field and the resulting plant population per acre, helping you plan transplant orders or seed purchases.',
+  whyItMatters: 'Plant spacing directly affects light interception, air circulation, and competition for water and nutrients. Proper spacing maximizes yield per acre while reducing disease pressure from overcrowding. It also determines how many transplants or seeds to order.',
+  methodology: 'Square feet per plant = (Row spacing / 12) × (Plant spacing / 12). Total plants = Area / Sq ft per plant. Plants per acre = 43,560 / Sq ft per plant. This assumes uniform spacing across the field with no skips or end rows.',
+  commonMistakes: [
+    'Forgetting to convert inches to feet when calculating area per plant manually.',
+    'Not accounting for headlands, turn rows, and alleys which reduce plantable area by 3-8%.',
+    'Using the same spacing for determinate and indeterminate crop varieties, which have different growth habits.',
+    'Choosing row spacing that does not match available equipment widths, causing overlap or gaps.',
+  ],
 };
 
 const germinationRate: CalculatorConfig = {
@@ -141,6 +159,15 @@ const germinationRate: CalculatorConfig = {
     { title: 'Estimate Seed Cost', href: '/calculators/seeding/seed-cost/' },
     { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
   ],
+  howToUse: 'Count out a sample of seeds (100 is ideal for easy percentage conversion), place them between moist paper towels, and wait 7-14 days. Enter the number tested and the number that germinated. Optionally enter a target seeding rate to see the adjusted rate needed to achieve your desired stand.',
+  whyItMatters: 'Seed germination declines with age, poor storage, and mechanical damage. Planting seed with unknown germination rates leads to either thin stands that reduce yield or over-seeding that wastes money. A simple test before planting saves both.',
+  methodology: 'Germination rate (%) = (Seeds germinated / Seeds tested) × 100. Adjusted seeding rate = Target rate / (Germination rate / 100). This ensures enough viable seeds are planted to achieve the desired final population even with reduced germination.',
+  commonMistakes: [
+    'Testing too few seeds — fewer than 50 seeds gives unreliable results due to sampling error.',
+    'Not maintaining consistent moisture and temperature during the test, which skews results.',
+    'Assuming last year\'s germination rate still holds — seed viability drops significantly with improper storage.',
+    'Ignoring field emergence rate, which is typically 5-15% lower than lab germination due to soil crusting and pests.',
+  ],
 };
 
 const seedsPerAcre: CalculatorConfig = {
@@ -182,6 +209,15 @@ const seedsPerAcre: CalculatorConfig = {
     { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
     { title: 'Estimate Seed Cost', href: '/calculators/seeding/seed-cost/' },
     { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
+  ],
+  howToUse: 'Enter your row spacing in inches and the seed spacing within the row in inches. The calculator determines the total seeds per acre and seeds per 1,000 feet of row, which you can use to calibrate your planter or drill.',
+  whyItMatters: 'Knowing the exact seeds per acre from your planter settings lets you verify that your equipment is calibrated correctly before planting. Even small errors in seed spacing compound across an entire field, leading to significant population differences that affect yield.',
+  methodology: 'Row feet per acre = 43,560 / (Row spacing in feet). Seeds per acre = Row feet per acre / (Seed spacing in feet). This geometric calculation assumes perfectly uniform spacing, so use it as a target for planter calibration.',
+  commonMistakes: [
+    'Confusing seed spacing with plant spacing — seed spacing should be tighter to account for germination losses.',
+    'Not verifying planter output in the field, where ground speed and soil conditions affect actual seed drop.',
+    'Using the wrong row spacing value when equipment has been modified or adjusted.',
+    'Assuming the planter delivers the same population at all ground speeds — most planters lose accuracy above 5-6 mph.',
   ],
 };
 
@@ -229,6 +265,15 @@ const seedCost: CalculatorConfig = {
     { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
     { title: 'Estimate Fertilizer Cost', href: '/calculators/fertilizer/fertilizer-cost/' },
     { title: 'Plan Farm Budget', href: '/calculators/economics/cost-per-acre/' },
+  ],
+  howToUse: 'Enter your field size in acres, the seeding rate in seeds per acre, and the number of seeds per unit (bag) from your supplier. Then input the price per unit. The calculator shows how many units to purchase and your total seed investment broken down by acre.',
+  whyItMatters: 'Seed is a major input cost that varies widely by crop, trait package, and supplier. Accurately estimating seed expenses before purchasing lets you compare options, take advantage of early-order discounts, and build a realistic planting budget.',
+  methodology: 'Total seeds = Seeding rate × Acres. Units needed = Total seeds / Seeds per unit, rounded up. Total cost = Units × Price per unit. Cost per acre = Total cost / Acres. Rounding up to whole units reflects actual purchasing, so the true cost per acre accounts for partial-unit purchases.',
+  commonMistakes: [
+    'Not accounting for different unit sizes between suppliers — corn is typically 80,000 seeds per unit, soybeans 140,000.',
+    'Forgetting to add seed treatment costs, which are often $5-15 per unit on top of the base price.',
+    'Ordering exact quantities without a buffer for replanting — keep 5-10% extra seed on hand.',
+    'Comparing seed prices without considering yield performance data, which affects return on investment.',
   ],
 };
 
@@ -419,6 +464,15 @@ function createCropSeedConfig(slug: string, data: CropSeedData): CalculatorConfi
           { title: `Find ${data.name} Planting Date`, href: plantingDateHref },
           { title: `Estimate ${data.name} Yield`, href: `/calculators/yield/${slug}/` },
         ],
+    howToUse: `Enter your field size in acres and the desired ${data.name.toLowerCase()} plant population. The calculator accounts for germination rate to determine how many seeds and pounds of seed you actually need to purchase. Default values are pre-filled based on standard ${data.name.toLowerCase()} recommendations.`,
+    whyItMatters: `Achieving the right plant population is essential for ${data.name.toLowerCase()} yield. Too few plants leave gaps that reduce light interception and invite weeds, while overcrowding increases competition for moisture and nutrients. This calculator ensures you order the correct amount of seed for your specific field size and conditions.`,
+    methodology: `The calculator uses a target population of ${data.population.toLocaleString()} plants/acre at ${data.rowSpacing}-inch row spacing with ${data.seedsPerLb.toLocaleString()} seeds per pound. Seeds needed = (Population / Germination rate) × Acres, then converted to pounds and 50-lb bags. Planting depth for ${data.name.toLowerCase()} is ${data.plantingDepth}.`,
+    commonMistakes: [
+      `Using a generic seeding rate instead of adjusting for ${data.name.toLowerCase()}-specific population targets and seed size.`,
+      'Not checking the seed tag for actual germination rate and seeds per pound, which vary by lot.',
+      'Failing to increase seeding rate for poor seedbed conditions, late planting, or no-till fields.',
+      `Planting ${data.name.toLowerCase()} at the wrong depth — target ${data.plantingDepth} for best emergence.`,
+    ],
   };
 }
 

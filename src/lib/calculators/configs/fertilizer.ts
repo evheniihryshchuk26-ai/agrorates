@@ -178,6 +178,15 @@ function createCropFertConfig(slug: string, data: CropData): CalculatorConfig {
       { title: `Find ${data.name} Planting Date`, href: plantingDateHref },
       { title: `Estimate ${data.name} Yield`, href: `/calculators/yield/${slug}/` },
     ],
+    howToUse: `Enter your field size and ${data.name.toLowerCase()} yield goal. The calculator uses crop-specific nutrient uptake rates to determine how much nitrogen, phosphorus, and potassium your ${data.name.toLowerCase()} crop needs. Soil test values are subtracted to show only the supplemental fertilizer required.`,
+    whyItMatters: `${data.name} has specific nutrient requirements that change with yield potential. Over-applying fertilizer to ${data.name.toLowerCase()} wastes money and can cause environmental harm, while under-applying limits yield and profit. This calculator helps you find the right balance based on proven agronomic data.`,
+    methodology: `The calculator estimates nutrient needs using crop removal rates: N at ${data.nRate} lbs per unit of yield, P₂O₅ at ${data.pRate}, and K₂O at ${data.kRate}. Soil test values are credited against these needs. These rates are based on university extension guidelines and may vary by region.`,
+    commonMistakes: [
+      `Using generic fertilizer rates instead of ${data.name.toLowerCase()}-specific recommendations.`,
+      'Ignoring soil test results and applying the same rate every year.',
+      'Not accounting for nutrients already in the soil from previous crops or manure.',
+      'Applying all fertilizer at planting instead of splitting applications for better uptake.',
+    ],
   };
 }
 
@@ -236,6 +245,15 @@ const npk: CalculatorConfig = {
     { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
     { title: 'Plan Farm Budget', href: '/calculators/economics/cost-per-acre/' },
   ],
+  howToUse: 'Start by entering your total field size in acres. Then input the recommended nutrient rates from your soil test report for nitrogen, phosphorus, and potassium. The calculator multiplies each rate by your acreage to give total pounds needed.',
+  whyItMatters: 'Applying the correct NPK rates prevents over-fertilization which wastes money and pollutes waterways, while under-fertilization limits crop yield. Accurate calculations based on soil tests are the foundation of profitable, sustainable farming.',
+  methodology: 'This calculator uses a simple multiplication formula: Total nutrient (lbs) = Rate (lbs/acre) × Acres. Rates should come from a certified soil test laboratory. The calculator does not account for nutrient credits from previous crops or organic matter — use the Nitrogen Rate Calculator for that.',
+  commonMistakes: [
+    'Using rates from a neighbor instead of your own soil test — every field is different.',
+    'Forgetting to account for nitrogen credits from previous legume crops.',
+    'Applying all nitrogen at once instead of splitting applications for better efficiency.',
+    'Not recalibrating your spreader when switching between fertilizer products.',
+  ],
 };
 
 const fertilizerCost: CalculatorConfig = {
@@ -292,6 +310,15 @@ const fertilizerCost: CalculatorConfig = {
     { title: 'Calculate NPK Rates', href: '/calculators/fertilizer/npk/' },
     { title: 'Estimate Seed Cost', href: '/calculators/seeding/seed-cost/' },
     { title: 'Plan Farm Budget', href: '/calculators/economics/cost-per-acre/' },
+  ],
+  howToUse: 'Enter your field size in acres and the application rate recommended for your fertilizer product. Then input the bag weight and price per bag from your supplier. The calculator determines how many bags you need and breaks down the cost per acre.',
+  whyItMatters: 'Fertilizer is one of the largest variable costs in crop production, often 15-25% of total input costs. Accurately estimating expenses before purchasing helps you compare suppliers, negotiate bulk pricing, and build a realistic operating budget.',
+  methodology: 'Total product (lbs) = Application rate (lbs/acre) × Acres. Bags needed = Total product / Bag weight, rounded up. Total cost = Bags × Price per bag. This does not include application or freight costs, which should be budgeted separately.',
+  commonMistakes: [
+    'Forgetting to round bags up — you cannot buy a partial bag.',
+    'Not factoring in delivery or custom application costs, which can add $5-15 per acre.',
+    'Comparing prices by the bag instead of by the pound or per unit of nutrient.',
+    'Buying more product than needed because of minimum order requirements without adjusting the budget.',
   ],
 };
 
@@ -356,6 +383,15 @@ const lime: CalculatorConfig = {
     { title: 'Estimate Compost Needs', href: '/calculators/fertilizer/compost/' },
     { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
   ],
+  howToUse: 'Enter your field size in acres, then input your current soil pH and target pH from your soil test report. Select the buffer pH value to account for your soil\'s resistance to pH change. The calculator estimates the tons of agricultural lime needed per acre and for your entire field.',
+  whyItMatters: 'Soil pH controls nutrient availability — most crops perform best between pH 6.0 and 7.0. Even with perfect fertilizer rates, nutrients like phosphorus and molybdenum become locked up in acidic soils, reducing uptake and wasting your fertilizer investment.',
+  methodology: 'Lime requirement is calculated using the buffer pH method: the difference between target and current pH is multiplied by a lime factor derived from buffer pH. Lower buffer pH values indicate higher buffering capacity (more clay or organic matter), requiring more lime to shift pH. Results assume 100% Effective Neutralizing Material (ENM).',
+  commonMistakes: [
+    'Ignoring the buffer pH and basing lime rates only on the water pH — this underestimates lime needs on clay soils.',
+    'Applying more than 4 tons per acre in one pass, which can over-correct surface pH before it incorporates.',
+    'Using pelletized lime without adjusting for its lower ENM compared to finely ground ag lime.',
+    'Not allowing 6-12 months for lime to fully react before planting pH-sensitive crops.',
+  ],
 };
 
 const compost: CalculatorConfig = {
@@ -409,6 +445,15 @@ const compost: CalculatorConfig = {
     { title: 'Calculate Lime Rate', href: '/calculators/fertilizer/lime/' },
     { title: 'Calculate NPK Rates', href: '/calculators/fertilizer/npk/' },
     { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
+  ],
+  howToUse: 'Enter the area you want to amend in square feet and the desired compost depth in inches. Optionally adjust the compost density if you know your product weight. The calculator converts your inputs into cubic yards and total pounds so you can order the right amount.',
+  whyItMatters: 'Compost improves soil structure, water-holding capacity, and microbial activity while slowly releasing nutrients over time. Applying the right amount avoids both under-amendment, which limits benefits, and over-application, which can cause excess salts or nutrient imbalances.',
+  methodology: 'Volume is calculated as Area (sq ft) × Depth (inches) / 12 to get cubic feet, then divided by 27 to convert to cubic yards. Weight is estimated by multiplying cubic yards by the compost density. Finished compost typically weighs 800-1,200 lbs per cubic yard depending on moisture content.',
+  commonMistakes: [
+    'Using unfinished compost that can tie up nitrogen and introduce weed seeds.',
+    'Applying compost too thickly on lawns — more than 0.5 inches smothers turf grass.',
+    'Not incorporating compost into garden beds, leaving it on the surface where it dries out.',
+    'Underestimating volume needed — compost settles 10-20% after spreading and incorporation.',
   ],
 };
 
@@ -477,6 +522,15 @@ const nitrogen: CalculatorConfig = {
     { title: 'Estimate Fertilizer Cost', href: '/calculators/fertilizer/fertilizer-cost/' },
     { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
     { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
+  ],
+  howToUse: 'Enter your field size, yield goal, and the nitrogen factor for your crop (pre-filled for corn). Select the previous crop to apply nitrogen credits, and enter your soil organic matter percentage. The calculator subtracts all credits from the gross nitrogen need to show your net application rate.',
+  whyItMatters: 'Nitrogen is the most expensive and environmentally sensitive nutrient in crop production. Over-applying nitrogen wastes money, increases nitrate leaching into groundwater, and can cause lodging. Under-applying limits yield potential and profit.',
+  methodology: 'Net N (lbs/acre) = (Yield goal × N factor) − Previous crop credit − Organic matter credit. Each 1% organic matter is credited at 20 lbs N/acre of annual mineralization. Legume credits vary by crop: soybeans provide ~40 lbs N/acre, alfalfa ~80 lbs N/acre. These credits are based on Midwest university extension research.',
+  commonMistakes: [
+    'Ignoring previous crop nitrogen credits, especially after soybeans or alfalfa.',
+    'Not crediting organic matter mineralization, which can contribute 40-80 lbs N/acre on high-OM soils.',
+    'Using the maximum yield N rate instead of the economic optimum rate, which is typically 10-15% lower.',
+    'Applying all nitrogen pre-plant instead of splitting applications to match crop uptake timing.',
   ],
 };
 

@@ -42,6 +42,15 @@ const bushelsToTons: CalculatorConfig = {
     { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
     { title: 'Break-Even Price Calculator', href: '/calculators/economics/break-even-price' },
   ],
+  howToUse: 'Enter the number of bushels you want to convert and select the grain type from the dropdown. Each grain has a standard test weight (pounds per bushel) set by the USDA. The calculator converts bushels to short tons, metric tons, and total pounds.',
+  whyItMatters: 'Grain is traded in bushels domestically but in metric tons internationally. Accurate conversion is essential for export contracts, trucking logistics (weight limits), and storage planning. Using the wrong test weight can cause significant errors in large quantities.',
+  methodology: 'Pounds = Bushels × Test weight (lbs/bu). Short tons = Pounds / 2,000. Metric tons = Pounds / 2,204.6. Standard test weights: corn 56, wheat 60, soybeans 60, oats 32, barley 48, sorghum 56, rice 45 lbs/bu.',
+  commonMistakes: [
+    'Using the wrong test weight — soybeans are 60 lbs/bu, not 56 like corn.',
+    'Confusing short tons (2,000 lbs) with metric tons (2,204.6 lbs) on export contracts.',
+    'Not adjusting for actual test weight — high-test-weight grain yields more tons per bushel.',
+    'Forgetting that moisture content affects weight — wet grain weighs more but is docked at the elevator.',
+  ],
 };
 
 const acresToHectares: CalculatorConfig = {
@@ -77,6 +86,15 @@ const acresToHectares: CalculatorConfig = {
     { title: 'Gallons/Acre to Liters/Hectare', href: '/calculators/conversions/gallons-per-acre-to-liters-per-hectare' },
     { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
   ],
+  howToUse: 'Enter the number of acres you want to convert. The calculator instantly shows the equivalent in hectares, square meters, and square feet. Use this for international reporting, metric-based input recommendations, or comparing farm sizes across countries.',
+  whyItMatters: 'Most of the world uses hectares, while the US uses acres. Converting accurately is essential when reading international research, applying metric-labeled products, or communicating farm size to international buyers and partners.',
+  methodology: '1 acre = 0.4047 hectares = 4,047 square meters = 43,560 square feet. 1 hectare = 2.471 acres = 10,000 square meters. The conversion factor 0.4047 is exact and based on the international definition of the acre.',
+  commonMistakes: [
+    'Multiplying by 2.471 when you should divide by 2.471 (or multiply by 0.4047) to go from acres to hectares.',
+    'Confusing hectares with acres when reading product labels — applying at the acre rate on a hectare-sized field underdoses by 60%.',
+    'Forgetting that yield per hectare is always a larger number than yield per acre for the same field.',
+    'Not converting application rates (lbs/acre vs kg/ha) when switching between unit systems.',
+  ],
 };
 
 const lbsPerAcreToKgPerHectare: CalculatorConfig = {
@@ -111,6 +129,15 @@ const lbsPerAcreToKgPerHectare: CalculatorConfig = {
     { title: 'Acres to Hectares Converter', href: '/calculators/conversions/acres-to-hectares' },
     { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
     { title: 'Fertilizer Spreader Calibration', href: '/calculators/conversions/fertilizer-spreader-calibration' },
+  ],
+  howToUse: 'Enter the application rate in pounds per acre from your soil test or product label. The calculator converts it to kilograms per hectare and also shows the rate per 1,000 square feet for smaller applications like lawns and gardens.',
+  whyItMatters: 'Fertilizer and chemical labels from international manufacturers use kg/ha, while US soil test recommendations use lbs/acre. Incorrect conversion leads to over- or under-application, wasting money or damaging crops and the environment.',
+  methodology: 'Kg per hectare = Lbs per acre × 1.1209. The factor 1.1209 accounts for both the weight conversion (lbs to kg) and the area conversion (acres to hectares). Reverse: Lbs per acre = Kg per hectare × 0.8922.',
+  commonMistakes: [
+    'Applying the conversion factor backwards — multiplying kg/ha by 1.1209 instead of 0.8922 to get lbs/acre.',
+    'Not converting when switching between US and imported products with metric labels.',
+    'Confusing lbs of product per acre with lbs of active ingredient per acre.',
+    'Forgetting to adjust for product concentration when converting between formulations.',
   ],
 };
 
@@ -154,6 +181,15 @@ const balesPerAcre: CalculatorConfig = {
     { title: 'Alfalfa Yield Calculator', href: '/calculators/yield/alfalfa/' },
     { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
   ],
+  howToUse: 'Enter the hay yield in tons per acre (check your area average or past records). Enter the average bale weight in pounds — small squares are typically 40-60 lbs, large rounds 800-1,500 lbs. Enter total acres to see the full bale count for your operation.',
+  whyItMatters: 'Accurate bale counts are essential for planning hay sales, storage space, and livestock feed budgets. Underestimating means running short of feed mid-winter; overestimating means wasted barn space or buying hay you did not need.',
+  methodology: 'Pounds per acre = Yield (tons/acre) × 2,000. Bales per acre = Pounds per acre / Bale weight. Total bales = Bales per acre × Total acres. Typical alfalfa yields 3-6 tons/acre per year across multiple cuttings; grass hay yields 1.5-3 tons/acre.',
+  commonMistakes: [
+    'Assuming all bales weigh the same — moisture content at baling causes significant weight variation.',
+    'Not accounting for harvest losses, which typically reduce yield by 10-20% from standing crop to baled hay.',
+    'Using per-cutting yield instead of total annual yield when estimating storage needs.',
+    'Forgetting that large round bales lose 5-25% of feed value from weathering if stored outside without cover.',
+  ],
 };
 
 const seedsPerPound: CalculatorConfig = {
@@ -189,6 +225,15 @@ const seedsPerPound: CalculatorConfig = {
     { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate/' },
     { title: 'Row Spacing Converter', href: '/calculators/conversions/row-spacing-converter' },
     { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
+  ],
+  howToUse: 'Enter the total weight of seed in pounds and the seeds per pound for your specific crop variety (found on the seed tag or seed company data sheet). The calculator multiplies weight by seed count to give you total seeds and seeds per ounce.',
+  whyItMatters: 'Seeding rate recommendations are often given in seeds per acre, but seed is sold by weight. Knowing your seeds per pound lets you convert between the two, ensuring you buy the right amount and plant at the correct population for maximum yield.',
+  methodology: 'Total seeds = Seed weight (lbs) × Seeds per pound. Seeds per ounce = Seeds per pound / 16. Seed count per pound varies by crop and variety: wheat ~15,000, corn ~1,200-1,500, soybeans ~2,500-3,000, alfalfa ~220,000 seeds per pound.',
+  commonMistakes: [
+    'Using a generic seeds-per-pound figure instead of the actual value from your seed lot tag.',
+    'Not adjusting for germination rate — if germination is 90%, you need 10% more seed.',
+    'Confusing seeds per pound with seeds per unit (corn is sold in 80,000-seed units, not by weight).',
+    'Forgetting that seed size varies between varieties and crop years, changing the seeds-per-pound count.',
   ],
 };
 
@@ -231,6 +276,15 @@ const cubicYardsToTons: CalculatorConfig = {
     { title: 'Mulch Calculator', href: '/calculators/conversions/mulch-calculator' },
     { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
   ],
+  howToUse: 'Enter the volume in cubic yards and select the bulk material type from the dropdown. Each material has a different density. The calculator converts volume to weight in tons and pounds so you can match delivery truck capacity and weight limits.',
+  whyItMatters: 'Bulk materials like topsoil, gravel, and compost are sold by volume (cubic yards) but trucking is limited by weight (tons). Knowing the weight prevents overloading trucks, helps estimate delivery costs, and ensures you order the right amount for your project.',
+  methodology: 'Weight (lbs) = Cubic yards × Material density (lbs/cu yd). Tons = Pounds / 2,000. Typical densities: topsoil ~2,200, gravel ~2,800, sand ~2,700, compost ~1,000, mulch ~800, crushed stone ~2,400 lbs per cubic yard.',
+  commonMistakes: [
+    'Assuming all materials weigh the same — gravel weighs 3.5 times more than mulch per cubic yard.',
+    'Not accounting for moisture content, which can increase weight by 20-40% for soil and compost.',
+    'Exceeding truck weight limits — a standard dump truck holds 10-14 cubic yards but may only carry 20 tons.',
+    'Ordering by volume alone without checking if the delivery truck can legally haul that weight.',
+  ],
 };
 
 const fertilizerSpreaderCalibration: CalculatorConfig = {
@@ -270,6 +324,15 @@ const fertilizerSpreaderCalibration: CalculatorConfig = {
     { title: 'Lbs/Acre to Kg/Hectare', href: '/calculators/conversions/lbs-per-acre-to-kg-per-hectare' },
     { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
   ],
+  howToUse: 'Run a calibration test by driving your spreader over a measured distance while collecting material in catch pans placed across the swath width. Enter the swath width, test distance, and total weight collected. The calculator shows your actual application rate in lbs/acre.',
+  whyItMatters: 'Spreader calibration is the only way to verify you are applying the correct rate. Even small errors compound over large acreages — a 10% over-application on 500 acres wastes thousands of dollars in fertilizer and can cause crop burn or environmental damage.',
+  methodology: 'Test area (acres) = (Swath width × Test distance) / 43,560. Application rate (lbs/acre) = Weight collected / Test area. Calibrate at your planned ground speed and PTO speed, as both affect delivery rate.',
+  commonMistakes: [
+    'Not placing catch pans across the full swath width, which misses uneven distribution patterns.',
+    'Calibrating at a different ground speed than you will use in the field.',
+    'Testing with a nearly empty hopper — application rate changes as hopper weight decreases.',
+    'Forgetting to recalibrate when switching to a different fertilizer product with a different particle size or density.',
+  ],
 };
 
 const gallonsPerAcreToLitersPerHectare: CalculatorConfig = {
@@ -302,6 +365,15 @@ const gallonsPerAcreToLitersPerHectare: CalculatorConfig = {
     { title: 'Lbs/Acre to Kg/Hectare', href: '/calculators/conversions/lbs-per-acre-to-kg-per-hectare' },
     { title: 'Acres to Hectares Converter', href: '/calculators/conversions/acres-to-hectares' },
     { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
+  ],
+  howToUse: 'Enter the spray or irrigation application rate in gallons per acre. The calculator converts it to liters per hectare. Use this when applying products with metric-labeled rates on US acreage, or when converting US rates for international reporting.',
+  whyItMatters: 'Spray application rates must be exact to ensure proper pest and weed control. Converting incorrectly between gallons per acre and liters per hectare leads to under-dosing (poor control) or over-dosing (crop damage, illegal residues, and wasted product).',
+  methodology: 'Liters per hectare = Gallons per acre × 9.354. The factor combines the gallon-to-liter conversion (3.785) with the acre-to-hectare conversion (2.471). Reverse: Gallons per acre = Liters per hectare × 0.1069.',
+  commonMistakes: [
+    'Applying the conversion in the wrong direction — GPA to L/ha multiplies, L/ha to GPA divides.',
+    'Confusing spray volume rate with product rate — you may apply 15 GPA of water but only 1 qt/acre of chemical.',
+    'Not recalibrating spray nozzles after changing between US and metric rate settings.',
+    'Forgetting that carrier volume (water) and product rate must be converted separately.',
   ],
 };
 
@@ -337,6 +409,15 @@ const rowSpacingConverter: CalculatorConfig = {
     { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate/' },
     { title: 'Seeds Per Pound Calculator', href: '/calculators/conversions/seeds-per-pound' },
     { title: 'Acres to Hectares Converter', href: '/calculators/conversions/acres-to-hectares' },
+  ],
+  howToUse: 'Enter the row spacing in inches used by your planter or drill. The calculator converts to centimeters for metric reference and calculates the total linear row feet per acre. Use this to plan seed, fertilizer, and chemical needs on a per-row-foot basis.',
+  whyItMatters: 'Row spacing directly affects plant population, light interception, weed competition, and equipment compatibility. Narrower rows increase yield potential for many crops but require specific planter and harvester configurations.',
+  methodology: 'Centimeters = Inches × 2.54. Row feet per acre = 43,560 sq ft / (Row spacing in inches / 12). At 30-inch rows, there are 17,424 row feet per acre. At 15-inch rows, there are 34,848 row feet per acre — double the row feet.',
+  commonMistakes: [
+    'Changing row spacing without adjusting seeding rate — narrower rows need proportionally more seed per acre.',
+    'Not verifying that harvest equipment header matches the planter row spacing.',
+    'Assuming narrower rows always increase yield — the benefit depends on crop, region, and planting date.',
+    'Forgetting that row spacing affects in-row seed spacing needed to achieve the target plant population.',
   ],
 };
 
@@ -381,6 +462,15 @@ const grainWeightPerBushel: CalculatorConfig = {
     { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
     { title: 'Break-Even Price Calculator', href: '/calculators/economics/break-even-price' },
   ],
+  howToUse: 'Select a grain type from the dropdown to see its USDA standard test weight. Optionally enter a number of bushels to calculate total weight in pounds and tons. Use this as a quick reference when you need to know the standard weight for any common grain.',
+  whyItMatters: 'Test weight is the official measure of grain density and quality. Grain elevators use it to determine dockage — grain below standard test weight receives a price discount. Understanding test weight helps you evaluate grain quality and estimate storage and trucking capacity.',
+  methodology: 'Test weight = Standard pounds per bushel (1.244 cubic feet) as defined by USDA. Total pounds = Test weight × Bushels. Total tons = Pounds / 2,000. Actual test weight varies by growing conditions, hybrid, and moisture at harvest.',
+  commonMistakes: [
+    'Assuming actual test weight equals the standard — drought stress and early frost lower test weight significantly.',
+    'Not knowing that soybeans and wheat share the same 60 lb/bu standard despite being very different grains.',
+    'Ignoring test weight premiums and discounts when making marketing decisions.',
+    'Confusing test weight (density) with moisture content — they are related but separate quality factors.',
+  ],
 };
 
 const livestockWeightConverter: CalculatorConfig = {
@@ -414,6 +504,15 @@ const livestockWeightConverter: CalculatorConfig = {
     { title: 'Temperature Converter', href: '/calculators/conversions/temperature-converter' },
     { title: 'Bushels to Tons Converter', href: '/calculators/conversions/bushels-to-tons' },
   ],
+  howToUse: 'Enter the animal weight in pounds. The calculator instantly converts to kilograms. Use this for international livestock trade, veterinary dosage calculations, or when reading research published in metric units.',
+  whyItMatters: 'Veterinary medications, feed supplements, and international livestock markets all use kilograms. Incorrect weight conversion leads to dangerous over- or under-dosing of medications and inaccurate pricing for export sales.',
+  methodology: 'Kilograms = Pounds × 0.4536. Pounds = Kilograms × 2.2046. These are exact conversion factors based on the international pound definition. One kilogram equals exactly 2.20462 pounds.',
+  commonMistakes: [
+    'Multiplying by 2.2 when converting lbs to kg instead of dividing — this gives a number 4.8x too large.',
+    'Using estimated live weight instead of actual scale weight for medication dosing.',
+    'Confusing live weight with carcass weight — dressing percentage is typically 60-65% for cattle.',
+    'Not accounting for gut fill — cattle can weigh 30-50 lbs more after feeding and watering.',
+  ],
 };
 
 const temperatureConverter: CalculatorConfig = {
@@ -446,6 +545,15 @@ const temperatureConverter: CalculatorConfig = {
     { title: 'Acres to Hectares Converter', href: '/calculators/conversions/acres-to-hectares' },
     { title: 'Lbs/Acre to Kg/Hectare', href: '/calculators/conversions/lbs-per-acre-to-kg-per-hectare' },
     { title: 'Livestock Weight Converter', href: '/calculators/conversions/livestock-weight-converter' },
+  ],
+  howToUse: 'Enter a temperature in Fahrenheit. The calculator converts it to Celsius. Use this for interpreting soil temperature data, understanding cold storage requirements, or converting between weather forecast formats used in different countries.',
+  whyItMatters: 'Soil temperature determines planting timing — corn needs 50°F (10°C), soybeans need 60°F (15.5°C). Understanding temperature in both scales helps you interpret international research, set greenhouse controls, and make accurate planting decisions.',
+  methodology: 'Celsius = (Fahrenheit - 32) × 5/9. Fahrenheit = (Celsius × 9/5) + 32. Key agricultural reference points: 32°F = 0°C (freezing), 50°F = 10°C (cool-season planting), 86°F = 30°C (heat stress threshold for many crops).',
+  commonMistakes: [
+    'Forgetting to subtract 32 first before multiplying by 5/9.',
+    'Using soil temperature at the wrong depth — planting-depth temperature matters, not surface temperature.',
+    'Not checking soil temperature at planting time — morning soil temps can be 10-15°F cooler than afternoon.',
+    'Confusing air temperature with soil temperature, which lags air temp by several days.',
   ],
 };
 
@@ -488,6 +596,15 @@ const soilVolume: CalculatorConfig = {
     { title: 'Mulch Calculator', href: '/calculators/conversions/mulch-calculator' },
     { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
   ],
+  howToUse: 'Enter the length and width of the area in feet, and the desired soil depth in inches. The calculator shows the total volume needed in cubic yards (for bulk delivery), cubic feet, and estimated weight in tons for planning delivery logistics.',
+  whyItMatters: 'Raised beds, garden fill, and landscaping projects require precise soil volumes. Ordering too little means a second delivery charge; ordering too much wastes money and leaves excess material with no place to put it. Accurate calculation saves both time and money.',
+  methodology: 'Cubic feet = Length (ft) × Width (ft) × Depth (in) / 12. Cubic yards = Cubic feet / 27. Estimated tons = Cubic yards × 1.1 (average dry topsoil density). One cubic yard of topsoil weighs approximately 2,000-2,400 lbs depending on moisture.',
+  commonMistakes: [
+    'Forgetting to convert depth from inches to feet before calculating volume.',
+    'Not adding 10-15% extra for settling — fresh fill settles 10-15% over the first year.',
+    'Estimating area by eye instead of measuring, which leads to ordering errors.',
+    'Not checking that the delivery truck can access your site — a loaded dump truck weighs 25-30 tons.',
+  ],
 };
 
 const mulchCalculator: CalculatorConfig = {
@@ -529,6 +646,15 @@ const mulchCalculator: CalculatorConfig = {
     { title: 'Soil Volume Calculator', href: '/calculators/conversions/soil-volume' },
     { title: 'Cubic Yards to Tons', href: '/calculators/conversions/cubic-yards-to-tons' },
     { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+  ],
+  howToUse: 'Measure the total area you want to mulch in square feet (length times width). Choose your desired mulch depth — typically 2-3 inches for garden beds and 3-4 inches for new plantings. The calculator shows cubic yards for bulk delivery and number of bags for retail purchase.',
+  whyItMatters: 'Buying too little mulch means a second trip and inconsistent coverage. Buying too much wastes money and leaves unused material. Accurate calculation saves time and ensures proper weed suppression and moisture retention across your entire garden or landscape.',
+  methodology: 'Volume = Area (sq ft) × Depth (inches) / 12 = cubic feet. Cubic yards = cubic feet / 27. Bags = cubic feet / bag size (typically 2 cu ft). One cubic yard covers approximately 162 sq ft at 2 inches deep.',
+  commonMistakes: [
+    'Measuring area by eyeball instead of actual measurements — errors compound over large areas.',
+    'Not adding 10-15% extra for settling, curves, and edges.',
+    'Applying mulch too deep (over 4 inches) which can suffocate plant roots.',
+    'Piling mulch against tree trunks and plant stems — keep 2-3 inches away to prevent rot.',
   ],
 };
 

@@ -53,4 +53,8 @@ export type CalculatorConfig = {
   faqs?: { question: string; answer: string }[];
   howToSteps?: string[];
   nextSteps?: { title: string; href: string }[];
+  howToUse?: string;
+  whyItMatters?: string;
+  methodology?: string;
+  commonMistakes?: string[];
 };

@@ -47,6 +47,15 @@ const farmProfitLoss: CalculatorConfig = {
     { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
     { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
   ],
+  howToUse: 'Enter your total gross revenue from all farm sales. Then break down your costs into variable costs (inputs that change with production) and fixed costs (expenses you pay regardless of production level). The calculator shows net profit, margin, and total expenses.',
+  whyItMatters: 'Most farm failures are financial, not agronomic. Knowing your true profit margin helps you make better decisions about land expansion, equipment purchases, and crop selection. A 15-25% margin is considered healthy for crop farming.',
+  methodology: 'Net profit = Gross revenue - (Variable costs + Fixed costs). Profit margin = Net profit / Gross revenue × 100. Variable costs include seed, fertilizer, chemicals, fuel, and hired labor. Fixed costs include land rent, insurance, depreciation, and interest.',
+  commonMistakes: [
+    'Forgetting to include depreciation as a real cost — equipment wears out.',
+    'Not separating family living expenses from farm expenses.',
+    'Counting government payments as operating revenue without tracking them separately.',
+    'Ignoring opportunity cost — what your land and labor could earn elsewhere.',
+  ],
 };
 
 const costPerAcre: CalculatorConfig = {
@@ -91,6 +100,15 @@ const costPerAcre: CalculatorConfig = {
     { title: 'Fuel Cost Per Acre', href: '/calculators/economics/fuel-cost' },
     { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
   ],
+  howToUse: 'Enter the total number of acres you farm. Then fill in each cost category: seed, fertilizer, chemicals, fuel and machinery, labor, land cost, and any other expenses. The calculator totals everything and divides by acres to show your per-acre production cost.',
+  whyItMatters: 'Knowing your cost per acre is the foundation of every farm financial decision. It determines your break-even price, helps you compare profitability across fields, and reveals which input categories are consuming the most money.',
+  methodology: 'Total costs = Seed + Fertilizer + Chemicals + Fuel + Labor + Land + Other. Cost per acre = Total costs / Total acres. Tracking each category separately helps identify where cost reductions will have the biggest impact on profitability.',
+  commonMistakes: [
+    'Leaving out overhead costs like insurance, accounting fees, and farm shop expenses.',
+    'Not including the cost of unpaid family labor at market rates.',
+    'Using last year\'s input prices instead of current-season costs.',
+    'Averaging costs across all fields instead of tracking per-field profitability.',
+  ],
 };
 
 const breakEvenPrice: CalculatorConfig = {
@@ -133,6 +151,15 @@ const breakEvenPrice: CalculatorConfig = {
     { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
     { title: 'Crop Insurance Estimator', href: '/calculators/economics/crop-insurance' },
     { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
+  ],
+  howToUse: 'Enter your total production costs for the season and the total acres planted. Then enter your expected yield per acre in bushels (or other units). The calculator divides total costs by total production to show the minimum price you must receive to cover expenses.',
+  whyItMatters: 'Break-even price is the single most important number for grain marketing decisions. If the market price is above your break-even, you are profitable. Knowing this number before harvest helps you set forward contract prices, evaluate hedging strategies, and avoid selling at a loss.',
+  methodology: 'Total bushels = Acres × Expected yield per acre. Break-even price = Total production costs / Total bushels. Cost per acre = Total costs / Acres. This gives the minimum selling price where revenue exactly equals expenses with zero profit.',
+  commonMistakes: [
+    'Using optimistic yield estimates — calculate break-even at both average and below-average yields.',
+    'Not including marketing, storage, and transportation costs in total production costs.',
+    'Forgetting to recalculate break-even as input costs change during the season.',
+    'Comparing break-even to cash price without accounting for basis (local price difference from futures).',
   ],
 };
 
@@ -177,6 +204,15 @@ const cashRent: CalculatorConfig = {
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
     { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
   ],
+  howToUse: 'Enter the land value per acre from recent comparable sales in your area. Set the expected return rate (typically 2-4% for farmland) and the annual property tax per acre. Enter total acres to see the full annual rent amount. Compare results to local rent surveys.',
+  whyItMatters: 'Fair cash rent balances the landowner\'s need for return on investment with the tenant\'s need for affordable costs. Overpaying rent is the fastest way to make a farm unprofitable, while underpaying leads to losing lease agreements to competing tenants.',
+  methodology: 'Fair cash rent = (Land value per acre × Return rate) + Property tax per acre. Total annual rent = Rent per acre × Total acres. The return rate represents the landowner\'s expected yield on their capital investment, comparable to other investment alternatives.',
+  commonMistakes: [
+    'Using outdated land values — farmland prices can change 5-15% per year.',
+    'Not comparing your calculated rent to actual local cash rent surveys from university extension.',
+    'Ignoring soil quality differences between fields — a high-CSR field commands more rent.',
+    'Forgetting that the tenant typically pays for all inputs, repairs, and crop insurance on top of rent.',
+  ],
 };
 
 const landValue: CalculatorConfig = {
@@ -219,6 +255,15 @@ const landValue: CalculatorConfig = {
     { title: 'Cash Rent Calculator', href: '/calculators/economics/cash-rent' },
     { title: 'Farm Loan Payment Calculator', href: '/calculators/economics/farm-loan' },
     { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
+  ],
+  howToUse: 'Enter a comparable sale price per acre from a recent nearby transaction. Provide the soil productivity index (CSR or PI) for both your field and the comparable sale. Enter your parcel size in acres. The calculator adjusts the sale price based on relative soil quality.',
+  whyItMatters: 'Accurate land valuation is essential for buying, selling, estate planning, and securing farm loans. Soil productivity is the strongest predictor of farmland value, so adjusting for it gives a more reliable estimate than using raw comparable sales alone.',
+  methodology: 'Adjusted value = Comparable sale price × (Your productivity index / Comparable productivity index). Total parcel value = Adjusted value per acre × Acres. The productivity adjustment accounts for yield potential differences between your field and the comparable sale.',
+  commonMistakes: [
+    'Using comparables from too far away — land values vary significantly even within a county.',
+    'Ignoring non-soil factors like drainage quality, field shape, road access, and buildings.',
+    'Using a single comparable sale instead of averaging 3-5 recent transactions.',
+    'Not adjusting for market timing — a sale from 2 years ago may not reflect current values.',
   ],
 };
 
@@ -270,6 +315,15 @@ const cropInsurance: CalculatorConfig = {
     { title: 'Break-Even Price Calculator', href: '/calculators/economics/break-even-price' },
     { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
   ],
+  howToUse: 'Enter the total acres you want to insure and your APH (Actual Production History) yield. Provide the projected price from RMA (set each February for spring crops). Select your coverage level and enter the premium rate from your crop insurance agent.',
+  whyItMatters: 'Crop insurance is the primary risk management tool for American farmers, protecting against both yield loss and price declines. Choosing the right coverage level balances premium cost against protection — too little coverage leaves you exposed, while too much erodes profit margins.',
+  methodology: 'Revenue guarantee per acre = APH yield × Coverage level × Projected price. Total guarantee = Per-acre guarantee × Acres. Estimated premium = Total guarantee × Premium rate. Actual premiums are subsidized 50-65% by USDA depending on coverage level.',
+  commonMistakes: [
+    'Waiting too long to sign up — the deadline is March 15 for spring crops in most states.',
+    'Not updating APH records with actual yields each year, which can lower your guarantee.',
+    'Choosing the cheapest coverage without analyzing whether it actually covers your costs.',
+    'Forgetting that prevented planting coverage pays only 55-60% of your full guarantee.',
+  ],
 };
 
 const farmLoan: CalculatorConfig = {
@@ -312,6 +366,15 @@ const farmLoan: CalculatorConfig = {
     { title: 'Land Value Estimator', href: '/calculators/economics/land-value' },
     { title: 'Equipment Depreciation', href: '/calculators/economics/equipment-depreciation' },
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+  ],
+  howToUse: 'Enter the total loan amount, the annual interest rate from your lender, and the loan term in years. The calculator uses standard amortization to show your monthly payment, total interest paid over the life of the loan, and total amount paid.',
+  whyItMatters: 'Farm debt is a major factor in cash flow planning. Understanding your monthly payment obligation helps you ensure operating income covers debt service. Comparing different terms and rates reveals how much interest you save with shorter loans or better rates.',
+  methodology: 'Monthly payment = P × [r(1+r)^n] / [(1+r)^n - 1], where P = principal, r = monthly interest rate, n = total months. Total interest = (Monthly payment × Total months) - Principal. This is standard fixed-rate amortization used by most agricultural lenders.',
+  commonMistakes: [
+    'Not comparing FSA loan rates, which are often 1-2% lower than commercial lenders.',
+    'Choosing a longer term to reduce monthly payment without calculating the extra interest cost.',
+    'Forgetting to include loan payments in your annual cash flow budget.',
+    'Taking variable-rate loans without a plan for how to handle rate increases.',
   ],
 };
 
@@ -357,6 +420,15 @@ const equipmentDepreciation: CalculatorConfig = {
     { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
     { title: 'Farm Loan Payment Calculator', href: '/calculators/economics/farm-loan' },
   ],
+  howToUse: 'Enter the original purchase price and estimated salvage value (what the equipment will be worth at the end of its useful life). Set the useful life in years and the current age. The calculator shows annual straight-line depreciation and current book value.',
+  whyItMatters: 'Depreciation is a real cost that many farmers overlook because it does not require a cash outlay each year. Tracking it accurately ensures your profit and loss statement reflects the true cost of equipment ownership and helps plan for replacement timing.',
+  methodology: 'Annual depreciation = (Purchase price - Salvage value) / Useful life. Total depreciation = Annual depreciation × Current age (capped at depreciable amount). Book value = Purchase price - Total depreciation. This is straight-line depreciation, the simplest and most common method.',
+  commonMistakes: [
+    'Setting salvage value at zero — most farm equipment retains 10-30% of its original value.',
+    'Using tax depreciation (MACRS 5-7 years) for economic analysis instead of actual useful life (10-20 years).',
+    'Not tracking depreciation per machine, which hides the true cost of older equipment.',
+    'Ignoring that actual market value often differs significantly from calculated book value.',
+  ],
 };
 
 const fuelCost: CalculatorConfig = {
@@ -400,6 +472,15 @@ const fuelCost: CalculatorConfig = {
     { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
     { title: 'Custom Hire Rate Calculator', href: '/calculators/economics/custom-hire-rate' },
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+  ],
+  howToUse: 'Enter the total acres for the operation. Provide the fuel consumption rate in gallons per acre for each pass (tillage, planting, spraying, etc.). Enter the current fuel price per gallon and the number of passes over the field. The calculator totals your fuel cost.',
+  whyItMatters: 'Fuel is typically 5-10% of total crop production costs and is one of the most volatile input prices. Tracking fuel cost per acre helps you evaluate whether conservation tillage, precision agriculture, or custom hiring would save money compared to owning equipment.',
+  methodology: 'Total gallons = Fuel use per acre × Total acres × Number of passes. Total cost = Total gallons × Fuel price. Cost per acre = Total cost / Acres. Typical fuel use ranges from 0.3 gal/acre for spraying to 3 gal/acre for deep tillage.',
+  commonMistakes: [
+    'Forgetting to count all passes — a corn crop may require 5-8 separate field operations.',
+    'Using average fuel consumption instead of measuring actual use per operation.',
+    'Not including road travel between fields in fuel estimates for scattered acreage.',
+    'Ignoring that larger, more efficient tractors often use less fuel per acre despite higher GPH.',
   ],
 };
 
@@ -445,6 +526,15 @@ const customHireRate: CalculatorConfig = {
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
     { title: 'Equipment Depreciation', href: '/calculators/economics/equipment-depreciation' },
   ],
+  howToUse: 'Select the field operation type from the dropdown to use a typical rate, or enter a custom rate from your local contractor. Enter the total acres for the job. The calculator shows rate per acre and total cost for the operation.',
+  whyItMatters: 'Custom hiring can be cheaper than owning equipment for small acreages or infrequent operations. Knowing exact custom hire costs helps you decide whether to buy equipment, hire a contractor, or trade work with a neighbor — a decision worth thousands of dollars annually.',
+  methodology: 'Total cost = Rate per acre × Total acres. Typical rates are based on state university extension surveys and vary by region, equipment size, and fuel prices. Custom rates generally include the operator, equipment, fuel, and basic repairs.',
+  commonMistakes: [
+    'Comparing custom hire rates only to fuel cost instead of the full cost of ownership (depreciation, repairs, insurance).',
+    'Not locking in rates early in the season — custom operators book up fast.',
+    'Forgetting that timeliness matters — late planting or harvest from waiting for a custom operator costs yield.',
+    'Not clarifying what is included in the rate — some charge extra for fuel, setup, or travel.',
+  ],
 };
 
 const farmROI: CalculatorConfig = {
@@ -483,6 +573,15 @@ const farmROI: CalculatorConfig = {
     { title: 'Farm Loan Payment Calculator', href: '/calculators/economics/farm-loan' },
     { title: 'Land Value Estimator', href: '/calculators/economics/land-value' },
     { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
+  ],
+  howToUse: 'Enter the total investment amount — this could be the cost of new equipment, a land purchase, or a facility improvement. Then enter the expected annual net return (revenue generated minus operating costs attributable to that investment). The calculator shows ROI percentage and payback period.',
+  whyItMatters: 'Capital is limited on every farm. Calculating ROI before making major purchases helps you prioritize investments that generate the highest returns. A grain bin that pays for itself in 3 years is a better use of capital than one that takes 15 years.',
+  methodology: 'ROI = (Annual net return / Total investment) × 100. Payback period = Total investment / Annual net return (in years). This is a simplified ROI that does not account for the time value of money. For large investments, also consider net present value (NPV).',
+  commonMistakes: [
+    'Overestimating annual returns by using best-case scenarios instead of realistic averages.',
+    'Not including all costs — maintenance, insurance, and taxes reduce net return.',
+    'Ignoring the payback period — a 10% ROI sounds good until you realize the investment takes 10 years to recoup.',
+    'Comparing farm ROI to stock market returns without accounting for the tax advantages of farm asset depreciation.',
   ],
 };
 
