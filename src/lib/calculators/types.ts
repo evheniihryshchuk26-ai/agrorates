@@ -51,4 +51,6 @@ export type CalculatorConfig = {
   relatedCalculators?: { title: string; href: string }[];
   relatedCrops?: { title: string; href: string }[];
   faqs?: { question: string; answer: string }[];
+  howToSteps?: string[];
+  nextSteps?: { title: string; href: string }[];
 };

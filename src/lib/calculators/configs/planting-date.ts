@@ -87,6 +87,16 @@ const firstFallFrostDOY: Record<string, number> = {
 };
 
 /* ------------------------------------------------------------------ */
+/*  Cross-cluster crop set (crops that exist in fertilizer/seeding/yield) */
+/* ------------------------------------------------------------------ */
+
+const crossClusterCrops = new Set([
+  'corn', 'wheat', 'soybeans', 'tomatoes', 'potatoes', 'cotton', 'rice',
+  'alfalfa', 'oats', 'barley', 'sorghum', 'sunflower', 'canola',
+  'strawberries', 'peppers', 'onions', 'lettuce', 'carrots', 'garlic', 'beans',
+]);
+
+/* ------------------------------------------------------------------ */
 /*  Factory                                                           */
 /* ------------------------------------------------------------------ */
 
@@ -199,6 +209,27 @@ function createPlantingDateConfig(p: PlantingDateParams): CalculatorConfig {
       { title: 'Frost Date Calculator', href: '/calculators/frost-date' },
     ],
     faqs: p.faqs,
+    howToSteps: [
+      'Select your USDA hardiness zone (3-10).',
+      'Choose the month of your last expected spring frost.',
+      'Select your preferred start method (direct sow, transplant, or both).',
+      'Click Calculate to see recommended indoor start, transplant, and fall planting dates.',
+    ],
+    nextSteps: (() => {
+      const baseSlug = p.slug.replace('-planting-date', '');
+      if (crossClusterCrops.has(baseSlug)) {
+        return [
+          { title: `${p.cropName} Fertilizer Calculator`, href: `/calculators/fertilizer/${baseSlug}/` },
+          { title: `${p.cropName} Seeding Rate`, href: `/calculators/seeding/${baseSlug}/` },
+          { title: `${p.cropName} Yield Calculator`, href: `/calculators/yield/${baseSlug}/` },
+        ];
+      }
+      return [
+        { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
+        { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate/' },
+        { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
+      ];
+    })(),
   };
 }
 

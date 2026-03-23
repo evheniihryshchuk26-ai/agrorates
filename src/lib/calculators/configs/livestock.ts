@@ -27,6 +27,17 @@ const cattleWeight: CalculatorConfig = {
     { question: 'How accurate is the weight tape method?', answer: 'Within 3-5% for mature cattle. Less accurate for young calves and very fat or thin animals.' },
     { question: 'What is heart girth?', answer: 'Heart girth is the circumference of the animal measured just behind the front legs and over the withers.' },
   ],
+  howToSteps: [
+    'Measure the heart girth (circumference behind front legs) in inches.',
+    'Measure the body length from point of shoulder to pin bone in inches.',
+    'Enter both measurements into the calculator.',
+    'Click Calculate to see the estimated live weight in pounds and kilograms.',
+  ],
+  nextSteps: [
+    { title: 'Feed Conversion Calculator', href: '/calculators/livestock/feed-conversion/' },
+    { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+  ],
   relatedCalculators: [{ title: 'Feed Conversion', href: '/calculators/livestock/feed-conversion' }, { title: 'Stocking Rate', href: '/calculators/livestock/stocking-rate' }],
 };
 
@@ -54,6 +65,16 @@ const feedConversion: CalculatorConfig = {
   seo: { title: 'Feed Conversion Ratio Calculator — FCR for Livestock', description: 'Calculate feed conversion ratio for cattle, pigs, poultry, and other livestock.' },
   tips: ['Lower FCR means more efficient feed conversion.', 'Typical FCR: beef cattle 6-8:1, pigs 3-4:1, broilers 1.6-2.0:1.', 'Genetics, nutrition, and management all affect FCR.'],
   faqs: [{ question: 'What is a good FCR for beef cattle?', answer: '6:1 to 8:1 is typical for feedlot cattle. Lower is better.' }],
+  howToSteps: [
+    'Enter the total amount of feed consumed in pounds.',
+    'Input the total weight gain over the same period.',
+    'Click Calculate to see the feed conversion ratio and feed efficiency percentage.',
+  ],
+  nextSteps: [
+    { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost/' },
+    { title: 'Cattle Weight Calculator', href: '/calculators/livestock/cattle-weight/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+  ],
   relatedCalculators: [{ title: 'Feed Cost', href: '/calculators/livestock/feed-cost' }, { title: 'Cattle Weight', href: '/calculators/livestock/cattle-weight' }],
 };
 
@@ -90,6 +111,17 @@ const stockingRate: CalculatorConfig = {
   seo: { title: 'Stocking Rate Calculator — Pasture Carrying Capacity', description: 'Calculate pasture stocking rate and carrying capacity. Determine head per acre based on forage production.' },
   tips: ['Never utilize more than 50-60% of forage to maintain pasture health.', 'Rotational grazing allows higher stocking rates than continuous grazing.', 'Account for drought years by keeping 20% buffer capacity.'],
   faqs: [{ question: 'What is a typical stocking rate for beef cattle?', answer: '1.5-3.0 acres per cow-calf pair depending on rainfall and forage type. Arid regions may need 20+ acres.' }],
+  howToSteps: [
+    'Enter your total pasture size in acres.',
+    'Input the annual forage yield in pounds of dry matter per acre.',
+    'Set the utilization rate (typically 50% for continuous grazing).',
+    'Enter daily intake per animal and grazing season length to see carrying capacity.',
+  ],
+  nextSteps: [
+    { title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale/' },
+    { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+  ],
   relatedCalculators: [{ title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale' }, { title: 'Feed Cost', href: '/calculators/livestock/feed-cost' }],
 };
 
@@ -125,6 +157,18 @@ const hayBale: CalculatorConfig = {
   seo: { title: 'Hay Bale Calculator — How Many Bales Do I Need?', description: 'Calculate how many hay bales you need for winter feeding. Account for waste and bale size.' },
   tips: ['Round bales have 15-35% waste depending on feeder type.', 'Small square bales have 5-10% waste when fed in a rack.', 'Use hay rings or feeders to minimize waste from round bales.', 'Test hay quality to balance rations properly.'],
   faqs: [{ question: 'How many round bales per cow for winter?', answer: 'A 1200-lb cow eating 25 lbs/day for 150 days needs about 4-5 large round bales (accounting for 15% waste).' }],
+  howToSteps: [
+    'Enter the number of animals to feed.',
+    'Input daily hay consumption per animal in pounds.',
+    'Set the feeding period in days and the bale weight.',
+    'Adjust the waste percentage and click Calculate to see total bales needed.',
+  ],
+  nextSteps: [
+    { title: 'Hay Storage Calculator', href: '/calculators/livestock/hay-storage/' },
+    { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost/' },
+    { title: 'Stocking Rate Calculator', href: '/calculators/livestock/stocking-rate/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+  ],
   relatedCalculators: [{ title: 'Hay Storage', href: '/calculators/livestock/hay-storage' }, { title: 'Feed Cost', href: '/calculators/livestock/feed-cost' }],
 };
 
@@ -167,6 +211,16 @@ const hayStorage: CalculatorConfig = {
   seo: { title: 'Hay Storage Calculator — Barn Capacity', description: 'Calculate hay barn storage capacity. Determine how many bales fit in your barn.' },
   tips: ['Store hay under cover to prevent weather losses (20-30% loss outdoors).', 'Allow airflow around bales to prevent mold.', 'Stack round bales in a pyramid or rows, never more than 3 high.'],
   faqs: [{ question: 'How do I store hay to prevent loss?', answer: 'Store under cover on pallets or gravel. Allow airflow and keep away from walls. Covered hay retains 95%+ of quality vs 70-80% uncovered.' }],
+  howToSteps: [
+    'Enter your barn length, width, and stacking height in feet.',
+    'Select the bale type (round, small square, or large square).',
+    'Click Calculate to see how many bales fit and the total weight capacity.',
+  ],
+  nextSteps: [
+    { title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale/' },
+    { title: 'Stocking Rate Calculator', href: '/calculators/livestock/stocking-rate/' },
+    { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost/' },
+  ],
   relatedCalculators: [{ title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale' }],
 };
 
@@ -200,6 +254,17 @@ const feedCost: CalculatorConfig = {
   seo: { title: 'Feed Cost Calculator — Livestock Feeding Expenses', description: 'Calculate daily, monthly, and annual feed costs for your livestock operation.' },
   tips: ['Feed costs are typically 60-70% of total livestock production costs.', 'Buy feed in bulk when prices are low to reduce costs.', 'Test feed quality to avoid over- or under-supplementing.'],
   faqs: [{ question: 'What is the average feed cost per cow per day?', answer: 'Feed costs $2-5 per cow per day depending on feed type, quality, and local prices.' }],
+  howToSteps: [
+    'Enter the number of animals in your operation.',
+    'Input the daily feed amount per animal in pounds.',
+    'Enter the feed price per ton.',
+    'Click Calculate to see daily, monthly, and annual feed costs.',
+  ],
+  nextSteps: [
+    { title: 'Feed Conversion Calculator', href: '/calculators/livestock/feed-conversion/' },
+    { title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+  ],
   relatedCalculators: [{ title: 'Feed Conversion', href: '/calculators/livestock/feed-conversion' }, { title: 'Hay Bale', href: '/calculators/livestock/hay-bale' }],
 };
 
@@ -242,6 +307,16 @@ const gestation: CalculatorConfig = {
   seo: { title: 'Gestation Calculator — Livestock Due Date', description: 'Calculate livestock due dates. Enter breeding date and species for expected birth date.' },
   tips: ['Mark breeding dates accurately for each animal.', 'Watch for signs of labor 1-2 weeks before due date.', 'Provide a clean, dry calving/lambing area.'],
   faqs: [{ question: 'What is the gestation period for cattle?', answer: 'Cattle gestation is approximately 283 days (about 9.5 months), ranging from 275-295 days.' }],
+  howToSteps: [
+    'Select the breeding month and enter the breeding day.',
+    'Choose the species to set the correct gestation period.',
+    'Click Calculate to see the estimated due date and gestation length.',
+  ],
+  nextSteps: [
+    { title: 'Cattle Weight Calculator', href: '/calculators/livestock/cattle-weight/' },
+    { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost/' },
+    { title: 'Stocking Rate Calculator', href: '/calculators/livestock/stocking-rate/' },
+  ],
   relatedCalculators: [{ title: 'Cattle Weight', href: '/calculators/livestock/cattle-weight' }, { title: 'Feed Cost', href: '/calculators/livestock/feed-cost' }],
 };
 
@@ -382,6 +457,23 @@ function createAnimalConfig(slug: string, data: AnimalData): CalculatorConfig {
       { label: 'Market Age', value: data.marketAge },
     ],
     tips: data.tips,
+    howToSteps: isBees ? [
+      'Enter the number of hives in your operation.',
+      'Input the sugar price per pound for fall feeding.',
+      'Set the estimated fall feed amount per hive in pounds.',
+      'Click Calculate to see total sugar needed, feeding cost, and estimated honey production.',
+    ] : [
+      `Enter the number of ${data.name.toLowerCase()} in your operation.`,
+      `Input the average weight per animal (default: ${data.avgWeight} lbs).`,
+      `Adjust the daily feed percentage of body weight if needed.`,
+      `Enter the feed price per ton and click Calculate to see daily, monthly, and annual feed costs.`,
+    ],
+    nextSteps: [
+      { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost/' },
+      { title: 'Stocking Rate Calculator', href: '/calculators/livestock/stocking-rate/' },
+      { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+      { title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale/' },
+    ],
     relatedCalculators: [
       { title: 'Feed Cost Calculator', href: '/calculators/livestock/feed-cost' },
       { title: 'Feed Conversion', href: '/calculators/livestock/feed-conversion' },

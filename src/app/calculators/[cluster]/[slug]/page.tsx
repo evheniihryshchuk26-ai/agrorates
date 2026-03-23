@@ -92,12 +92,14 @@ export default async function CalculatorPage({
         }
       : null;
 
+  const pageUrl = `https://agrorates.com/calculators/${cluster}/${slug}/`;
+
   const webAppLd = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: calculator.title,
     description: calculator.description,
-    url: `https://agrorates.com/calculators/${cluster}/${slug}`,
+    url: pageUrl,
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'Any',
     offers: {
@@ -106,6 +108,21 @@ export default async function CalculatorPage({
       priceCurrency: 'USD',
     },
   };
+
+  const howToLd =
+    calculator.howToSteps && calculator.howToSteps.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'HowTo',
+          name: `How to use the ${calculator.title}`,
+          description: calculator.description,
+          step: calculator.howToSteps.map((text, i) => ({
+            '@type': 'HowToStep',
+            position: i + 1,
+            text,
+          })),
+        }
+      : null;
 
   return (
     <>
@@ -121,6 +138,12 @@ export default async function CalculatorPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
+      {howToLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
         />
       )}
       <CalculatorShell config={calculator} clusterTitle={clusterInfo.title} />

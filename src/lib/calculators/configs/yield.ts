@@ -36,6 +36,17 @@ const yieldPerAcre: CalculatorConfig = {
     { question: 'What is a good corn yield per acre?', answer: 'US average corn yield is about 175 bu/acre. Top producers consistently achieve 220-280 bu/acre.' },
     { question: 'How do I convert lbs to bushels?', answer: 'Divide total pounds by the test weight: corn = 56 lbs/bu, wheat/soybeans = 60 lbs/bu, oats = 32 lbs/bu.' },
   ],
+  howToSteps: [
+    'Enter your total field size in acres.',
+    'Input the total harvest weight in pounds.',
+    'Select your grain type to set the correct test weight.',
+    'Click Calculate to see yield in bushels, pounds, and tons per acre.',
+  ],
+  nextSteps: [
+    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Seeding Rate Calculator', href: '/calculators/seeding/seeding-rate/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+  ],
   relatedCalculators: [
     { title: 'Harvest Loss Calculator', href: '/calculators/yield/harvest-loss' },
     { title: 'Grain Moisture Calculator', href: '/calculators/yield/grain-moisture' },
@@ -78,6 +89,17 @@ const harvestLoss: CalculatorConfig = {
     { question: 'What is acceptable harvest loss?', answer: '1-3% of total yield is considered acceptable. For 200 bu/acre corn, that is 2-6 bu/acre.' },
     { question: 'How do I measure harvest loss?', answer: 'Count kernels in a 10 sq ft area behind the combine. For corn, about 2 kernels/sq ft equals 1 bu/acre loss.' },
   ],
+  howToSteps: [
+    'Enter your total field size in acres.',
+    'Input the expected yield based on scouting or historical data.',
+    'Enter the actual harvested yield in bushels per acre.',
+    'Enter the current market price per bushel to calculate dollar losses.',
+  ],
+  nextSteps: [
+    { title: 'Grain Moisture Calculator', href: '/calculators/yield/grain-moisture/' },
+    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+  ],
   relatedCalculators: [{ title: 'Yield Per Acre', href: '/calculators/yield/yield-per-acre' }, { title: 'Grain Moisture', href: '/calculators/yield/grain-moisture' }],
 };
 
@@ -110,6 +132,17 @@ const grainMoisture: CalculatorConfig = {
   tips: ['Standard marketing moistures: corn 15%, wheat 13%, soybeans 13%.', 'Every 1% moisture above standard reduces bushel weight proportionally.', 'Drying costs average $0.03-0.06 per point of moisture removed per bushel.'],
   faqs: [
     { question: 'What is grain shrink?', answer: 'Shrink is the weight loss when grain is dried from harvest moisture to storage/marketing moisture. It reduces total bushels sold.' },
+  ],
+  howToSteps: [
+    'Enter the total wet weight of your grain in pounds.',
+    'Input the current moisture percentage from your moisture tester.',
+    'Set the target moisture for storage or marketing.',
+    'Click Calculate to see the dry weight, shrink amount, and shrink factor.',
+  ],
+  nextSteps: [
+    { title: 'Grain Bin Storage Calculator', href: '/calculators/yield/grain-bin-storage/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+    { title: 'Seeding Rate Calculator', href: '/calculators/seeding/seeding-rate/' },
   ],
   relatedCalculators: [{ title: 'Grain Bin Storage', href: '/calculators/yield/grain-bin-storage' }, { title: 'Yield Per Acre', href: '/calculators/yield/yield-per-acre' }],
 };
@@ -149,6 +182,17 @@ const grainBinStorage: CalculatorConfig = {
   faqs: [
     { question: 'How many bushels in a 36-foot bin?', answer: 'A 36-foot diameter bin with 24-foot eave height holds approximately 19,500 bushels of corn.' },
   ],
+  howToSteps: [
+    'Enter the diameter of your grain bin in feet.',
+    'Input the eave height in feet.',
+    'Select the grain type to set the correct test weight.',
+    'Click Calculate to see capacity in bushels, tons, and cubic feet.',
+  ],
+  nextSteps: [
+    { title: 'Grain Moisture Calculator', href: '/calculators/yield/grain-moisture/' },
+    { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
+  ],
   relatedCalculators: [{ title: 'Grain Moisture', href: '/calculators/yield/grain-moisture' }, { title: 'Bushels to Tons', href: '/calculators/conversions/bushels-to-tons' }],
 };
 
@@ -179,6 +223,16 @@ const plantsPerAcre: CalculatorConfig = {
   tips: ['Count plants in multiple locations to estimate actual field population.', 'Target 90-95% of planted seeds to emerge as plants.'],
   faqs: [
     { question: 'How many corn plants per acre at 30-inch rows?', answer: 'At 30-inch rows with 7-inch spacing: about 29,900 plants/acre. At 8-inch spacing: about 26,100 plants/acre.' },
+  ],
+  howToSteps: [
+    'Enter the row spacing in inches.',
+    'Input the in-row plant spacing in inches.',
+    'Click Calculate to see plants per acre, plants per 1000 ft of row, and square feet per plant.',
+  ],
+  nextSteps: [
+    { title: 'Seeding Rate Calculator', href: '/calculators/seeding/seeding-rate/' },
+    { title: 'Fertilizer Rate Calculator', href: '/calculators/fertilizer/fertilizer-rate/' },
+    { title: 'Farm Profit & Loss Calculator', href: '/calculators/economics/farm-profit-loss/' },
   ],
   relatedCalculators: [{ title: 'Yield Per Acre', href: '/calculators/yield/yield-per-acre' }, { title: 'Plant Spacing', href: '/calculators/seeding/plant-spacing' }],
 };
@@ -318,6 +372,17 @@ function createCropYieldConfig(slug: string, data: CropYieldData): CalculatorCon
       { label: 'Test Weight', value: data.testWeight },
     ],
     tips: data.tips,
+    howToSteps: [
+      `Enter the total field size planted with ${data.name.toLowerCase()} in acres.`,
+      `Input the estimated plants per acre for your ${data.name.toLowerCase()} stand.`,
+      `Enter the expected yield per plant in pounds.`,
+      `Click Calculate to see total yield in pounds and tons per acre.`,
+    ],
+    nextSteps: [
+      { title: `${data.name} Fertilizer Calculator`, href: `/calculators/fertilizer/${slug}/` },
+      { title: `${data.name} Seeding Rate`, href: `/calculators/seeding/${slug}/` },
+      { title: `${data.name} Planting Date`, href: `/calculators/planting-date/${slug}-planting-date/` },
+    ],
     relatedCalculators: [
       { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre' },
       { title: 'Harvest Loss Calculator', href: '/calculators/yield/harvest-loss' },

@@ -43,6 +43,18 @@ const irrigationWaterNeed: CalculatorConfig = {
     { title: 'Water Cost', href: '/calculators/irrigation/water-cost' },
     { title: 'Rainfall Deficit', href: '/calculators/irrigation/rainfall-deficit' },
   ],
+  howToSteps: [
+    'Enter the total field size in acres.',
+    'Provide the daily evapotranspiration (ET) rate from a weather station or estimate.',
+    'Select your irrigation system type to set efficiency.',
+    'Click Calculate to see weekly and daily water requirements.',
+  ],
+  nextSteps: [
+    { title: 'Drip Irrigation Calculator', href: '/calculators/irrigation/drip-irrigation' },
+    { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
+    { title: 'Rainfall Deficit Calculator', href: '/calculators/irrigation/rainfall-deficit' },
+    { title: 'Fuel Cost Per Acre', href: '/calculators/economics/fuel-cost' },
+  ],
 };
 
 const dripIrrigation: CalculatorConfig = {
@@ -77,6 +89,17 @@ const dripIrrigation: CalculatorConfig = {
   tips: ['Maintain 10 PSI minimum pressure at the farthest emitter.', 'Install a filter to prevent clogging.', 'Flush lines regularly to remove sediment.'],
   faqs: [{ question: 'How long should I run drip irrigation?', answer: 'Typically 1-4 hours per zone depending on emitter flow rate, spacing, and crop water needs.' }],
   relatedCalculators: [{ title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' }, { title: 'Water Cost', href: '/calculators/irrigation/water-cost' }],
+  howToSteps: [
+    'Enter the total row length and number of rows.',
+    'Set the emitter spacing in inches.',
+    'Provide the emitter flow rate in gallons per hour.',
+    'Click Calculate to see total emitters, flow rate, and GPM.',
+  ],
+  nextSteps: [
+    { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
+    { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
+    { title: 'Pipe Flow Rate', href: '/calculators/irrigation/pipe-flow' },
+  ],
 };
 
 const sprinklerCoverage: CalculatorConfig = {
@@ -110,6 +133,17 @@ const sprinklerCoverage: CalculatorConfig = {
   tips: ['Overlap sprinkler patterns 50-60% for uniform coverage.', 'Wind reduces effective radius — increase spacing overlap on windy sites.'],
   faqs: [{ question: 'How far apart should sprinklers be spaced?', answer: '50-60% of the sprinkler diameter. For a 40-ft radius sprinkler, space at 40-48 feet.' }],
   relatedCalculators: [{ title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' }],
+  howToSteps: [
+    'Enter the number of sprinkler heads in the system.',
+    'Set the sprinkler radius and spacing in feet.',
+    'Provide the flow rate per sprinkler head.',
+    'Click Calculate to see total coverage area and flow requirements.',
+  ],
+  nextSteps: [
+    { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
+    { title: 'Pipe Flow Rate', href: '/calculators/irrigation/pipe-flow' },
+    { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
+  ],
 };
 
 const waterCost: CalculatorConfig = {
@@ -141,6 +175,18 @@ const waterCost: CalculatorConfig = {
   tips: ['Municipal water costs $2-8 per 1000 gallons.', 'Well water costs $0.50-2.00 per 1000 gallons (pumping only).'],
   faqs: [{ question: 'How much does irrigation water cost?', answer: 'Costs vary widely: well water $0.50-2.00/1000 gal, municipal $2-8/1000 gal, canal water $15-100/acre-foot.' }],
   relatedCalculators: [{ title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' }],
+  howToSteps: [
+    'Enter the total water volume in gallons.',
+    'Provide the price per 1,000 gallons from your water source.',
+    'Optionally enter your field size in acres for per-acre cost.',
+    'Click Calculate to see total cost, cost per acre, and acre-inches.',
+  ],
+  nextSteps: [
+    { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
+    { title: 'Rainfall Deficit Calculator', href: '/calculators/irrigation/rainfall-deficit' },
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+    { title: 'Cost Per Acre', href: '/calculators/economics/cost-per-acre' },
+  ],
 };
 
 const pipeFlow: CalculatorConfig = {
@@ -172,6 +218,16 @@ const pipeFlow: CalculatorConfig = {
   tips: ['Keep velocity between 3-7 ft/sec to avoid erosion and excessive friction.', 'Larger pipes reduce friction loss but cost more.'],
   faqs: [{ question: 'What is a safe pipe velocity?', answer: '3-5 ft/sec for PVC, up to 7 ft/sec for metal pipe. Higher velocities increase wear and friction loss.' }],
   relatedCalculators: [{ title: 'Well Yield', href: '/calculators/irrigation/well-yield' }],
+  howToSteps: [
+    'Enter the pipe diameter in inches.',
+    'Provide the water velocity in feet per second.',
+    'Click Calculate to see flow rate in GPM, GPH, and CFS.',
+  ],
+  nextSteps: [
+    { title: 'Well Yield Calculator', href: '/calculators/irrigation/well-yield' },
+    { title: 'Drip Irrigation Calculator', href: '/calculators/irrigation/drip-irrigation' },
+    { title: 'Sprinkler Coverage', href: '/calculators/irrigation/sprinkler-coverage' },
+  ],
 };
 
 const rainfallDeficit: CalculatorConfig = {
@@ -203,6 +259,17 @@ const rainfallDeficit: CalculatorConfig = {
   tips: ['Not all rainfall is effective — heavy rains may run off without infiltrating.', 'Use soil moisture sensors for precise irrigation scheduling.'],
   faqs: [{ question: 'What is effective rainfall?', answer: 'About 75% of light-moderate rainfall is effective. Heavy rains (>1 inch) may have only 50-60% effectiveness due to runoff.' }],
   relatedCalculators: [{ title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' }, { title: 'Water Cost', href: '/calculators/irrigation/water-cost' }],
+  howToSteps: [
+    'Enter the weekly crop evapotranspiration (ET) in inches.',
+    'Provide the average weekly rainfall in inches.',
+    'Set the growing season length in weeks.',
+    'Click Calculate to see the weekly deficit and total irrigation needed.',
+  ],
+  nextSteps: [
+    { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
+    { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
+    { title: 'Pond Size Calculator', href: '/calculators/irrigation/pond-size' },
+  ],
 };
 
 const pondSize: CalculatorConfig = {
@@ -232,6 +299,16 @@ const pondSize: CalculatorConfig = {
   tips: ['Farm ponds should be at least 8 feet deep to reduce aquatic weed growth.', 'Allow for 1-2 feet of evaporation loss per year in the design.'],
   faqs: [{ question: 'How big should a farm pond be?', answer: 'For irrigation, plan 1 acre-foot (325,851 gallons) of storage per acre irrigated per application.' }],
   relatedCalculators: [{ title: 'Water Tank', href: '/calculators/irrigation/water-tank' }],
+  howToSteps: [
+    'Enter the pond surface area in square feet.',
+    'Provide the average pond depth in feet.',
+    'Click Calculate to see volume in gallons, acre-feet, and cubic feet.',
+  ],
+  nextSteps: [
+    { title: 'Water Tank Calculator', href: '/calculators/irrigation/water-tank' },
+    { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
+    { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
+  ],
 };
 
 const waterTank: CalculatorConfig = {
@@ -267,6 +344,17 @@ const waterTank: CalculatorConfig = {
   tips: ['Allow 10-15% extra capacity for expansion and overflow.', 'Elevated tanks provide gravity-fed pressure for irrigation.'],
   faqs: [{ question: 'How many gallons in a 10-foot round tank?', answer: 'A 10-ft diameter, 8-ft tall round tank holds about 4,696 gallons.' }],
   relatedCalculators: [{ title: 'Pond Size', href: '/calculators/irrigation/pond-size' }],
+  howToSteps: [
+    'Select the tank shape (round or rectangular).',
+    'Enter the diameter (or length) and height in feet.',
+    'For rectangular tanks, also enter the width.',
+    'Click Calculate to see capacity in gallons and cubic feet.',
+  ],
+  nextSteps: [
+    { title: 'Pond Size Calculator', href: '/calculators/irrigation/pond-size' },
+    { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
+    { title: 'Well Yield Calculator', href: '/calculators/irrigation/well-yield' },
+  ],
 };
 
 const wellYield: CalculatorConfig = {
@@ -296,6 +384,17 @@ const wellYield: CalculatorConfig = {
   tips: ['A sustained yield test should run at least 4-8 hours for accuracy.', 'Well yield may decrease during drought — test during dry periods.', 'Match pump size to actual well yield, not maximum pump capacity.'],
   faqs: [{ question: 'How many GPM do I need for irrigation?', answer: 'Rule of thumb: 5-10 GPM per acre for sprinkler irrigation, 2-5 GPM per acre for drip.' }],
   relatedCalculators: [{ title: 'Pipe Flow', href: '/calculators/irrigation/pipe-flow' }, { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' }],
+  howToSteps: [
+    'Enter the gallons pumped during a timed test.',
+    'Provide the test duration in minutes.',
+    'Click Calculate to see well yield in GPM, GPH, and GPD.',
+  ],
+  nextSteps: [
+    { title: 'Pipe Flow Rate', href: '/calculators/irrigation/pipe-flow' },
+    { title: 'Irrigation Water Need', href: '/calculators/irrigation/irrigation-water-need' },
+    { title: 'Water Cost Calculator', href: '/calculators/irrigation/water-cost' },
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+  ],
 };
 
 export const irrigationConfigs: CalculatorConfig[] = [

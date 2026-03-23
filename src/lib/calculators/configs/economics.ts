@@ -35,6 +35,18 @@ const farmProfitLoss: CalculatorConfig = {
     { title: 'Break-Even Price', href: '/calculators/economics/break-even-price' },
     { title: 'Farm ROI', href: '/calculators/economics/farm-roi' },
   ],
+  howToSteps: [
+    'Enter your total gross revenue from crop and livestock sales.',
+    'Provide variable costs (seed, fertilizer, fuel, labor, etc.).',
+    'Enter fixed costs (land rent, insurance, depreciation, etc.).',
+    'Click Calculate to see net profit, profit margin, and total expenses.',
+  ],
+  nextSteps: [
+    { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
+    { title: 'Break-Even Price Calculator', href: '/calculators/economics/break-even-price' },
+    { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
+    { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
+  ],
 };
 
 const costPerAcre: CalculatorConfig = {
@@ -68,6 +80,17 @@ const costPerAcre: CalculatorConfig = {
   tips: ['Typical corn production costs are $400-700 per acre.', 'Land cost is usually the largest single expense.', 'Track costs by field to identify your most and least profitable areas.'],
   faqs: [{ question: 'What does it cost to farm an acre of corn?', answer: 'Total costs range from $400-700/acre including land, seed ($100-150), fertilizer ($80-150), chemicals ($30-60), and machinery ($60-100).' }],
   relatedCalculators: [{ title: 'Farm Profit/Loss', href: '/calculators/economics/farm-profit-loss' }, { title: 'Break-Even Price', href: '/calculators/economics/break-even-price' }],
+  howToSteps: [
+    'Enter the total number of acres farmed.',
+    'Fill in each cost category: seed, fertilizer, chemicals, fuel, labor, land, and other.',
+    'Click Calculate to see total costs and cost per acre.',
+  ],
+  nextSteps: [
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+    { title: 'Break-Even Price Calculator', href: '/calculators/economics/break-even-price' },
+    { title: 'Fuel Cost Per Acre', href: '/calculators/economics/fuel-cost' },
+    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
+  ],
 };
 
 const breakEvenPrice: CalculatorConfig = {
@@ -99,6 +122,18 @@ const breakEvenPrice: CalculatorConfig = {
   tips: ['Know your break-even before making forward contracting decisions.', 'Calculate break-even for each field individually — they may differ significantly.'],
   faqs: [{ question: 'What is break-even price?', answer: 'The minimum price per unit (bushel, ton, etc.) at which revenue equals total production costs. Selling above break-even generates profit.' }],
   relatedCalculators: [{ title: 'Farm Profit/Loss', href: '/calculators/economics/farm-profit-loss' }, { title: 'Cost Per Acre', href: '/calculators/economics/cost-per-acre' }],
+  howToSteps: [
+    'Enter your total production costs for the season.',
+    'Provide the total acres planted.',
+    'Enter the expected yield per acre in bushels.',
+    'Click Calculate to see the minimum price needed to break even.',
+  ],
+  nextSteps: [
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+    { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
+    { title: 'Crop Insurance Estimator', href: '/calculators/economics/crop-insurance' },
+    { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
+  ],
 };
 
 const cashRent: CalculatorConfig = {
@@ -131,6 +166,17 @@ const cashRent: CalculatorConfig = {
   tips: ['Cash rent typically equals 2-4% of land value plus taxes.', 'Compare to local cash rent surveys from your university extension.', 'Consider soil productivity and drainage quality in negotiations.'],
   faqs: [{ question: 'What is fair cash rent for farm land?', answer: 'Fair cash rent is typically 2-4% of land value plus property taxes. For $10,000/acre land, that is $200-400/acre plus taxes.' }],
   relatedCalculators: [{ title: 'Land Value', href: '/calculators/economics/land-value' }, { title: 'Farm Profit/Loss', href: '/calculators/economics/farm-profit-loss' }],
+  howToSteps: [
+    'Enter the land value per acre from recent comparable sales.',
+    'Set the expected return rate (typically 2-4%).',
+    'Provide the annual property tax per acre.',
+    'Click Calculate to see the fair cash rent and total annual rent.',
+  ],
+  nextSteps: [
+    { title: 'Land Value Estimator', href: '/calculators/economics/land-value' },
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+    { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
+  ],
 };
 
 const landValue: CalculatorConfig = {
@@ -163,6 +209,17 @@ const landValue: CalculatorConfig = {
   tips: ['Always use recent comparable sales within 5 miles if possible.', 'Soil quality (CSR/PI) is the strongest predictor of farm land value.', 'Drainage, road access, and field shape also affect value.'],
   faqs: [{ question: 'What determines farm land value?', answer: 'Soil productivity, location, drainage, field size/shape, and comparable sales are the primary factors.' }],
   relatedCalculators: [{ title: 'Cash Rent', href: '/calculators/economics/cash-rent' }],
+  howToSteps: [
+    'Enter a comparable sale price per acre from a recent transaction.',
+    'Provide the productivity index (CSR/PI) for your field and the comparable field.',
+    'Enter your parcel size in acres.',
+    'Click Calculate to see the adjusted per-acre value and total parcel value.',
+  ],
+  nextSteps: [
+    { title: 'Cash Rent Calculator', href: '/calculators/economics/cash-rent' },
+    { title: 'Farm Loan Payment Calculator', href: '/calculators/economics/farm-loan' },
+    { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
+  ],
 };
 
 const cropInsurance: CalculatorConfig = {
@@ -202,6 +259,17 @@ const cropInsurance: CalculatorConfig = {
   tips: ['Higher coverage levels cost more but provide better protection.', 'Revenue Protection (RP) is the most popular policy — it covers both price and yield.', 'Sign up by the March 15 deadline for spring crops.'],
   faqs: [{ question: 'What is APH yield?', answer: 'Actual Production History — the average of your proven yields over 4-10 years, used to set your coverage level.' }],
   relatedCalculators: [{ title: 'Farm Profit/Loss', href: '/calculators/economics/farm-profit-loss' }, { title: 'Break-Even Price', href: '/calculators/economics/break-even-price' }],
+  howToSteps: [
+    'Enter the total acres to insure.',
+    'Provide your APH (Actual Production History) yield and projected price.',
+    'Select a coverage level (70-85%) and enter the premium rate.',
+    'Click Calculate to see your revenue guarantee and estimated premium.',
+  ],
+  nextSteps: [
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+    { title: 'Break-Even Price Calculator', href: '/calculators/economics/break-even-price' },
+    { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
+  ],
 };
 
 const farmLoan: CalculatorConfig = {
@@ -233,6 +301,18 @@ const farmLoan: CalculatorConfig = {
   tips: ['FSA loans offer lower interest rates for beginning farmers.', 'Consider variable vs fixed rate based on your risk tolerance.', 'Shorter terms save significantly on total interest paid.'],
   faqs: [{ question: 'What interest rate can I get on a farm loan?', answer: 'Farm loan rates range from 5-8% for real estate and 6-10% for operating loans (2024 rates). FSA rates may be lower.' }],
   relatedCalculators: [{ title: 'Farm ROI', href: '/calculators/economics/farm-roi' }, { title: 'Land Value', href: '/calculators/economics/land-value' }],
+  howToSteps: [
+    'Enter the total loan amount in dollars.',
+    'Provide the annual interest rate.',
+    'Set the loan term in years.',
+    'Click Calculate to see monthly payment, total interest, and total cost.',
+  ],
+  nextSteps: [
+    { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
+    { title: 'Land Value Estimator', href: '/calculators/economics/land-value' },
+    { title: 'Equipment Depreciation', href: '/calculators/economics/equipment-depreciation' },
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+  ],
 };
 
 const equipmentDepreciation: CalculatorConfig = {
@@ -266,6 +346,17 @@ const equipmentDepreciation: CalculatorConfig = {
   tips: ['Use MACRS depreciation for tax purposes — it allows faster write-offs.', 'Section 179 allows full expensing of equipment in the purchase year.', 'Track actual hours to estimate remaining useful life.'],
   faqs: [{ question: 'How fast does farm equipment depreciate?', answer: 'Farm equipment typically has a 5-7 year MACRS tax life. Economic useful life is often 10-20 years with proper maintenance.' }],
   relatedCalculators: [{ title: 'Farm Profit/Loss', href: '/calculators/economics/farm-profit-loss' }],
+  howToSteps: [
+    'Enter the original purchase price of the equipment.',
+    'Provide the estimated salvage value and useful life in years.',
+    'Enter the current age of the equipment.',
+    'Click Calculate to see annual depreciation and current book value.',
+  ],
+  nextSteps: [
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+    { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
+    { title: 'Farm Loan Payment Calculator', href: '/calculators/economics/farm-loan' },
+  ],
 };
 
 const fuelCost: CalculatorConfig = {
@@ -299,6 +390,17 @@ const fuelCost: CalculatorConfig = {
   tips: ['Typical fuel use: tillage 2-3 gal/acre, planting 0.5-1 gal/acre, spraying 0.3-0.5 gal/acre, harvest 1-2 gal/acre.', 'No-till reduces fuel costs by 50-70% compared to conventional tillage.'],
   faqs: [{ question: 'How much fuel does farming use per acre?', answer: 'Total season fuel use is typically 8-15 gallons per acre for conventional row crops, 4-8 gallons for no-till.' }],
   relatedCalculators: [{ title: 'Cost Per Acre', href: '/calculators/economics/cost-per-acre' }],
+  howToSteps: [
+    'Enter the total acres for the operation.',
+    'Provide fuel consumption in gallons per acre.',
+    'Enter the fuel price per gallon and number of passes.',
+    'Click Calculate to see total gallons, cost per acre, and total fuel cost.',
+  ],
+  nextSteps: [
+    { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
+    { title: 'Custom Hire Rate Calculator', href: '/calculators/economics/custom-hire-rate' },
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+  ],
 };
 
 const customHireRate: CalculatorConfig = {
@@ -331,6 +433,18 @@ const customHireRate: CalculatorConfig = {
   tips: ['Custom rates vary significantly by region and equipment size.', 'Check your state university extension for current custom rate surveys.', 'Negotiate multi-operation discounts with custom operators.'],
   faqs: [{ question: 'What is custom hire?', answer: 'Hiring a contractor with their own equipment to perform field operations like planting, spraying, or harvesting on your land.' }],
   relatedCalculators: [{ title: 'Cost Per Acre', href: '/calculators/economics/cost-per-acre' }, { title: 'Fuel Cost', href: '/calculators/economics/fuel-cost' }],
+  howToSteps: [
+    'Select the type of field operation from the dropdown.',
+    'Enter the total acres for the job.',
+    'Optionally override the typical rate with a custom rate.',
+    'Click Calculate to see rate per acre and total cost.',
+  ],
+  nextSteps: [
+    { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre' },
+    { title: 'Fuel Cost Per Acre', href: '/calculators/economics/fuel-cost' },
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+    { title: 'Equipment Depreciation', href: '/calculators/economics/equipment-depreciation' },
+  ],
 };
 
 const farmROI: CalculatorConfig = {
@@ -359,6 +473,17 @@ const farmROI: CalculatorConfig = {
   tips: ['Target 10-15% ROI on farm equipment investments.', 'Include all costs (maintenance, insurance, depreciation) in your return calculation.', 'Compare ROI across investment options before committing capital.'],
   faqs: [{ question: 'What is a good ROI for farming?', answer: '8-15% ROI is considered good for farm operations. Land investments may return 3-5% annually but appreciate over time.' }],
   relatedCalculators: [{ title: 'Farm Profit/Loss', href: '/calculators/economics/farm-profit-loss' }, { title: 'Farm Loan', href: '/calculators/economics/farm-loan' }],
+  howToSteps: [
+    'Enter the total investment amount in dollars.',
+    'Provide the expected annual net return.',
+    'Click Calculate to see ROI percentage and payback period.',
+  ],
+  nextSteps: [
+    { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
+    { title: 'Farm Loan Payment Calculator', href: '/calculators/economics/farm-loan' },
+    { title: 'Land Value Estimator', href: '/calculators/economics/land-value' },
+    { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
+  ],
 };
 
 export const economicsConfigs: CalculatorConfig[] = [

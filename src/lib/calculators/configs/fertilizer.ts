@@ -101,8 +101,17 @@ const cropData: Record<string, CropData> = {
   },
 };
 
+const cropsWithPlantingDate = new Set([
+  'tomatoes', 'peppers', 'corn', 'wheat', 'soybeans', 'potatoes', 'strawberries',
+  'lettuce', 'carrots', 'onions', 'garlic', 'beans', 'sunflower', 'alfalfa',
+  'oats', 'barley', 'rice', 'cotton', 'sorghum', 'canola',
+]);
+
 function createCropFertConfig(slug: string, data: CropData): CalculatorConfig {
   const similarCrops = crops.filter(c => c !== slug).slice(0, 4);
+  const plantingDateHref = cropsWithPlantingDate.has(slug)
+    ? `/calculators/planting-date/${slug}-planting-date/`
+    : '/calculators/planting-date/';
   return {
     slug,
     cluster: 'fertilizer',
@@ -158,6 +167,17 @@ function createCropFertConfig(slug: string, data: CropData): CalculatorConfig {
       href: `/calculators/fertilizer/${c}`,
     })),
     faqs: data.faqs.map(([q, a]) => ({ question: q, answer: a })),
+    howToSteps: [
+      `Enter your ${data.name.toLowerCase()} field size in acres.`,
+      `Set your yield goal in ${data.yieldUnit} and enter soil test N, P, and K values in ppm.`,
+      `Click Calculate to see the recommended nitrogen, phosphorus, and potassium rates for ${data.name.toLowerCase()}.`,
+      'Review results and adjust rates based on crop history, soil conditions, or split-application plans.',
+    ],
+    nextSteps: [
+      { title: `Calculate ${data.name} Seeding Rate`, href: `/calculators/seeding/${slug}/` },
+      { title: `Find ${data.name} Planting Date`, href: plantingDateHref },
+      { title: `Estimate ${data.name} Yield`, href: `/calculators/yield/${slug}/` },
+    ],
   };
 }
 
@@ -205,6 +225,17 @@ const npk: CalculatorConfig = {
     { question: 'How often should I soil test?', answer: 'Soil test every 2-3 years for field crops. Sample in the same season each time for consistent results.' },
     { question: 'What is a good NPK ratio for most crops?', answer: 'There is no single ideal ratio — it depends on crop needs and soil test levels. A soil test is the only reliable way to determine the right rates.' },
   ],
+  howToSteps: [
+    'Enter your total field size in acres.',
+    'Input the recommended N, P₂O₅, and K₂O rates from your soil test report in lbs/acre.',
+    'Click Calculate to see the total pounds of each nutrient needed for your field.',
+    'Review results and adjust rates based on previous crop credits or soil conditions.',
+  ],
+  nextSteps: [
+    { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
+    { title: 'Plan Farm Budget', href: '/calculators/economics/cost-per-acre/' },
+  ],
 };
 
 const fertilizerCost: CalculatorConfig = {
@@ -250,6 +281,17 @@ const fertilizerCost: CalculatorConfig = {
   relatedCalculators: [
     { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
     { title: 'Nitrogen Rate Calculator', href: '/calculators/fertilizer/nitrogen' },
+  ],
+  howToSteps: [
+    'Enter your total field size in acres.',
+    'Input the application rate in lbs/acre for your chosen fertilizer product.',
+    'Enter the bag weight and price per bag from your supplier.',
+    'Click Calculate to see total bags needed, cost per acre, and total cost.',
+  ],
+  nextSteps: [
+    { title: 'Calculate NPK Rates', href: '/calculators/fertilizer/npk/' },
+    { title: 'Estimate Seed Cost', href: '/calculators/seeding/seed-cost/' },
+    { title: 'Plan Farm Budget', href: '/calculators/economics/cost-per-acre/' },
   ],
 };
 
@@ -303,6 +345,17 @@ const lime: CalculatorConfig = {
     { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
     { title: 'Compost Calculator', href: '/calculators/fertilizer/compost' },
   ],
+  howToSteps: [
+    'Enter your field size in acres.',
+    'Input your current soil pH and target pH from your soil test report.',
+    'Select the buffer pH value from your soil test to account for soil buffering capacity.',
+    'Click Calculate to see the lime rate in tons per acre and total lime needed.',
+  ],
+  nextSteps: [
+    { title: 'Calculate NPK Rates', href: '/calculators/fertilizer/npk/' },
+    { title: 'Estimate Compost Needs', href: '/calculators/fertilizer/compost/' },
+    { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
+  ],
 };
 
 const compost: CalculatorConfig = {
@@ -345,6 +398,17 @@ const compost: CalculatorConfig = {
   relatedCalculators: [
     { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
     { title: 'Lime Application Rate', href: '/calculators/fertilizer/lime' },
+  ],
+  howToSteps: [
+    'Enter the area you want to amend in square feet.',
+    'Set the desired compost depth in inches (1-3 inches for garden beds).',
+    'Optionally adjust the compost density based on your product.',
+    'Click Calculate to see the total cubic yards and weight of compost needed.',
+  ],
+  nextSteps: [
+    { title: 'Calculate Lime Rate', href: '/calculators/fertilizer/lime/' },
+    { title: 'Calculate NPK Rates', href: '/calculators/fertilizer/npk/' },
+    { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
   ],
 };
 
@@ -401,6 +465,18 @@ const nitrogen: CalculatorConfig = {
     { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk' },
     { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost' },
     { title: 'Corn Fertilizer Calculator', href: '/calculators/fertilizer/corn' },
+  ],
+  howToSteps: [
+    'Enter your field size in acres and your yield goal in bushels per acre.',
+    'Select the previous crop to apply nitrogen credits (e.g., soybeans provide 40 lbs N/acre).',
+    'Enter your soil organic matter percentage from your soil test.',
+    'Click Calculate to see gross N need, credits, and the net nitrogen rate to apply.',
+  ],
+  nextSteps: [
+    { title: 'Calculate NPK Rates', href: '/calculators/fertilizer/npk/' },
+    { title: 'Estimate Fertilizer Cost', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
   ],
 };
 

@@ -124,8 +124,8 @@ export default function Home() {
                 Free Agricultural Calculators
               </p>
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Plan smarter.{' '}
-                <span className="text-primary">Farm better.</span>
+                Free Agricultural Calculators{' '}
+                <span className="text-primary">for Farmers</span>
               </h1>
               <p className="mt-4 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
                 184 free calculators for fertilizer rates, seed rates, crop yields,

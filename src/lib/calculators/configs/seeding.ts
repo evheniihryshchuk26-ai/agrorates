@@ -39,6 +39,17 @@ const seedRate: CalculatorConfig = {
     { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre' },
     { title: 'Seed Cost Calculator', href: '/calculators/seeding/seed-cost' },
   ],
+  howToSteps: [
+    'Enter your total field size in acres.',
+    'Input the desired plant population per acre and seeds per pound for your crop.',
+    'Set the germination rate from your seed tag or test results.',
+    'Click Calculate to see the total seeds and pounds of seed needed.',
+  ],
+  nextSteps: [
+    { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
+    { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
+    { title: 'Plan Planting Date', href: '/calculators/planting-date/' },
+  ],
 };
 
 const plantSpacing: CalculatorConfig = {
@@ -76,6 +87,17 @@ const plantSpacing: CalculatorConfig = {
     { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' },
     { title: 'Seeds Per Acre', href: '/calculators/seeding/seeds-per-acre' },
   ],
+  howToSteps: [
+    'Enter your row spacing in inches.',
+    'Input the desired plant spacing within the row in inches.',
+    'Enter the total area in square feet (1 acre = 43,560 sq ft).',
+    'Click Calculate to see the total plants needed and plants per acre.',
+  ],
+  nextSteps: [
+    { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
+    { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
+  ],
 };
 
 const germinationRate: CalculatorConfig = {
@@ -108,6 +130,17 @@ const germinationRate: CalculatorConfig = {
     { question: 'How do I do a germination test?', answer: 'Place 100 seeds between moist paper towels in a sealed bag. Keep at 70-80°F for 7-14 days. Count sprouted seeds — that number is your germination percentage.' },
   ],
   relatedCalculators: [{ title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' }],
+  howToSteps: [
+    'Count out a sample of seeds (100 is recommended for accuracy).',
+    'Enter the number of seeds tested and the number that germinated.',
+    'Optionally enter your target seeding rate to calculate an adjusted rate.',
+    'Click Calculate to see the germination percentage and adjusted seeding rate.',
+  ],
+  nextSteps: [
+    { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Estimate Seed Cost', href: '/calculators/seeding/seed-cost/' },
+    { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
+  ],
 };
 
 const seedsPerAcre: CalculatorConfig = {
@@ -139,6 +172,17 @@ const seedsPerAcre: CalculatorConfig = {
     { question: 'How many seeds per acre at 30-inch rows, 7-inch spacing?', answer: 'About 29,900 seeds per acre (43,560 / (2.5 × 0.583)).' },
   ],
   relatedCalculators: [{ title: 'Plant Spacing Calculator', href: '/calculators/seeding/plant-spacing' }, { title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' }],
+  howToSteps: [
+    'Enter your row spacing in inches.',
+    'Input the seed spacing within the row in inches.',
+    'Click Calculate to see the seeds per acre and seeds per 1,000 ft of row.',
+    'Use results to calibrate your planter or drill settings.',
+  ],
+  nextSteps: [
+    { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Estimate Seed Cost', href: '/calculators/seeding/seed-cost/' },
+    { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
+  ],
 };
 
 const seedCost: CalculatorConfig = {
@@ -175,6 +219,17 @@ const seedCost: CalculatorConfig = {
     { question: 'How much does corn seed cost per acre?', answer: 'Corn seed typically costs $100-150 per acre at 32,000-34,000 seeds/acre depending on traits and brand.' },
   ],
   relatedCalculators: [{ title: 'Seed Rate Calculator', href: '/calculators/seeding/seed-rate' }, { title: 'Fertilizer Cost Calculator', href: '/calculators/fertilizer/fertilizer-cost' }],
+  howToSteps: [
+    'Enter your total field size in acres.',
+    'Input the seeding rate in seeds per acre and the number of seeds per unit (bag).',
+    'Enter the price per unit from your seed supplier.',
+    'Click Calculate to see the total units needed, cost per acre, and total seed cost.',
+  ],
+  nextSteps: [
+    { title: 'Calculate Seed Rate', href: '/calculators/seeding/seed-rate/' },
+    { title: 'Estimate Fertilizer Cost', href: '/calculators/fertilizer/fertilizer-cost/' },
+    { title: 'Plan Farm Budget', href: '/calculators/economics/cost-per-acre/' },
+  ],
 };
 
 // Crop-specific seeding configs
@@ -287,9 +342,21 @@ const cropSeedData: Record<string, CropSeedData> = {
   },
 };
 
+const seedCropsWithPlantingDate = new Set([
+  'tomatoes', 'peppers', 'corn', 'wheat', 'soybeans', 'potatoes', 'strawberries',
+  'lettuce', 'carrots', 'onions', 'garlic', 'beans', 'sunflower', 'alfalfa',
+  'oats', 'barley', 'rice', 'cotton', 'sorghum', 'canola',
+]);
+
+const nonCrossClusterSlugs = new Set(['grass-seed', 'cover-crops']);
+
 function createCropSeedConfig(slug: string, data: CropSeedData): CalculatorConfig {
   const allSlugs = Object.keys(cropSeedData).filter(s => s !== slug);
   const related = allSlugs.slice(0, 4);
+  const isGenericCrop = nonCrossClusterSlugs.has(slug);
+  const plantingDateHref = seedCropsWithPlantingDate.has(slug)
+    ? `/calculators/planting-date/${slug}-planting-date/`
+    : '/calculators/planting-date/';
   return {
     slug, cluster: 'seeding', crop: slug,
     title: `${data.name} Seeding Rate Calculator`,
@@ -335,6 +402,23 @@ function createCropSeedConfig(slug: string, data: CropSeedData): CalculatorConfi
     ],
     relatedCrops: related.map(s => ({ title: cropSeedData[s].name, href: `/calculators/seeding/${s}` })),
     faqs: data.faqs.map(([q, a]) => ({ question: q, answer: a })),
+    howToSteps: [
+      `Enter your ${data.name.toLowerCase()} field size in acres.`,
+      `Adjust the desired plant population, row spacing, and seeds per pound if needed (defaults are pre-filled for ${data.name.toLowerCase()}).`,
+      'Set the germination rate from your seed tag or test results.',
+      `Click Calculate to see the total seeds and pounds of ${data.name.toLowerCase()} seed needed.`,
+    ],
+    nextSteps: isGenericCrop
+      ? [
+          { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
+          { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
+          { title: 'Plan Planting Date', href: '/calculators/planting-date/' },
+        ]
+      : [
+          { title: `Calculate ${data.name} Fertilizer Rates`, href: `/calculators/fertilizer/${slug}/` },
+          { title: `Find ${data.name} Planting Date`, href: plantingDateHref },
+          { title: `Estimate ${data.name} Yield`, href: `/calculators/yield/${slug}/` },
+        ],
   };
 }
 

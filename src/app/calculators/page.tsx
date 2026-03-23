@@ -56,7 +56,7 @@ export default function AllCalculatorsPage() {
       {/* Header */}
       <div className="mb-10 max-w-2xl">
         <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-          All Calculators
+          184 Free Agricultural Calculators
           <span className="ml-2 inline-flex translate-y-[-2px] items-center rounded-md bg-accent px-2 py-0.5 align-middle text-sm font-medium text-muted">
             184
           </span>
