@@ -2,9 +2,16 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy',
+  title: 'Privacy Policy — AgroRates',
   description:
     'AgroRates privacy policy — how we handle your data, cookies, and third-party services.',
+  alternates: { canonical: 'https://agrorates.com/privacy' },
+  openGraph: {
+    title: 'Privacy Policy — AgroRates',
+    description: 'AgroRates privacy policy — how we handle your data, cookies, and third-party services.',
+    url: 'https://agrorates.com/privacy',
+    type: 'website',
+  },
 };
 
 export default function PrivacyPage() {

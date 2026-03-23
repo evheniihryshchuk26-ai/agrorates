@@ -1,6 +1,16 @@
 import Link from 'next/link';
 import { Sprout } from 'lucide-react';
 
+const navLinks = [
+  { title: 'All Calculators', href: '/calculators' },
+  { title: 'Fertilizer', href: '/calculators/fertilizer' },
+  { title: 'Seeding', href: '/calculators/seeding' },
+  { title: 'Yield', href: '/calculators/yield' },
+  { title: 'Livestock', href: '/calculators/livestock' },
+  { title: 'Irrigation', href: '/calculators/irrigation' },
+  { title: 'Economics', href: '/calculators/economics' },
+];
+
 export function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-white/80 backdrop-blur-xl">
@@ -14,42 +24,21 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
-          <Link
-            href="/calculators"
-            className="rounded-lg px-3.5 py-2 text-[0.8125rem] font-medium text-muted transition-colors hover:bg-accent hover:text-foreground"
-          >
-            All Calculators
-          </Link>
-          <Link
-            href="/calculators/fertilizer"
-            className="rounded-lg px-3.5 py-2 text-[0.8125rem] font-medium text-muted transition-colors hover:bg-accent hover:text-foreground"
-          >
-            Fertilizer
-          </Link>
-          <Link
-            href="/calculators/seeding"
-            className="rounded-lg px-3.5 py-2 text-[0.8125rem] font-medium text-muted transition-colors hover:bg-accent hover:text-foreground"
-          >
-            Seeding
-          </Link>
-          <Link
-            href="/calculators/yield"
-            className="rounded-lg px-3.5 py-2 text-[0.8125rem] font-medium text-muted transition-colors hover:bg-accent hover:text-foreground"
-          >
-            Yield
-          </Link>
-          <Link
-            href="/calculators/livestock"
-            className="rounded-lg px-3.5 py-2 text-[0.8125rem] font-medium text-muted transition-colors hover:bg-accent hover:text-foreground"
-          >
-            Livestock
-          </Link>
+        <nav className="hidden items-center gap-0.5 lg:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-lg px-3 py-2 text-[0.8125rem] font-medium text-muted transition-colors hover:bg-accent hover:text-foreground"
+            >
+              {link.title}
+            </Link>
+          ))}
         </nav>
 
         <Link
           href="/calculators"
-          className="hidden items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-[0.8125rem] font-medium text-white transition-colors hover:bg-primary-hover md:inline-flex"
+          className="hidden items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-[0.8125rem] font-medium text-white transition-colors hover:bg-primary-hover sm:inline-flex"
         >
           Get Started
         </Link>

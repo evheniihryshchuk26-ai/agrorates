@@ -2,9 +2,16 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact Us — AgroRates',
   description:
     'Get in touch with the AgroRates team. Questions, suggestions, or corrections — we would love to hear from you.',
+  alternates: { canonical: 'https://agrorates.com/contact' },
+  openGraph: {
+    title: 'Contact Us — AgroRates',
+    description: 'Get in touch with the AgroRates team.',
+    url: 'https://agrorates.com/contact',
+    type: 'website',
+  },
 };
 
 export default function ContactPage() {

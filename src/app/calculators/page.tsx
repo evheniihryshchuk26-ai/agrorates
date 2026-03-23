@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   title: 'All Agricultural Calculators — 184 Free Tools',
   description:
     'Browse 184 free agricultural calculators across 8 categories: fertilizer, seeding, planting dates, crop yield, livestock, irrigation, farm economics, and unit conversions.',
+  alternates: { canonical: 'https://agrorates.com/calculators' },
+  openGraph: {
+    title: 'All Agricultural Calculators — 184 Free Farming Tools',
+    description: 'Browse 184 free agricultural calculators across 8 categories.',
+    url: 'https://agrorates.com/calculators',
+    type: 'website',
+  },
 };
 
 const iconMap: Record<string, any> = {
