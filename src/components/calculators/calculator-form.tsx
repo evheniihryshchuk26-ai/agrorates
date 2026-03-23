@@ -68,7 +68,7 @@ export function CalculatorForm({ slug, cluster, fields }: CalculatorFormProps) {
   const groupedFields = groupFields(fields);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr,1.15fr]">
+    <div className="grid gap-6 md:grid-cols-2">
       {/* Input Panel */}
       <div className="rounded-xl border border-border bg-white p-6">
         <div className="mb-5">
