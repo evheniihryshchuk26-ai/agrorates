@@ -32,7 +32,7 @@ const irrigationWaterNeed: CalculatorConfig = {
       totalLabel: 'Weekly irrigation need', totalValue: Math.round(weeklyGross * 100) / 100, totalUnit: 'inches',
     };
   },
-  seo: { title: 'Irrigation Water Need Calculator — Crop Water Requirements', description: 'Calculate irrigation water needs based on ET rate, system efficiency, and rainfall. Plan your water management.' },
+  seo: { title: 'Irrigation Calculator — Crop Water Needs Per Acre', description: 'Free irrigation calculator. Calculate daily and weekly water needs based on evapotranspiration, system efficiency, and rainfall. Plan irrigation scheduling.' },
   tips: ['Check local weather station data for daily ET rates.', 'Peak ET rates in summer can reach 0.3-0.4 inches/day for many crops.', 'Schedule irrigation based on soil moisture monitoring, not just calendar.', 'Deficit irrigation can save water without significant yield loss for some crops.'],
   faqs: [
     { question: 'What is evapotranspiration (ET)?', answer: 'ET is the combined water loss from soil evaporation and plant transpiration. It determines how much water crops need daily.' },
@@ -216,7 +216,7 @@ const waterCost: CalculatorConfig = {
       totalLabel: 'Total water cost', totalValue: Math.round(totalCost * 100) / 100, totalUnit: '$',
     };
   },
-  seo: { title: 'Water Cost Calculator — Irrigation Expenses', description: 'Calculate irrigation water costs. Estimate expenses per acre and per acre-inch of water applied.' },
+  seo: { title: 'Irrigation Water Cost Calculator — Cost Per Acre', description: 'Calculate irrigation water costs per acre and per acre-inch. Compare municipal, well, and canal water expenses for your farm.' },
   tips: ['Municipal water costs $2-8 per 1000 gallons.', 'Well water costs $0.50-2.00 per 1000 gallons (pumping only).'],
   faqs: [{ question: 'How much does irrigation water cost?', answer: 'Costs vary widely: well water $0.50-2.00/1000 gal, municipal $2-8/1000 gal, canal water $15-100/acre-foot.' }],
   relatedCalculators: [
@@ -506,7 +506,7 @@ const wellYield: CalculatorConfig = {
       totalLabel: 'Well yield', totalValue: Math.round(gpm * 100) / 100, totalUnit: 'GPM',
     };
   },
-  seo: { title: 'Well Yield Calculator — GPM Test Results', description: 'Calculate well yield in GPM from pump test. Determine if your well can support irrigation needs.' },
+  seo: { title: 'Well Yield Calculator — GPM from Pump Test', description: 'Calculate well yield in gallons per minute from a pump test. Determine if your well can support irrigation or livestock water needs.' },
   tips: ['A sustained yield test should run at least 4-8 hours for accuracy.', 'Well yield may decrease during drought — test during dry periods.', 'Match pump size to actual well yield, not maximum pump capacity.'],
   faqs: [{ question: 'How many GPM do I need for irrigation?', answer: 'Rule of thumb: 5-10 GPM per acre for sprinkler irrigation, 2-5 GPM per acre for drip.' }],
   relatedCalculators: [

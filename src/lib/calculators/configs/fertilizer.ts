@@ -147,8 +147,8 @@ function createCropFertConfig(slug: string, data: CropData): CalculatorConfig {
       };
     },
     seo: {
-      title: `${data.name} Fertilizer Calculator — NPK Rates for ${data.name} Per Acre`,
-      description: `Calculate exact fertilizer rates for ${data.name.toLowerCase()}. Get nitrogen, phosphorus, and potassium recommendations based on yield goals and soil test results.`,
+      title: `${data.name} Fertilizer Calculator — NPK Rates Per Acre for ${data.name}`,
+      description: `Free ${data.name.toLowerCase()} fertilizer calculator. Calculate exact nitrogen, phosphorus, and potassium rates per acre based on yield goals and soil test results.`,
     },
     quickFacts: [
       { label: 'Typical N rate', value: `${Math.round(data.nRate * Number(data.typicalYield.split('-')[1] || 100))} lbs/acre` },
@@ -222,8 +222,8 @@ const npk: CalculatorConfig = {
     };
   },
   seo: {
-    title: 'NPK Fertilizer Calculator — Calculate Fertilizer Application Rates',
-    description: 'Free NPK fertilizer calculator. Enter soil test results and target yield to get exact nitrogen, phosphorus, and potassium rates per acre.',
+    title: 'NPK Fertilizer Calculator — Free Nutrient Rate Calculator',
+    description: 'Free NPK fertilizer calculator. Enter soil test results to get exact nitrogen, phosphorus, and potassium application rates per acre. Works for all crops.',
   },
   tips: ['Always base fertilizer rates on a current soil test (within 2-3 years).', 'Split nitrogen applications improve efficiency and reduce leaching.', 'Consider previous crop credits when calculating nitrogen needs.', 'Phosphorus and potassium can be applied in fall or spring.'],
   relatedCalculators: [
@@ -294,8 +294,8 @@ const fertilizerCost: CalculatorConfig = {
     };
   },
   seo: {
-    title: 'Fertilizer Cost Calculator — Estimate Fertilizer Expenses Per Acre',
-    description: 'Calculate total fertilizer cost per acre. Enter product price, bag size, and application rate to estimate your field expenses.',
+    title: 'Fertilizer Cost Calculator — Price Per Acre Estimator',
+    description: 'Calculate total fertilizer cost and cost per acre. Enter product price, bag size, and application rate to estimate field expenses.',
   },
   tips: ['Compare bulk pricing vs bagged for large acreages — bulk is often 20-30% cheaper.', 'Factor in application costs ($5-10/acre for custom application).', 'Buy fertilizer in the off-season (summer/fall) for better prices.', 'Consider blended products to reduce application passes.'],
   faqs: [
@@ -438,7 +438,7 @@ const compost: CalculatorConfig = {
   },
   seo: {
     title: 'Compost Calculator — How Much Compost Do I Need?',
-    description: 'Calculate compost volume and weight needed for your garden or field. Enter area and desired depth to get cubic yards and total pounds.',
+    description: 'Free compost calculator. Calculate cubic yards and total weight needed for your garden, field, or raised beds. Enter area and depth for instant results.',
   },
   tips: ['Apply 1-3 inches of compost for garden beds, 0.25-0.5 inches for lawns.', 'Well-aged compost has a finished, earthy smell with no recognizable materials.', 'Incorporate compost into the top 6-12 inches of soil for best results.', 'Compost improves both sandy and clay soils by improving water retention and drainage.'],
   faqs: [
@@ -516,8 +516,8 @@ const nitrogen: CalculatorConfig = {
     };
   },
   seo: {
-    title: 'Nitrogen Rate Calculator — Calculate N Fertilizer Needs',
-    description: 'Calculate nitrogen fertilizer requirements based on yield goals, previous crop credits, and soil organic matter. Get accurate N rates per acre.',
+    title: 'Nitrogen Rate Calculator — N Fertilizer Per Acre',
+    description: 'Calculate nitrogen fertilizer needs per acre based on yield goals, previous crop credits, and soil organic matter. Free N rate calculator for all crops.',
   },
   tips: ['Credit nitrogen from previous legume crops to avoid over-application.', 'Each 1% soil organic matter contributes approximately 20 lbs N/acre per year.', 'Split nitrogen applications are more efficient than single pre-plant applications.', 'Use the economic optimum nitrogen rate (EONR) rather than maximum yield rate.', 'Consider in-season soil nitrate testing to adjust rates.'],
   faqs: [

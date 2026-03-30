@@ -21,7 +21,7 @@ const cattleWeight: CalculatorConfig = {
       totalLabel: 'Estimated live weight', totalValue: Math.round(weight), totalUnit: 'lbs',
     };
   },
-  seo: { title: 'Cattle Weight Calculator — Estimate Weight Without a Scale', description: 'Estimate cattle weight from heart girth and body length. No scale needed — use a tape measure.' },
+  seo: { title: 'Cattle Weight Calculator — Estimate Cow Weight Without a Scale', description: 'Free cattle weight calculator. Estimate live weight from heart girth and body length measurements. No scale needed — accurate within 3-5%.' },
   tips: ['Measure heart girth snugly behind the front legs.', 'Body length runs from point of shoulder to pin bone.', 'This formula is most accurate for mature cattle 400-1400 lbs.', 'Take measurements when the animal is standing squarely on level ground.'],
   faqs: [
     { question: 'How accurate is the weight tape method?', answer: 'Within 3-5% for mature cattle. Less accurate for young calves and very fat or thin animals.' },
@@ -140,7 +140,7 @@ const stockingRate: CalculatorConfig = {
       totalLabel: 'Carrying capacity', totalValue: head, totalUnit: 'head',
     };
   },
-  seo: { title: 'Stocking Rate Calculator — Pasture Carrying Capacity', description: 'Calculate pasture stocking rate and carrying capacity. Determine head per acre based on forage production.' },
+  seo: { title: 'Stocking Rate Calculator — Cattle Per Acre & Carrying Capacity', description: 'Free stocking rate calculator. Calculate how many head your pasture can support based on forage production, utilization rate, and grazing season length.' },
   tips: ['Never utilize more than 50-60% of forage to maintain pasture health.', 'Rotational grazing allows higher stocking rates than continuous grazing.', 'Account for drought years by keeping 20% buffer capacity.'],
   faqs: [{ question: 'What is a typical stocking rate for beef cattle?', answer: '1.5-3.0 acres per cow-calf pair depending on rainfall and forage type. Arid regions may need 20+ acres.' }],
   howToSteps: [
@@ -202,7 +202,7 @@ const hayBale: CalculatorConfig = {
       totalLabel: 'Total bales needed', totalValue: bales, totalUnit: 'bales',
     };
   },
-  seo: { title: 'Hay Bale Calculator — How Many Bales Do I Need?', description: 'Calculate how many hay bales you need for winter feeding. Account for waste and bale size.' },
+  seo: { title: 'Hay Bale Calculator — How Many Bales Per Cow for Winter?', description: 'Free hay calculator. Calculate bales needed for winter feeding based on herd size, daily intake, and feeding period. Accounts for waste.' },
   tips: ['Round bales have 15-35% waste depending on feeder type.', 'Small square bales have 5-10% waste when fed in a rack.', 'Use hay rings or feeders to minimize waste from round bales.', 'Test hay quality to balance rations properly.'],
   faqs: [{ question: 'How many round bales per cow for winter?', answer: 'A 1200-lb cow eating 25 lbs/day for 150 days needs about 4-5 large round bales (accounting for 15% waste).' }],
   howToSteps: [
@@ -332,7 +332,7 @@ const feedCost: CalculatorConfig = {
       totalLabel: 'Annual feed cost', totalValue: Math.round(annualCost), totalUnit: '$',
     };
   },
-  seo: { title: 'Feed Cost Calculator — Livestock Feeding Expenses', description: 'Calculate daily, monthly, and annual feed costs for your livestock operation.' },
+  seo: { title: 'Livestock Feed Cost Calculator — Daily, Monthly & Annual', description: 'Free feed cost calculator. Calculate daily, monthly, and annual feed expenses for cattle, pigs, poultry, sheep, goats, and other livestock.' },
   tips: ['Feed costs are typically 60-70% of total livestock production costs.', 'Buy feed in bulk when prices are low to reduce costs.', 'Test feed quality to avoid over- or under-supplementing.'],
   faqs: [{ question: 'What is the average feed cost per cow per day?', answer: 'Feed costs $2-5 per cow per day depending on feed type, quality, and local prices.' }],
   howToSteps: [
@@ -561,8 +561,8 @@ function createAnimalConfig(slug: string, data: AnimalData): CalculatorConfig {
       };
     },
     seo: {
-      title: `${data.name} Feed Calculator — Feed Requirements & Cost`,
-      description: `Calculate ${data.name.toLowerCase()} feed requirements and costs. Estimate daily intake, monthly feed needs, and annual expenses.`,
+      title: `${data.name} Feed Calculator — Daily Feed & Annual Cost`,
+      description: `Free ${data.name.toLowerCase()} feed calculator. Calculate daily feed intake, monthly requirements, and annual feed costs based on herd size and weight.`,
     },
     quickFacts: [
       { label: 'Average Weight', value: isBees ? 'N/A' : `${data.avgWeight} lbs` },

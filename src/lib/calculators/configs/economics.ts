@@ -25,7 +25,7 @@ const farmProfitLoss: CalculatorConfig = {
       totalLabel: 'Net farm income', totalValue: Math.round(netProfit), totalUnit: '$',
     };
   },
-  seo: { title: 'Farm Profit & Loss Calculator — Net Farm Income', description: 'Calculate farm profit, loss, and profit margin. Analyze revenue vs expenses for your farm operation.' },
+  seo: { title: 'Farm Profit Calculator — Net Income & Profit Margin', description: 'Free farm profit calculator. Calculate net income, profit margin, and break-even from gross revenue and expenses. Essential for farm financial planning.' },
   tips: ['Track variable and fixed costs separately for better management decisions.', 'Aim for a 15-25% profit margin in crop farming.', 'Review P&L monthly during the growing season, not just at year-end.'],
   faqs: [
     { question: 'What is a good profit margin for farming?', answer: '10-25% net profit margin is considered good for crop farming. Livestock operations may be lower (5-15%) but more consistent.' },
@@ -89,7 +89,7 @@ const costPerAcre: CalculatorConfig = {
       totalLabel: 'Cost per acre', totalValue: Math.round(perAcre * 100) / 100, totalUnit: '$/acre',
     };
   },
-  seo: { title: 'Cost Per Acre Calculator — Farm Production Costs', description: 'Calculate total cost per acre for crop production. Break down seed, fertilizer, chemical, fuel, labor, and land costs.' },
+  seo: { title: 'Cost Per Acre Calculator — Total Farm Production Costs', description: 'Calculate total production cost per acre. Break down seed, fertilizer, chemical, fuel, labor, land, and other farm expenses.' },
   tips: ['Typical corn production costs are $400-700 per acre.', 'Land cost is usually the largest single expense.', 'Track costs by field to identify your most and least profitable areas.'],
   faqs: [{ question: 'What does it cost to farm an acre of corn?', answer: 'Total costs range from $400-700/acre including land, seed ($100-150), fertilizer ($80-150), chemicals ($30-60), and machinery ($60-100).' }],
   relatedCalculators: [
@@ -391,7 +391,7 @@ const farmLoan: CalculatorConfig = {
       totalLabel: 'Monthly payment', totalValue: Math.round(monthly * 100) / 100, totalUnit: '$',
     };
   },
-  seo: { title: 'Farm Loan Payment Calculator — Monthly Payment & Interest', description: 'Calculate farm loan monthly payments, total interest, and total cost. Plan your agricultural financing.' },
+  seo: { title: 'Farm Loan Calculator — Monthly Payment, Interest & Total Cost', description: 'Free farm loan calculator. Calculate monthly payments, total interest, and total cost for agricultural real estate and operating loans.' },
   tips: ['FSA loans offer lower interest rates for beginning farmers.', 'Consider variable vs fixed rate based on your risk tolerance.', 'Shorter terms save significantly on total interest paid.'],
   faqs: [{ question: 'What interest rate can I get on a farm loan?', answer: 'Farm loan rates range from 5-8% for real estate and 6-10% for operating loans (2024 rates). FSA rates may be lower.' }],
   relatedCalculators: [
@@ -627,7 +627,7 @@ const farmROI: CalculatorConfig = {
       totalLabel: 'Return on investment', totalValue: Math.round(roi * 10) / 10, totalUnit: '%',
     };
   },
-  seo: { title: 'Farm ROI Calculator — Return on Investment', description: 'Calculate farm return on investment and payback period for capital investments.' },
+  seo: { title: 'Farm ROI Calculator — Return on Investment & Payback', description: 'Calculate farm return on investment and payback period. Evaluate capital investments in equipment, land, and improvements.' },
   tips: ['Target 10-15% ROI on farm equipment investments.', 'Include all costs (maintenance, insurance, depreciation) in your return calculation.', 'Compare ROI across investment options before committing capital.'],
   faqs: [{ question: 'What is a good ROI for farming?', answer: '8-15% ROI is considered good for farm operations. Land investments may return 3-5% annually but appreciate over time.' }],
   relatedCalculators: [

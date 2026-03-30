@@ -28,7 +28,7 @@ const bushelsToTons: CalculatorConfig = {
       totalLabel: 'Weight', totalValue: Math.round(tons * 100) / 100, totalUnit: 'short tons',
     };
   },
-  seo: { title: 'Bushels to Tons Converter — Grain Weight Calculator', description: 'Convert bushels to tons, metric tons, and pounds for corn, wheat, soybeans, and other grains.' },
+  seo: { title: 'Bushels to Tons Converter — Corn, Wheat, Soybeans & Grain', description: 'Convert bushels to tons and pounds for corn, wheat, soybeans, oats, barley, and sorghum. Free grain weight calculator with standard test weights.' },
   tips: ['Standard test weights: corn 56, wheat 60, soybeans 60, oats 32, barley 48 lbs/bu.', 'Actual test weight may vary — heavier grain yields more weight per bushel.'],
   faqs: [{ question: 'How many bushels in a ton of corn?', answer: '1 ton = 2000 lbs / 56 lbs per bushel = 35.7 bushels of corn.' }],
   relatedCalculators: [
@@ -80,7 +80,7 @@ const acresToHectares: CalculatorConfig = {
       totalLabel: 'Hectares', totalValue: Math.round(hectares * 1000) / 1000, totalUnit: 'ha',
     };
   },
-  seo: { title: 'Acres to Hectares Converter — Land Area Conversion', description: 'Convert acres to hectares and back. Quick land area conversion for farming.' },
+  seo: { title: 'Acreage Calculator — Measure Acres, Convert to Hectares', description: 'Free acreage calculator. Measure land area in acres, convert acres to hectares and square feet. Essential tool for farmers and landowners.' },
   tips: ['1 acre = 0.4047 hectares, 1 hectare = 2.471 acres.', '1 acre = 43,560 sq ft, 1 hectare = 10,000 sq meters.'],
   faqs: [{ question: 'How many acres in a hectare?', answer: '1 hectare = 2.471 acres. 1 acre = 0.4047 hectares.' }],
   relatedCalculators: [
@@ -297,7 +297,7 @@ const cubicYardsToTons: CalculatorConfig = {
       totalLabel: 'Weight', totalValue: Math.round(tons * 100) / 100, totalUnit: 'tons',
     };
   },
-  seo: { title: 'Cubic Yards to Tons — Bulk Material Weight', description: 'Convert cubic yards to tons for topsoil, gravel, sand, compost, and mulch.' },
+  seo: { title: 'Cubic Yards to Tons Calculator — Dirt, Gravel, Sand & Topsoil', description: 'Convert cubic yards to tons for dirt, gravel, sand, topsoil, compost, and mulch. Free bulk material weight calculator.' },
   tips: ['Wet material weighs significantly more than dry — these are average dry weights.'],
   faqs: [{ question: 'How much does a cubic yard of topsoil weigh?', answer: 'About 2,000-2,400 lbs (1.0-1.2 tons) depending on moisture content.' }],
   relatedCalculators: [
@@ -352,7 +352,7 @@ const fertilizerSpreaderCalibration: CalculatorConfig = {
       totalLabel: 'Application rate', totalValue: Math.round(lbsPerAcre * 10) / 10, totalUnit: 'lbs/acre',
     };
   },
-  seo: { title: 'Fertilizer Spreader Calibration — Application Rate Check', description: 'Calibrate your fertilizer spreader. Calculate actual application rate from a test run.' },
+  seo: { title: 'Fertilizer Spreader Calibration Calculator — Check Application Rate', description: 'Calibrate your fertilizer spreader to ensure accurate application rates. Calculate actual lbs per acre from a calibration test run.' },
   tips: ['Calibrate before each season and when switching products.', 'Use catch pans placed across the full swath width for accuracy.'],
   faqs: [{ question: 'How do I calibrate a broadcast spreader?', answer: 'Spread over a measured area, collect material in catch pans, weigh it, and calculate lbs/acre.' }],
   relatedCalculators: [
@@ -666,7 +666,7 @@ const soilVolume: CalculatorConfig = {
       totalLabel: 'Volume needed', totalValue: Math.round(cubicYards * 100) / 100, totalUnit: 'cubic yards',
     };
   },
-  seo: { title: 'Soil Volume Calculator — Raised Bed & Garden Fill', description: 'Calculate soil volume for raised beds, gardens, and fill projects. Get cubic yards and estimated tons.' },
+  seo: { title: 'Dirt & Soil Calculator — Volume for Fill, Gardens & Raised Beds', description: 'Free dirt and soil calculator. Calculate cubic yards, cubic feet, and tons needed for raised beds, gardens, fill projects, and landscaping.' },
   tips: ['Most bulk soil is sold by the cubic yard.', 'Plan for 10-15% extra to account for settling.', 'A standard pickup truck holds about 1-2 cubic yards.'],
   faqs: [{ question: 'How much soil for a 4x8 raised bed?', answer: 'A 4×8 foot bed, 12 inches deep needs about 1.2 cubic yards of soil.' }],
   relatedCalculators: [
@@ -723,7 +723,7 @@ const mulchCalculator: CalculatorConfig = {
       totalLabel: 'Mulch needed', totalValue: Math.round(cubicYards * 100) / 100, totalUnit: 'cubic yards',
     };
   },
-  seo: { title: 'Mulch Calculator — How Many Bags or Yards of Mulch', description: 'Calculate mulch needed in cubic yards and bags. Enter area and depth for instant results.' },
+  seo: { title: 'Mulch Calculator — How Much Mulch Do I Need?', description: 'Free mulch calculator. Enter area and depth to get cubic yards and bags needed. Works for bark mulch, wood chips, rubber mulch, and straw.' },
   tips: ['Apply 2-4 inches of mulch for weed suppression.', 'Keep mulch 2-3 inches away from plant stems and tree trunks.', 'Bulk mulch is cheaper than bagged for areas over 50 sq ft.'],
   faqs: [{ question: 'How much mulch do I need?', answer: 'For 3 inches deep: multiply area (sq ft) by 0.25, then divide by 27 for cubic yards. 100 sq ft needs about 1 cubic yard.' }],
   relatedCalculators: [

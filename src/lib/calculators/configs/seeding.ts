@@ -28,7 +28,7 @@ const seedRate: CalculatorConfig = {
       totalLabel: 'Total seed needed', totalValue: Math.round(lbs), totalUnit: 'lbs',
     };
   },
-  seo: { title: 'Seed Rate Calculator — How Much Seed Per Acre', description: 'Calculate seed rate per acre based on plant population, seeds per pound, and germination rate. Get exact lbs of seed needed.' },
+  seo: { title: 'Seed Rate Calculator — How Much Seed Per Acre', description: 'Free seed rate calculator. Calculate pounds of seed needed per acre based on plant population, seeds per pound, and germination rate.' },
   tips: ['Always adjust for germination rate to ensure adequate stand.', 'Increase seeding rate 10-15% for no-till conditions.', 'Seed size varies by variety — check seeds per pound for your specific lot.', 'Consider field conditions: increase rate for cloddy or wet seedbeds.'],
   faqs: [
     { question: 'How do I calculate seeding rate?', answer: 'Seeding rate (lbs/acre) = (Desired population / Germination rate) / Seeds per pound. This accounts for seeds that won\'t germinate.' },
@@ -91,7 +91,7 @@ const plantSpacing: CalculatorConfig = {
       totalLabel: 'Total plants needed', totalValue: totalPlants, totalUnit: 'plants',
     };
   },
-  seo: { title: 'Plant Spacing Calculator — Row & Plant Spacing Planner', description: 'Calculate plant population from row spacing and in-row spacing. Determine total plants needed for your field or garden.' },
+  seo: { title: 'Plant Spacing Calculator — Population & Spacing Planner', description: 'Free plant spacing calculator. Calculate plants per acre from row spacing and in-row spacing. Works for all crops, gardens, and orchards.' },
   tips: ['Narrower row spacing increases light interception and can boost yields.', 'Maintain consistent in-row spacing for uniform plant development.', 'Consider equipment width when choosing row spacing.'],
   faqs: [
     { question: 'How many plants per acre at 30-inch rows, 8-inch spacing?', answer: 'At 30" rows and 8" spacing: 43,560 sq ft / (2.5 ft × 0.667 ft) = about 26,136 plants per acre.' },
@@ -208,7 +208,7 @@ const seedsPerAcre: CalculatorConfig = {
       totalLabel: 'Seeds per acre', totalValue: Math.round(seedsPerRow), totalUnit: 'seeds',
     };
   },
-  seo: { title: 'Seeds Per Acre Calculator — Calculate Plant Population', description: 'Calculate seeds per acre from row spacing and seed spacing. Determine exact plant population for your planter settings.' },
+  seo: { title: 'Seeds Per Acre Calculator — Plant Population by Row Spacing', description: 'Calculate seeds per acre from row spacing and seed drop rate. Determine exact plant population for your planter settings.' },
   tips: ['Check planter calibration in the field — lab settings often differ from field conditions.', 'Consider seed size when setting planter plates or discs.'],
   faqs: [
     { question: 'How many seeds per acre at 30-inch rows, 7-inch spacing?', answer: 'About 29,900 seeds per acre (43,560 / (2.5 × 0.583)).' },
@@ -460,8 +460,8 @@ function createCropSeedConfig(slug: string, data: CropSeedData): CalculatorConfi
       };
     },
     seo: {
-      title: `${data.name} Seeding Rate Calculator — Seeds Per Acre`,
-      description: `Calculate ${data.name.toLowerCase()} seeding rate, seed quantity, and plant population per acre. Get exact seed needs for your field.`,
+      title: `${data.name} Seeding Rate Calculator — ${data.name} Seeds Per Acre`,
+      description: `Free ${data.name.toLowerCase()} seeding rate calculator. Calculate seed quantity, plant population, and pounds of seed needed per acre.`,
     },
     quickFacts: [
       { label: 'Target Population', value: `${data.population.toLocaleString()} plants/acre` },

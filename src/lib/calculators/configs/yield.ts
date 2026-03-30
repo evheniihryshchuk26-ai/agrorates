@@ -30,7 +30,7 @@ const yieldPerAcre: CalculatorConfig = {
       totalLabel: 'Yield per acre', totalValue: Math.round(buPerAcre * 10) / 10, totalUnit: 'bu/acre',
     };
   },
-  seo: { title: 'Yield Per Acre Calculator — Crop Yield Conversion', description: 'Calculate crop yield per acre. Convert total harvest to bushels, pounds, or tons per acre.' },
+  seo: { title: 'Crop Yield Calculator — Bushels & Tons Per Acre', description: 'Free crop yield calculator. Convert total harvest to bushels, pounds, or tons per acre for corn, wheat, soybeans, and all grain crops.' },
   tips: ['Weigh grain trucks before and after unloading for accurate totals.', 'Account for moisture shrink when comparing to standard yields.', 'Use yield monitors for field-level data to optimize management zones.'],
   faqs: [
     { question: 'What is a good corn yield per acre?', answer: 'US average corn yield is about 175 bu/acre. Top producers consistently achieve 220-280 bu/acre.' },
@@ -222,7 +222,7 @@ const grainBinStorage: CalculatorConfig = {
       totalLabel: 'Bin capacity', totalValue: Math.round(bushels), totalUnit: 'bushels',
     };
   },
-  seo: { title: 'Grain Bin Storage Calculator — Bin Capacity in Bushels', description: 'Calculate grain bin storage capacity from diameter and height. Get bushels, tons, and cubic feet.' },
+  seo: { title: 'Grain Bin Calculator — Storage Capacity in Bushels & Tons', description: 'Calculate grain bin storage capacity from diameter and height. Get bushels, tons, and cubic feet for corn, wheat, soybeans, and all grains.' },
   tips: ['Account for the cone-shaped peak when calculating usable capacity.', 'Leave 6-12 inches of headspace for aeration and leveling.', 'Check structural integrity before filling to capacity.'],
   faqs: [
     { question: 'How many bushels in a 36-foot bin?', answer: 'A 36-foot diameter bin with 24-foot eave height holds approximately 19,500 bushels of corn.' },
@@ -280,7 +280,7 @@ const plantsPerAcre: CalculatorConfig = {
       totalLabel: 'Plants per acre', totalValue: plantsPerAcre, totalUnit: 'plants',
     };
   },
-  seo: { title: 'Plants Per Acre Calculator — Plant Population', description: 'Calculate plants per acre from row spacing and plant spacing. Determine stand count for any crop.' },
+  seo: { title: 'Plants Per Acre Calculator — Plant Population & Density', description: 'Calculate plants per acre from row spacing and plant spacing. Determine plant population and density for any crop.' },
   tips: ['Count plants in multiple locations to estimate actual field population.', 'Target 90-95% of planted seeds to emerge as plants.'],
   faqs: [
     { question: 'How many corn plants per acre at 30-inch rows?', answer: 'At 30-inch rows with 7-inch spacing: about 29,900 plants/acre. At 8-inch spacing: about 26,100 plants/acre.' },
@@ -439,8 +439,8 @@ function createCropYieldConfig(slug: string, data: CropYieldData): CalculatorCon
       };
     },
     seo: {
-      title: `${data.name} Yield Calculator — Estimate ${data.name} Yield Per Acre`,
-      description: `Calculate ${data.name.toLowerCase()} yield per acre. Estimate harvest totals and compare to US averages.`,
+      title: `${data.name} Yield Calculator — ${data.name} Bushels Per Acre`,
+      description: `Calculate ${data.name.toLowerCase()} yield per acre. Estimate harvest totals in bushels, pounds, and tons. Compare to US average ${data.name.toLowerCase()} yields.`,
     },
     quickFacts: [
       { label: 'US Average Yield', value: `${data.avgYield.toLocaleString()} ${data.yieldUnit}` },
