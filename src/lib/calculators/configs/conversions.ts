@@ -846,9 +846,98 @@ const dirtCalculator: CalculatorConfig = {
   ],
 };
 
+const acreageCalculator: CalculatorConfig = {
+  slug: 'acreage-calculator', cluster: 'conversions',
+  title: 'Acreage Calculator',
+  description: 'Calculate the acreage of any land area from length and width measurements. Convert between acres, hectares, square feet, and square meters.',
+  fields: [
+    { id: 'shape', label: 'Area Shape', type: 'select', options: [
+      { value: 'rectangle', label: 'Rectangle / Square' },
+      { value: 'circle', label: 'Circle' },
+      { value: 'triangle', label: 'Triangle' },
+    ] },
+    { id: 'length', label: 'Length (or Diameter)', type: 'number', placeholder: '1000', unit: 'feet', min: 0.1, required: true },
+    { id: 'width', label: 'Width (rectangle only)', type: 'number', placeholder: '500', unit: 'feet', min: 0.1, helpText: 'Leave blank for circle/triangle' },
+    { id: 'height', label: 'Height (triangle only)', type: 'number', placeholder: '400', unit: 'feet', min: 0.1, helpText: 'Perpendicular height for triangle' },
+  ],
+  calculate: (inputs) => {
+    const shape = String(inputs.shape || 'rectangle');
+    const length = Number(inputs.length) || 0;
+    const width = Number(inputs.width) || 0;
+    const height = Number(inputs.height) || 0;
+    let sqFt = 0;
+    if (shape === 'rectangle') { sqFt = length * width; }
+    else if (shape === 'circle') { sqFt = Math.PI * (length / 2) * (length / 2); }
+    else if (shape === 'triangle') { sqFt = (length * height) / 2; }
+    const acres = sqFt / 43560;
+    const hectares = acres * 0.4047;
+    const sqMeters = sqFt * 0.0929;
+    return {
+      results: [
+        { label: 'Acres', value: Math.round(acres * 1000) / 1000, unit: 'acres', color: 'blue' },
+        { label: 'Hectares', value: Math.round(hectares * 1000) / 1000, unit: 'ha', color: 'green' },
+        { label: 'Square Feet', value: Math.round(sqFt), unit: 'sq ft', color: 'orange' },
+        { label: 'Square Meters', value: Math.round(sqMeters), unit: 'm²', color: 'purple' },
+      ],
+      totalLabel: 'Total area', totalValue: Math.round(acres * 1000) / 1000, totalUnit: 'acres',
+    };
+  },
+  seo: {
+    title: 'Free Acreage Calculator — Acres, Hectares & Sq Feet (2026)',
+    description: 'Free acreage calculator. Measure land area in acres from length and width. Convert to hectares, square feet, and square meters. Works for any shape.',
+  },
+  quickFacts: [
+    { label: '1 Acre', value: '43,560 sq ft' },
+    { label: '1 Acre', value: '0.4047 hectares' },
+    { label: '1 Acre', value: '208.7 × 208.7 ft' },
+    { label: '1 Hectare', value: '2.471 acres' },
+  ],
+  tips: [
+    'One acre is approximately the size of a football field without the end zones (90% of a football field).',
+    'For irregular shapes, divide the area into rectangles and triangles, calculate each separately, and add them together.',
+    'GPS-based measurements from your phone or tractor are more accurate than tape measures for large fields.',
+    'County tax records and USDA FSA maps provide official acreage figures for farm fields.',
+    'When buying land, always verify acreage with a licensed surveyor — fence lines are not legal boundaries.',
+  ],
+  faqs: [
+    { question: 'How do I calculate acreage from feet?', answer: 'Multiply length by width in feet to get square feet, then divide by 43,560. For example, a 200 × 200 foot lot = 40,000 sq ft / 43,560 = 0.918 acres.' },
+    { question: 'How many acres is a football field?', answer: 'A standard football field (including end zones) is 1.32 acres. Without end zones, it is 1.10 acres.' },
+    { question: 'How do I measure irregular land?', answer: 'Break the area into simple shapes (rectangles, triangles), measure each, calculate their areas separately, and add them together. For very irregular shapes, use a GPS walking tool or satellite mapping service.' },
+  ],
+  howToSteps: [
+    'Select the shape of your land area (rectangle, circle, or triangle).',
+    'Enter the length (or diameter for circles) in feet.',
+    'For rectangles, enter the width. For triangles, enter the perpendicular height.',
+    'Click Calculate to see the area in acres, hectares, square feet, and square meters.',
+  ],
+  nextSteps: [
+    { title: 'Acres to Hectares Converter', href: '/calculators/conversions/acres-to-hectares/' },
+    { title: 'Land Value Calculator', href: '/calculators/economics/land-value/' },
+    { title: 'Cash Rent Calculator', href: '/calculators/economics/cash-rent/' },
+    { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre/' },
+  ],
+  howToUse: 'Select the shape that best matches your land area. For rectangular or square plots, enter the length and width in feet. For circular areas (like pivot irrigated fields), enter the diameter. For triangular parcels, enter the base length and perpendicular height. The calculator instantly converts to acres, hectares, and square feet.',
+  whyItMatters: 'Accurate acreage measurement is the foundation of every farm decision — from seed and fertilizer purchases to crop insurance, cash rent negotiations, and land sales. A 5% error on a 500-acre farm means 25 acres of miscalculated inputs, costing thousands of dollars per year. This calculator gives you precise figures for any land shape.',
+  methodology: 'Rectangle area = Length × Width. Circle area = π × (Diameter/2)². Triangle area = (Base × Height) / 2. All results in square feet are divided by 43,560 to convert to acres (the USDA standard). Hectare conversion uses the factor 1 acre = 0.4047 hectares. Square meters = square feet × 0.0929.',
+  commonMistakes: [
+    'Measuring along fence lines instead of property boundaries — fences are rarely on exact property lines.',
+    'Forgetting to subtract non-farmable areas (waterways, ditches, tree lines, buildings) from total acreage.',
+    'Confusing gross acres (total land) with net tillable acres (actual farmable area) — typically 5-15% difference.',
+    'Using road frontage × depth for irregularly shaped parcels — this only works for perfect rectangles.',
+  ],
+  relatedCalculators: [
+    { title: 'Acres to Hectares', href: '/calculators/conversions/acres-to-hectares/' },
+    { title: 'Dirt Calculator', href: '/calculators/conversions/dirt-calculator/' },
+    { title: 'Soil Volume Calculator', href: '/calculators/conversions/soil-volume/' },
+    { title: 'Land Value Calculator', href: '/calculators/economics/land-value/' },
+    { title: 'Cash Rent Calculator', href: '/calculators/economics/cash-rent/' },
+    { title: 'Cost Per Acre Calculator', href: '/calculators/economics/cost-per-acre/' },
+  ],
+};
+
 export const conversionConfigs: CalculatorConfig[] = [
   bushelsToTons, acresToHectares, lbsPerAcreToKgPerHectare, balesPerAcre, seedsPerPound,
   cubicYardsToTons, fertilizerSpreaderCalibration, gallonsPerAcreToLitersPerHectare,
   rowSpacingConverter, grainWeightPerBushel, livestockWeightConverter, temperatureConverter,
-  soilVolume, mulchCalculator, dirtCalculator,
+  soilVolume, mulchCalculator, dirtCalculator, acreageCalculator,
 ];
