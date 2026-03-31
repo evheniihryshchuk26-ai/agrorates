@@ -28,7 +28,7 @@ const seedRate: CalculatorConfig = {
       totalLabel: 'Total seed needed', totalValue: Math.round(lbs), totalUnit: 'lbs',
     };
   },
-  seo: { title: 'Seed Rate Calculator — How Much Seed Per Acre', description: 'Free seed rate calculator. Calculate pounds of seed needed per acre based on plant population, seeds per pound, and germination rate.' },
+  seo: { title: 'Free Seed Rate Calculator — Lbs/Acre, Seeds & Bags (2026)', description: 'Free seed rate calculator. Calculate pounds of seed needed per acre based on plant population, seeds per pound, and germination rate.' },
   tips: ['Always adjust for germination rate to ensure adequate stand.', 'Increase seeding rate 10-15% for no-till conditions.', 'Seed size varies by variety — check seeds per pound for your specific lot.', 'Consider field conditions: increase rate for cloddy or wet seedbeds.'],
   faqs: [
     { question: 'How do I calculate seeding rate?', answer: 'Seeding rate (lbs/acre) = (Desired population / Germination rate) / Seeds per pound. This accounts for seeds that won\'t germinate.' },
@@ -91,7 +91,7 @@ const plantSpacing: CalculatorConfig = {
       totalLabel: 'Total plants needed', totalValue: totalPlants, totalUnit: 'plants',
     };
   },
-  seo: { title: 'Plant Spacing Calculator — Population & Spacing Planner', description: 'Free plant spacing calculator. Calculate plants per acre from row spacing and in-row spacing. Works for all crops, gardens, and orchards.' },
+  seo: { title: 'Free Plant Spacing Calculator — Plants/Acre & Sq Ft (2026)', description: 'Free plant spacing calculator. Calculate plants per acre from row spacing and in-row spacing. Works for all crops, gardens, and orchards.' },
   tips: ['Narrower row spacing increases light interception and can boost yields.', 'Maintain consistent in-row spacing for uniform plant development.', 'Consider equipment width when choosing row spacing.'],
   faqs: [
     { question: 'How many plants per acre at 30-inch rows, 8-inch spacing?', answer: 'At 30" rows and 8" spacing: 43,560 sq ft / (2.5 ft × 0.667 ft) = about 26,136 plants per acre.' },
@@ -150,7 +150,7 @@ const germinationRate: CalculatorConfig = {
       totalLabel: 'Germination rate', totalValue: Math.round(germRate * 10) / 10, totalUnit: '%',
     };
   },
-  seo: { title: 'Germination Rate Calculator — Test Seed Viability', description: 'Calculate seed germination percentage and adjusted seeding rates. Test seed viability before planting.' },
+  seo: { title: 'Free Germination Rate Calculator — Percentage & Viability (2026)', description: 'Calculate seed germination percentage and adjusted seeding rates. Test seed viability before planting.' },
   tips: ['Test germination 2-3 weeks before planting to allow time for adjustments.', 'Use 100 seeds for a statistically reliable test.', 'Test in moist paper towels at 70-80°F for most species.', 'Seeds below 80% germination should be replaced or rates increased.'],
   faqs: [
     { question: 'How do I do a germination test?', answer: 'Place 100 seeds between moist paper towels in a sealed bag. Keep at 70-80°F for 7-14 days. Count sprouted seeds — that number is your germination percentage.' },
@@ -208,7 +208,7 @@ const seedsPerAcre: CalculatorConfig = {
       totalLabel: 'Seeds per acre', totalValue: Math.round(seedsPerRow), totalUnit: 'seeds',
     };
   },
-  seo: { title: 'Seeds Per Acre Calculator — Plant Population by Row Spacing', description: 'Calculate seeds per acre from row spacing and seed drop rate. Determine exact plant population for your planter settings.' },
+  seo: { title: 'Free Seeds Per Acre Calculator — Population & Row Spacing (2026)', description: 'Calculate seeds per acre from row spacing and seed drop rate. Determine exact plant population for your planter settings.' },
   tips: ['Check planter calibration in the field — lab settings often differ from field conditions.', 'Consider seed size when setting planter plates or discs.'],
   faqs: [
     { question: 'How many seeds per acre at 30-inch rows, 7-inch spacing?', answer: 'About 29,900 seeds per acre (43,560 / (2.5 × 0.583)).' },
@@ -271,7 +271,7 @@ const seedCost: CalculatorConfig = {
       totalLabel: 'Total seed cost', totalValue: Math.round(totalCost * 100) / 100, totalUnit: '$',
     };
   },
-  seo: { title: 'Seed Cost Calculator — Estimate Seed Expenses Per Acre', description: 'Calculate total seed cost and cost per acre. Compare seed prices and plan your planting budget.' },
+  seo: { title: 'Free Seed Cost Calculator — Cost/Acre, Units & Total (2026)', description: 'Calculate total seed cost and cost per acre. Compare seed prices and plan your planting budget.' },
   tips: ['Compare seed costs on a per-acre basis, not per unit, since unit sizes vary.', 'Early-order discounts can save 5-15% on seed costs.', 'Consider value-added traits when comparing seed prices.'],
   faqs: [
     { question: 'How much does corn seed cost per acre?', answer: 'Corn seed typically costs $100-150 per acre at 32,000-34,000 seeds/acre depending on traits and brand.' },
@@ -460,7 +460,7 @@ function createCropSeedConfig(slug: string, data: CropSeedData): CalculatorConfi
       };
     },
     seo: {
-      title: `${data.name} Seeding Rate Calculator — ${data.name} Seeds Per Acre`,
+      title: `Free ${data.name} Seeding Rate Calculator — Seeds Per Acre (2026)`,
       description: `Free ${data.name.toLowerCase()} seeding rate calculator. Calculate seed quantity, plant population, and pounds of seed needed per acre.`,
     },
     quickFacts: [

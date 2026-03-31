@@ -147,7 +147,7 @@ function createCropFertConfig(slug: string, data: CropData): CalculatorConfig {
       };
     },
     seo: {
-      title: `${data.name} Fertilizer Calculator — NPK Rates Per Acre for ${data.name}`,
+      title: `Free ${data.name} Fertilizer Calculator — NPK Rates Per Acre (2026)`,
       description: `Free ${data.name.toLowerCase()} fertilizer calculator. Calculate exact nitrogen, phosphorus, and potassium rates per acre based on yield goals and soil test results.`,
     },
     quickFacts: [
@@ -222,7 +222,7 @@ const npk: CalculatorConfig = {
     };
   },
   seo: {
-    title: 'NPK Fertilizer Calculator — Free Nutrient Rate Calculator',
+    title: 'Free NPK Fertilizer Calculator — Nitrogen, Phosphorus & Potassium (2026)',
     description: 'Free NPK fertilizer calculator. Enter soil test results to get exact nitrogen, phosphorus, and potassium application rates per acre. Works for all crops.',
   },
   tips: ['Always base fertilizer rates on a current soil test (within 2-3 years).', 'Split nitrogen applications improve efficiency and reduce leaching.', 'Consider previous crop credits when calculating nitrogen needs.', 'Phosphorus and potassium can be applied in fall or spring.'],
@@ -294,7 +294,7 @@ const fertilizerCost: CalculatorConfig = {
     };
   },
   seo: {
-    title: 'Fertilizer Cost Calculator — Price Per Acre Estimator',
+    title: 'Free Fertilizer Cost Calculator — Bags, Total Cost & Per Acre (2026)',
     description: 'Calculate total fertilizer cost and cost per acre. Enter product price, bag size, and application rate to estimate field expenses.',
   },
   tips: ['Compare bulk pricing vs bagged for large acreages — bulk is often 20-30% cheaper.', 'Factor in application costs ($5-10/acre for custom application).', 'Buy fertilizer in the off-season (summer/fall) for better prices.', 'Consider blended products to reduce application passes.'],
@@ -370,7 +370,7 @@ const lime: CalculatorConfig = {
     };
   },
   seo: {
-    title: 'Lime Application Rate Calculator — How Much Lime Per Acre',
+    title: 'Free Lime Calculator — Tons Per Acre & pH Correction (2026)',
     description: 'Calculate lime application rates based on soil pH and buffer pH. Determine how many tons of agricultural lime your field needs.',
   },
   tips: ['Apply lime 3-6 months before planting for best results.', 'Incorporate lime into the top 6-8 inches of soil.', 'Do not apply more than 4 tons/acre in a single application — split if needed.', 'Use ENM (Effective Neutralizing Material) to compare lime products.'],
@@ -437,7 +437,7 @@ const compost: CalculatorConfig = {
     };
   },
   seo: {
-    title: 'Compost Calculator — How Much Compost Do I Need?',
+    title: 'Free Compost Calculator — Cubic Yards, Weight & Volume (2026)',
     description: 'Free compost calculator. Calculate cubic yards and total weight needed for your garden, field, or raised beds. Enter area and depth for instant results.',
   },
   tips: ['Apply 1-3 inches of compost for garden beds, 0.25-0.5 inches for lawns.', 'Well-aged compost has a finished, earthy smell with no recognizable materials.', 'Incorporate compost into the top 6-12 inches of soil for best results.', 'Compost improves both sandy and clay soils by improving water retention and drainage.'],
@@ -516,7 +516,7 @@ const nitrogen: CalculatorConfig = {
     };
   },
   seo: {
-    title: 'Nitrogen Rate Calculator — N Fertilizer Per Acre',
+    title: 'Free Nitrogen Rate Calculator — Lbs/Acre, Credits & Net N (2026)',
     description: 'Calculate nitrogen fertilizer needs per acre based on yield goals, previous crop credits, and soil organic matter. Free N rate calculator for all crops.',
   },
   tips: ['Credit nitrogen from previous legume crops to avoid over-application.', 'Each 1% soil organic matter contributes approximately 20 lbs N/acre per year.', 'Split nitrogen applications are more efficient than single pre-plant applications.', 'Use the economic optimum nitrogen rate (EONR) rather than maximum yield rate.', 'Consider in-season soil nitrate testing to adjust rates.'],

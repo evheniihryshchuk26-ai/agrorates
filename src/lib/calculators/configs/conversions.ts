@@ -28,7 +28,7 @@ const bushelsToTons: CalculatorConfig = {
       totalLabel: 'Weight', totalValue: Math.round(tons * 100) / 100, totalUnit: 'short tons',
     };
   },
-  seo: { title: 'Bushels to Tons Converter — Corn, Wheat, Soybeans & Grain', description: 'Convert bushels to tons and pounds for corn, wheat, soybeans, oats, barley, and sorghum. Free grain weight calculator with standard test weights.' },
+  seo: { title: 'Free Bushels to Tons Converter — Corn, Wheat & Grain (2026)', description: 'Convert bushels to tons and pounds for corn, wheat, soybeans, oats, barley, and sorghum. Free grain weight calculator with standard test weights.' },
   tips: ['Standard test weights: corn 56, wheat 60, soybeans 60, oats 32, barley 48 lbs/bu.', 'Actual test weight may vary — heavier grain yields more weight per bushel.'],
   faqs: [{ question: 'How many bushels in a ton of corn?', answer: '1 ton = 2000 lbs / 56 lbs per bushel = 35.7 bushels of corn.' }],
   relatedCalculators: [
@@ -80,7 +80,7 @@ const acresToHectares: CalculatorConfig = {
       totalLabel: 'Hectares', totalValue: Math.round(hectares * 1000) / 1000, totalUnit: 'ha',
     };
   },
-  seo: { title: 'Acreage Calculator — Measure Acres, Convert to Hectares', description: 'Free acreage calculator. Measure land area in acres, convert acres to hectares and square feet. Essential tool for farmers and landowners.' },
+  seo: { title: 'Free Acreage Calculator — Acres, Hectares & Sq Feet (2026)', description: 'Free acreage calculator. Measure land area in acres, convert acres to hectares and square feet. Essential tool for farmers and landowners.' },
   tips: ['1 acre = 0.4047 hectares, 1 hectare = 2.471 acres.', '1 acre = 43,560 sq ft, 1 hectare = 10,000 sq meters.'],
   faqs: [{ question: 'How many acres in a hectare?', answer: '1 hectare = 2.471 acres. 1 acre = 0.4047 hectares.' }],
   relatedCalculators: [
@@ -131,7 +131,7 @@ const lbsPerAcreToKgPerHectare: CalculatorConfig = {
       totalLabel: 'Rate conversion', totalValue: Math.round(kph * 100) / 100, totalUnit: 'kg/ha',
     };
   },
-  seo: { title: 'Lbs/Acre to Kg/Hectare — Rate Conversion', description: 'Convert fertilizer and application rates from lbs/acre to kg/hectare.' },
+  seo: { title: 'Free Lbs/Acre to Kg/Ha Converter — Rate Conversion (2026)', description: 'Convert fertilizer and application rates from lbs/acre to kg/hectare.' },
   tips: ['Multiply lbs/acre by 1.1209 to get kg/ha.', 'Multiply kg/ha by 0.8922 to get lbs/acre.'],
   faqs: [{ question: 'How do I convert lbs/acre to kg/ha?', answer: 'Multiply lbs/acre by 1.1209. Example: 150 lbs/acre × 1.1209 = 168.1 kg/ha.' }],
   relatedCalculators: [
@@ -187,7 +187,7 @@ const balesPerAcre: CalculatorConfig = {
       totalLabel: 'Total bales', totalValue: Math.round(totalBales), totalUnit: 'bales',
     };
   },
-  seo: { title: 'Bales Per Acre Calculator — Hay Bale Count', description: 'Calculate hay bales per acre from yield and bale size.' },
+  seo: { title: 'Free Bales Per Acre Calculator — Hay Yield & Count (2026)', description: 'Calculate hay bales per acre from yield and bale size.' },
   tips: ['Small square bales: 40-60 lbs. Large round: 800-1500 lbs. Large square: 800-1200 lbs.'],
   faqs: [{ question: 'How many small bales per acre?', answer: 'At 3 tons/acre yield with 50-lb bales: 120 bales per acre.' }],
   relatedCalculators: [
@@ -240,7 +240,7 @@ const seedsPerPound: CalculatorConfig = {
       totalLabel: 'Total seeds', totalValue: Math.round(total), totalUnit: 'seeds',
     };
   },
-  seo: { title: 'Seeds Per Pound Calculator — Seed Count', description: 'Calculate total seed count from weight and seeds per pound.' },
+  seo: { title: 'Free Seeds Per Pound Calculator — Total Seed Count (2026)', description: 'Calculate total seed count from weight and seeds per pound.' },
   tips: ['Seed size varies by variety — always check your seed lot analysis.'],
   faqs: [{ question: 'How many wheat seeds per pound?', answer: 'About 15,000 seeds per pound for average-sized wheat seed.' }],
   relatedCalculators: [
@@ -297,7 +297,7 @@ const cubicYardsToTons: CalculatorConfig = {
       totalLabel: 'Weight', totalValue: Math.round(tons * 100) / 100, totalUnit: 'tons',
     };
   },
-  seo: { title: 'Cubic Yards to Tons Calculator — Dirt, Gravel, Sand & Topsoil', description: 'Convert cubic yards to tons for dirt, gravel, sand, topsoil, compost, and mulch. Free bulk material weight calculator.' },
+  seo: { title: 'Free Cubic Yards to Tons Calculator — Dirt, Gravel & Sand (2026)', description: 'Convert cubic yards to tons for dirt, gravel, sand, topsoil, compost, and mulch. Free bulk material weight calculator.' },
   tips: ['Wet material weighs significantly more than dry — these are average dry weights.'],
   faqs: [{ question: 'How much does a cubic yard of topsoil weigh?', answer: 'About 2,000-2,400 lbs (1.0-1.2 tons) depending on moisture content.' }],
   relatedCalculators: [
@@ -352,7 +352,7 @@ const fertilizerSpreaderCalibration: CalculatorConfig = {
       totalLabel: 'Application rate', totalValue: Math.round(lbsPerAcre * 10) / 10, totalUnit: 'lbs/acre',
     };
   },
-  seo: { title: 'Fertilizer Spreader Calibration Calculator — Check Application Rate', description: 'Calibrate your fertilizer spreader to ensure accurate application rates. Calculate actual lbs per acre from a calibration test run.' },
+  seo: { title: 'Free Spreader Calibration Calculator — Lbs Per Acre (2026)', description: 'Calibrate your fertilizer spreader to ensure accurate application rates. Calculate actual lbs per acre from a calibration test run.' },
   tips: ['Calibrate before each season and when switching products.', 'Use catch pans placed across the full swath width for accuracy.'],
   faqs: [{ question: 'How do I calibrate a broadcast spreader?', answer: 'Spread over a measured area, collect material in catch pans, weigh it, and calculate lbs/acre.' }],
   relatedCalculators: [
@@ -402,7 +402,7 @@ const gallonsPerAcreToLitersPerHectare: CalculatorConfig = {
       totalLabel: 'Rate conversion', totalValue: Math.round(lph * 100) / 100, totalUnit: 'L/ha',
     };
   },
-  seo: { title: 'Gallons/Acre to Liters/Hectare — Spray Rate Conversion', description: 'Convert spray rates from gallons per acre to liters per hectare.' },
+  seo: { title: 'Free Gallons/Acre to Liters/Ha Converter (2026)', description: 'Convert spray rates from gallons per acre to liters per hectare.' },
   tips: ['Multiply gal/acre by 9.354 to get L/ha.', 'Multiply L/ha by 0.1069 to get gal/acre.'],
   faqs: [{ question: 'How to convert GPA to L/ha?', answer: 'Multiply gallons per acre by 9.354. Example: 15 GPA × 9.354 = 140.3 L/ha.' }],
   relatedCalculators: [
@@ -453,7 +453,7 @@ const rowSpacingConverter: CalculatorConfig = {
       totalLabel: 'Row spacing', totalValue: Math.round(cm * 10) / 10, totalUnit: 'cm',
     };
   },
-  seo: { title: 'Row Spacing Converter — Inches to CM & Rows Per Acre', description: 'Convert row spacing from inches to centimeters. Calculate row feet per acre.' },
+  seo: { title: 'Free Row Spacing Converter — Inches, CM & Rows/Acre (2026)', description: 'Convert row spacing from inches to centimeters. Calculate row feet per acre.' },
   tips: ['30-inch rows = 17,424 row feet per acre.', '15-inch rows = 34,848 row feet per acre.'],
   faqs: [{ question: 'How many row feet in an acre at 30-inch rows?', answer: '43,560 sq ft / 2.5 ft = 17,424 row feet per acre.' }],
   relatedCalculators: [
@@ -511,7 +511,7 @@ const grainWeightPerBushel: CalculatorConfig = {
       totalLabel: 'Standard test weight', totalValue: tw, totalUnit: 'lbs/bu',
     };
   },
-  seo: { title: 'Grain Weight Per Bushel — Standard Test Weights', description: 'Standard test weights for all common grains. Quick reference for bushel-to-weight conversions.' },
+  seo: { title: 'Free Grain Weight Per Bushel — Test Weights Reference (2026)', description: 'Standard test weights for all common grains. Quick reference for bushel-to-weight conversions.' },
   tips: ['Test weight above standard indicates higher quality grain.', 'Low test weight may result in dockage at the elevator.'],
   faqs: [{ question: 'What is test weight?', answer: 'Test weight is the weight of grain per bushel (1.244 cubic feet). It indicates grain density and quality.' }],
   relatedCalculators: [
@@ -561,7 +561,7 @@ const livestockWeightConverter: CalculatorConfig = {
       totalLabel: 'Weight', totalValue: Math.round(kg * 10) / 10, totalUnit: 'kg',
     };
   },
-  seo: { title: 'Livestock Weight Converter — Lbs to Kg', description: 'Convert livestock weight between pounds and kilograms.' },
+  seo: { title: 'Free Livestock Weight Converter — Lbs to Kg (2026)', description: 'Convert livestock weight between pounds and kilograms.' },
   tips: ['Multiply lbs by 0.4536 to get kg.', 'Multiply kg by 2.2046 to get lbs.'],
   faqs: [{ question: 'How do I convert animal weight to kg?', answer: 'Multiply pounds by 0.4536. Example: 1200 lbs × 0.4536 = 544 kg.' }],
   relatedCalculators: [
@@ -610,7 +610,7 @@ const temperatureConverter: CalculatorConfig = {
       totalLabel: 'Temperature', totalValue: Math.round(c * 10) / 10, totalUnit: '°C',
     };
   },
-  seo: { title: 'Temperature Converter — Fahrenheit to Celsius', description: 'Convert temperatures between Fahrenheit and Celsius for farming applications.' },
+  seo: { title: 'Free Temperature Converter — Fahrenheit to Celsius (2026)', description: 'Convert temperatures between Fahrenheit and Celsius for farming applications.' },
   tips: ['Key soil temps: 50°F (10°C) = corn planting, 60°F (15.5°C) = beans, 65°F (18°C) = cotton.', 'Freezing point: 32°F = 0°C.'],
   faqs: [{ question: 'How do I convert F to C?', answer: 'Subtract 32, then multiply by 5/9. Example: 77°F → (77-32) × 5/9 = 25°C.' }],
   relatedCalculators: [
@@ -666,7 +666,7 @@ const soilVolume: CalculatorConfig = {
       totalLabel: 'Volume needed', totalValue: Math.round(cubicYards * 100) / 100, totalUnit: 'cubic yards',
     };
   },
-  seo: { title: 'Dirt & Soil Calculator — Volume for Fill, Gardens & Raised Beds', description: 'Free dirt and soil calculator. Calculate cubic yards, cubic feet, and tons needed for raised beds, gardens, fill projects, and landscaping.' },
+  seo: { title: 'Free Dirt & Soil Calculator — Cubic Yards, Tons & Volume (2026)', description: 'Free dirt and soil calculator. Calculate cubic yards, cubic feet, and tons needed for raised beds, gardens, fill projects, and landscaping.' },
   tips: ['Most bulk soil is sold by the cubic yard.', 'Plan for 10-15% extra to account for settling.', 'A standard pickup truck holds about 1-2 cubic yards.'],
   faqs: [{ question: 'How much soil for a 4x8 raised bed?', answer: 'A 4×8 foot bed, 12 inches deep needs about 1.2 cubic yards of soil.' }],
   relatedCalculators: [
@@ -723,7 +723,7 @@ const mulchCalculator: CalculatorConfig = {
       totalLabel: 'Mulch needed', totalValue: Math.round(cubicYards * 100) / 100, totalUnit: 'cubic yards',
     };
   },
-  seo: { title: 'Mulch Calculator — How Much Mulch Do I Need?', description: 'Free mulch calculator. Enter area and depth to get cubic yards and bags needed. Works for bark mulch, wood chips, rubber mulch, and straw.' },
+  seo: { title: 'Free Mulch Calculator — Cubic Yards, Bags & Coverage (2026)', description: 'Free mulch calculator. Enter area and depth to get cubic yards and bags needed. Works for bark mulch, wood chips, rubber mulch, and straw.' },
   tips: ['Apply 2-4 inches of mulch for weed suppression.', 'Keep mulch 2-3 inches away from plant stems and tree trunks.', 'Bulk mulch is cheaper than bagged for areas over 50 sq ft.'],
   faqs: [{ question: 'How much mulch do I need?', answer: 'For 3 inches deep: multiply area (sq ft) by 0.25, then divide by 27 for cubic yards. 100 sq ft needs about 1 cubic yard.' }],
   relatedCalculators: [

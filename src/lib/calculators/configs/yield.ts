@@ -30,7 +30,7 @@ const yieldPerAcre: CalculatorConfig = {
       totalLabel: 'Yield per acre', totalValue: Math.round(buPerAcre * 10) / 10, totalUnit: 'bu/acre',
     };
   },
-  seo: { title: 'Crop Yield Calculator — Bushels & Tons Per Acre', description: 'Free crop yield calculator. Convert total harvest to bushels, pounds, or tons per acre for corn, wheat, soybeans, and all grain crops.' },
+  seo: { title: 'Free Crop Yield Calculator — Bushels, Tons & Lbs/Acre (2026)', description: 'Free crop yield calculator. Convert total harvest to bushels, pounds, or tons per acre for corn, wheat, soybeans, and all grain crops.' },
   tips: ['Weigh grain trucks before and after unloading for accurate totals.', 'Account for moisture shrink when comparing to standard yields.', 'Use yield monitors for field-level data to optimize management zones.'],
   faqs: [
     { question: 'What is a good corn yield per acre?', answer: 'US average corn yield is about 175 bu/acre. Top producers consistently achieve 220-280 bu/acre.' },
@@ -96,7 +96,7 @@ const harvestLoss: CalculatorConfig = {
       totalLabel: 'Total estimated loss', totalValue: Math.round(dollarLoss * 100) / 100, totalUnit: '$',
     };
   },
-  seo: { title: 'Harvest Loss Calculator — Estimate Combine Losses', description: 'Calculate harvest losses in bushels and dollars. Compare expected vs actual yield to identify efficiency improvements.' },
+  seo: { title: 'Free Harvest Loss Calculator — Bushels, Dollars & Percent (2026)', description: 'Calculate harvest losses in bushels and dollars. Compare expected vs actual yield to identify efficiency improvements.' },
   tips: ['Acceptable harvest loss is typically 1-3% of yield.', 'Check behind the combine regularly with a drop pan.', 'Slow ground speed in tough conditions to reduce losses.', 'Properly adjusted headers and sieves minimize losses.'],
   faqs: [
     { question: 'What is acceptable harvest loss?', answer: '1-3% of total yield is considered acceptable. For 200 bu/acre corn, that is 2-6 bu/acre.' },
@@ -157,7 +157,7 @@ const grainMoisture: CalculatorConfig = {
       totalLabel: 'Adjusted weight', totalValue: Math.round(dryWeight), totalUnit: 'lbs',
     };
   },
-  seo: { title: 'Grain Moisture Calculator — Shrink Factor & Dry Weight', description: 'Calculate grain moisture shrink and dry weight. Convert wet weight to standard moisture for accurate yield and pricing.' },
+  seo: { title: 'Free Grain Moisture Calculator — Shrink, Dry Weight & % (2026)', description: 'Calculate grain moisture shrink and dry weight. Convert wet weight to standard moisture for accurate yield and pricing.' },
   tips: ['Standard marketing moistures: corn 15%, wheat 13%, soybeans 13%.', 'Every 1% moisture above standard reduces bushel weight proportionally.', 'Drying costs average $0.03-0.06 per point of moisture removed per bushel.'],
   faqs: [
     { question: 'What is grain shrink?', answer: 'Shrink is the weight loss when grain is dried from harvest moisture to storage/marketing moisture. It reduces total bushels sold.' },
@@ -222,7 +222,7 @@ const grainBinStorage: CalculatorConfig = {
       totalLabel: 'Bin capacity', totalValue: Math.round(bushels), totalUnit: 'bushels',
     };
   },
-  seo: { title: 'Grain Bin Calculator — Storage Capacity in Bushels & Tons', description: 'Calculate grain bin storage capacity from diameter and height. Get bushels, tons, and cubic feet for corn, wheat, soybeans, and all grains.' },
+  seo: { title: 'Free Grain Bin Calculator — Bushels, Tons & Capacity (2026)', description: 'Calculate grain bin storage capacity from diameter and height. Get bushels, tons, and cubic feet for corn, wheat, soybeans, and all grains.' },
   tips: ['Account for the cone-shaped peak when calculating usable capacity.', 'Leave 6-12 inches of headspace for aeration and leveling.', 'Check structural integrity before filling to capacity.'],
   faqs: [
     { question: 'How many bushels in a 36-foot bin?', answer: 'A 36-foot diameter bin with 24-foot eave height holds approximately 19,500 bushels of corn.' },
@@ -280,7 +280,7 @@ const plantsPerAcre: CalculatorConfig = {
       totalLabel: 'Plants per acre', totalValue: plantsPerAcre, totalUnit: 'plants',
     };
   },
-  seo: { title: 'Plants Per Acre Calculator — Plant Population & Density', description: 'Calculate plants per acre from row spacing and plant spacing. Determine plant population and density for any crop.' },
+  seo: { title: 'Free Plants Per Acre Calculator — Population & Spacing (2026)', description: 'Calculate plants per acre from row spacing and plant spacing. Determine plant population and density for any crop.' },
   tips: ['Count plants in multiple locations to estimate actual field population.', 'Target 90-95% of planted seeds to emerge as plants.'],
   faqs: [
     { question: 'How many corn plants per acre at 30-inch rows?', answer: 'At 30-inch rows with 7-inch spacing: about 29,900 plants/acre. At 8-inch spacing: about 26,100 plants/acre.' },
@@ -439,7 +439,7 @@ function createCropYieldConfig(slug: string, data: CropYieldData): CalculatorCon
       };
     },
     seo: {
-      title: `${data.name} Yield Calculator — ${data.name} Bushels Per Acre`,
+      title: `Free ${data.name} Yield Calculator — Lbs/Acre, Tons & Harvest (2026)`,
       description: `Calculate ${data.name.toLowerCase()} yield per acre. Estimate harvest totals in bushels, pounds, and tons. Compare to US average ${data.name.toLowerCase()} yields.`,
     },
     quickFacts: [

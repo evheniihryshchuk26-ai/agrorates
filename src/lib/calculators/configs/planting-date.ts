@@ -204,7 +204,7 @@ function createPlantingDateConfig(p: PlantingDateParams): CalculatorConfig {
       };
     },
     seo: {
-      title: `${p.cropName} Planting Date Calculator | When to Plant ${p.cropName}`,
+      title: `Free ${p.cropName} Planting Date Calculator — When to Plant (2026)`,
       description: `Find the best planting dates for ${p.cropName.toLowerCase()} in your USDA zone. Calculate indoor start, transplant, direct sow, and fall planting dates.`,
     },
     quickFacts: p.quickFacts ?? baseQuickFacts,

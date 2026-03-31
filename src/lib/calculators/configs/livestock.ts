@@ -21,7 +21,7 @@ const cattleWeight: CalculatorConfig = {
       totalLabel: 'Estimated live weight', totalValue: Math.round(weight), totalUnit: 'lbs',
     };
   },
-  seo: { title: 'Cattle Weight Calculator — Estimate Cow Weight Without a Scale', description: 'Free cattle weight calculator. Estimate live weight from heart girth and body length measurements. No scale needed — accurate within 3-5%.' },
+  seo: { title: 'Free Cattle Weight Calculator — Lbs & Kg Estimate (2026)', description: 'Free cattle weight calculator. Estimate live weight from heart girth and body length measurements. No scale needed — accurate within 3-5%.' },
   tips: ['Measure heart girth snugly behind the front legs.', 'Body length runs from point of shoulder to pin bone.', 'This formula is most accurate for mature cattle 400-1400 lbs.', 'Take measurements when the animal is standing squarely on level ground.'],
   faqs: [
     { question: 'How accurate is the weight tape method?', answer: 'Within 3-5% for mature cattle. Less accurate for young calves and very fat or thin animals.' },
@@ -78,7 +78,7 @@ const feedConversion: CalculatorConfig = {
       totalLabel: 'FCR', totalValue: Math.round(fcr * 100) / 100, totalUnit: 'lbs feed per lb gain',
     };
   },
-  seo: { title: 'Feed Conversion Ratio Calculator — FCR for Livestock', description: 'Calculate feed conversion ratio for cattle, pigs, poultry, and other livestock.' },
+  seo: { title: 'Free Feed Conversion Calculator — FCR & Efficiency (2026)', description: 'Calculate feed conversion ratio for cattle, pigs, poultry, and other livestock.' },
   tips: ['Lower FCR means more efficient feed conversion.', 'Typical FCR: beef cattle 6-8:1, pigs 3-4:1, broilers 1.6-2.0:1.', 'Genetics, nutrition, and management all affect FCR.'],
   faqs: [{ question: 'What is a good FCR for beef cattle?', answer: '6:1 to 8:1 is typical for feedlot cattle. Lower is better.' }],
   howToSteps: [
@@ -140,7 +140,7 @@ const stockingRate: CalculatorConfig = {
       totalLabel: 'Carrying capacity', totalValue: head, totalUnit: 'head',
     };
   },
-  seo: { title: 'Stocking Rate Calculator — Cattle Per Acre & Carrying Capacity', description: 'Free stocking rate calculator. Calculate how many head your pasture can support based on forage production, utilization rate, and grazing season length.' },
+  seo: { title: 'Free Stocking Rate Calculator — Head/Acre & Capacity (2026)', description: 'Free stocking rate calculator. Calculate how many head your pasture can support based on forage production, utilization rate, and grazing season length.' },
   tips: ['Never utilize more than 50-60% of forage to maintain pasture health.', 'Rotational grazing allows higher stocking rates than continuous grazing.', 'Account for drought years by keeping 20% buffer capacity.'],
   faqs: [{ question: 'What is a typical stocking rate for beef cattle?', answer: '1.5-3.0 acres per cow-calf pair depending on rainfall and forage type. Arid regions may need 20+ acres.' }],
   howToSteps: [
@@ -202,7 +202,7 @@ const hayBale: CalculatorConfig = {
       totalLabel: 'Total bales needed', totalValue: bales, totalUnit: 'bales',
     };
   },
-  seo: { title: 'Hay Bale Calculator — How Many Bales Per Cow for Winter?', description: 'Free hay calculator. Calculate bales needed for winter feeding based on herd size, daily intake, and feeding period. Accounts for waste.' },
+  seo: { title: 'Free Hay Bale Calculator — Bales, Tons & Daily Feed (2026)', description: 'Free hay calculator. Calculate bales needed for winter feeding based on herd size, daily intake, and feeding period. Accounts for waste.' },
   tips: ['Round bales have 15-35% waste depending on feeder type.', 'Small square bales have 5-10% waste when fed in a rack.', 'Use hay rings or feeders to minimize waste from round bales.', 'Test hay quality to balance rations properly.'],
   faqs: [{ question: 'How many round bales per cow for winter?', answer: 'A 1200-lb cow eating 25 lbs/day for 150 days needs about 4-5 large round bales (accounting for 15% waste).' }],
   howToSteps: [
@@ -273,7 +273,7 @@ const hayStorage: CalculatorConfig = {
       totalLabel: 'Storage capacity', totalValue: bales, totalUnit: 'bales',
     };
   },
-  seo: { title: 'Hay Storage Calculator — Barn Capacity', description: 'Calculate hay barn storage capacity. Determine how many bales fit in your barn.' },
+  seo: { title: 'Free Hay Storage Calculator — Bale Capacity & Tons (2026)', description: 'Calculate hay barn storage capacity. Determine how many bales fit in your barn.' },
   tips: ['Store hay under cover to prevent weather losses (20-30% loss outdoors).', 'Allow airflow around bales to prevent mold.', 'Stack round bales in a pyramid or rows, never more than 3 high.'],
   faqs: [{ question: 'How do I store hay to prevent loss?', answer: 'Store under cover on pallets or gravel. Allow airflow and keep away from walls. Covered hay retains 95%+ of quality vs 70-80% uncovered.' }],
   howToSteps: [
@@ -332,7 +332,7 @@ const feedCost: CalculatorConfig = {
       totalLabel: 'Annual feed cost', totalValue: Math.round(annualCost), totalUnit: '$',
     };
   },
-  seo: { title: 'Livestock Feed Cost Calculator — Daily, Monthly & Annual', description: 'Free feed cost calculator. Calculate daily, monthly, and annual feed expenses for cattle, pigs, poultry, sheep, goats, and other livestock.' },
+  seo: { title: 'Free Feed Cost Calculator — Daily, Monthly & Annual (2026)', description: 'Free feed cost calculator. Calculate daily, monthly, and annual feed expenses for cattle, pigs, poultry, sheep, goats, and other livestock.' },
   tips: ['Feed costs are typically 60-70% of total livestock production costs.', 'Buy feed in bulk when prices are low to reduce costs.', 'Test feed quality to avoid over- or under-supplementing.'],
   faqs: [{ question: 'What is the average feed cost per cow per day?', answer: 'Feed costs $2-5 per cow per day depending on feed type, quality, and local prices.' }],
   howToSteps: [
@@ -402,7 +402,7 @@ const gestation: CalculatorConfig = {
       totalLabel: 'Gestation period', totalValue: gestationDays, totalUnit: 'days',
     };
   },
-  seo: { title: 'Gestation Calculator — Livestock Due Date', description: 'Calculate livestock due dates. Enter breeding date and species for expected birth date.' },
+  seo: { title: 'Free Gestation Calculator — Due Date by Species (2026)', description: 'Calculate livestock due dates. Enter breeding date and species for expected birth date.' },
   tips: ['Mark breeding dates accurately for each animal.', 'Watch for signs of labor 1-2 weeks before due date.', 'Provide a clean, dry calving/lambing area.'],
   faqs: [{ question: 'What is the gestation period for cattle?', answer: 'Cattle gestation is approximately 283 days (about 9.5 months), ranging from 275-295 days.' }],
   howToSteps: [
@@ -561,7 +561,7 @@ function createAnimalConfig(slug: string, data: AnimalData): CalculatorConfig {
       };
     },
     seo: {
-      title: `${data.name} Feed Calculator — Daily Feed & Annual Cost`,
+      title: `Free ${data.name} Feed Calculator — Daily Intake & Annual Cost (2026)`,
       description: `Free ${data.name.toLowerCase()} feed calculator. Calculate daily feed intake, monthly requirements, and annual feed costs based on herd size and weight.`,
     },
     quickFacts: [
