@@ -756,9 +756,99 @@ const mulchCalculator: CalculatorConfig = {
   ],
 };
 
+const dirtCalculator: CalculatorConfig = {
+  slug: 'dirt-calculator', cluster: 'conversions',
+  title: 'Dirt & Fill Calculator',
+  description: 'Calculate how much dirt or fill you need in cubic yards, tons, and truckloads for grading, backfill, raised beds, and landscaping projects.',
+  fields: [
+    { id: 'length', label: 'Length', type: 'number', placeholder: '50', unit: 'feet', min: 0.1, required: true },
+    { id: 'width', label: 'Width', type: 'number', placeholder: '20', unit: 'feet', min: 0.1 },
+    { id: 'depth', label: 'Depth', type: 'number', placeholder: '6', unit: 'inches', min: 0.5, step: 0.5 },
+    { id: 'material', label: 'Material Type', type: 'select', options: [
+      { value: '2200', label: 'Fill Dirt — ~2,200 lbs/cu yd' },
+      { value: '2000', label: 'Topsoil — ~2,000 lbs/cu yd' },
+      { value: '2800', label: 'Gravel — ~2,800 lbs/cu yd' },
+      { value: '2700', label: 'Sand — ~2,700 lbs/cu yd' },
+      { value: '3000', label: 'Crushed Stone — ~3,000 lbs/cu yd' },
+      { value: '1800', label: 'Clay — ~1,800 lbs/cu yd' },
+      { value: '1000', label: 'Compost — ~1,000 lbs/cu yd' },
+    ] },
+  ],
+  calculate: (inputs) => {
+    const l = Number(inputs.length) || 0;
+    const w = Number(inputs.width) || 0;
+    const d = Number(inputs.depth) || 0;
+    const density = Number(inputs.material) || 2200;
+    const cubicFt = l * w * (d / 12);
+    const cubicYards = cubicFt / 27;
+    const tons = (cubicYards * density) / 2000;
+    const truckloads = Math.ceil(cubicYards / 10);
+    return {
+      results: [
+        { label: 'Cubic Yards', value: Math.round(cubicYards * 100) / 100, unit: 'cu yd', color: 'blue' },
+        { label: 'Tons', value: Math.round(tons * 100) / 100, unit: 'tons', color: 'orange' },
+        { label: 'Cubic Feet', value: Math.round(cubicFt * 10) / 10, unit: 'cu ft', color: 'green' },
+        { label: 'Truckloads (10 yd)', value: truckloads, unit: 'loads', color: 'purple' },
+      ],
+      totalLabel: 'Material needed', totalValue: Math.round(cubicYards * 100) / 100, totalUnit: 'cubic yards',
+    };
+  },
+  seo: {
+    title: 'Free Dirt Calculator — Cubic Yards, Tons & Truckloads (2026)',
+    description: 'Free dirt calculator. Calculate how much fill dirt, topsoil, gravel, or sand you need in cubic yards, tons, and truckloads for any project.',
+  },
+  quickFacts: [
+    { label: 'Fill Dirt Weight', value: '~2,200 lbs/cu yd' },
+    { label: 'Topsoil Weight', value: '~2,000 lbs/cu yd' },
+    { label: 'Dump Truck Capacity', value: '10-14 cu yd' },
+    { label: '1 Cubic Yard', value: '27 cu ft' },
+  ],
+  tips: [
+    'Order 10-15% more than calculated to account for compaction, settling, and uneven ground.',
+    'Fill dirt is cheaper than topsoil — use fill for grading and topsoil only for the top 4-6 inches.',
+    'Compact fill dirt in 6-inch lifts for structural stability around foundations.',
+    'Wet dirt weighs significantly more — plan deliveries for dry weather.',
+    'Ask your supplier about delivery fees — they often charge per mile beyond a set radius.',
+  ],
+  faqs: [
+    { question: 'How much does a cubic yard of dirt weigh?', answer: 'Fill dirt weighs approximately 2,000-2,400 lbs per cubic yard depending on moisture content and composition. Topsoil is slightly lighter at 1,800-2,200 lbs per cubic yard.' },
+    { question: 'How many cubic yards in a dump truck?', answer: 'A standard single-axle dump truck holds 10-14 cubic yards. A tandem axle truck holds 14-18 cubic yards. Always confirm capacity with your supplier.' },
+    { question: 'What is the difference between fill dirt and topsoil?', answer: 'Fill dirt is subsoil with no organic matter — used for grading, backfill, and structural fill. Topsoil contains organic matter and nutrients — used for gardens, lawns, and planting beds. Fill dirt is typically half the cost of topsoil.' },
+  ],
+  howToSteps: [
+    'Enter the length and width of the area in feet.',
+    'Set the desired depth in inches.',
+    'Select the material type (fill dirt, topsoil, gravel, sand, etc.).',
+    'Click Calculate to see cubic yards, tons, and truckloads needed.',
+  ],
+  nextSteps: [
+    { title: 'Soil Volume Calculator', href: '/calculators/conversions/soil-volume/' },
+    { title: 'Cubic Yards to Tons', href: '/calculators/conversions/cubic-yards-to-tons/' },
+    { title: 'Mulch Calculator', href: '/calculators/conversions/mulch-calculator/' },
+    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+  ],
+  howToUse: 'Measure the length and width of the area you need to fill in feet. Determine the depth of material needed in inches — typically 4-6 inches for topsoil, 6-12 inches for grading, or as specified by your project plan. Select the material type to get an accurate weight estimate, since dirt, gravel, and sand have very different densities.',
+  whyItMatters: 'Ordering too little dirt means delays and extra delivery charges. Ordering too much wastes money and leaves excess material to deal with. For large projects, the difference between an accurate estimate and a guess can be thousands of dollars. This calculator eliminates guesswork by accounting for material density and giving you cubic yards (how suppliers sell) and tons (how they weigh).',
+  methodology: 'Volume = Length (ft) × Width (ft) × Depth (in) / 12 = cubic feet. Cubic yards = cubic feet / 27. Weight (tons) = cubic yards × material density (lbs/cu yd) / 2000. Truckloads assume a standard 10 cubic yard dump truck. Material densities are industry averages for dry material — wet conditions increase weight by 20-30%.',
+  commonMistakes: [
+    'Not accounting for compaction — loose fill dirt compacts 10-20% after placement and settling.',
+    'Confusing cubic yards (volume) with tons (weight) when ordering — suppliers may sell by either unit.',
+    'Using fill dirt where topsoil is needed — fill dirt has no nutrients and will not support plant growth.',
+    'Forgetting to check local grading codes — some jurisdictions require permits for fill over 12 inches.',
+  ],
+  relatedCalculators: [
+    { title: 'Soil Volume Calculator', href: '/calculators/conversions/soil-volume/' },
+    { title: 'Cubic Yards to Tons', href: '/calculators/conversions/cubic-yards-to-tons/' },
+    { title: 'Mulch Calculator', href: '/calculators/conversions/mulch-calculator/' },
+    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+    { title: 'Acres to Hectares', href: '/calculators/conversions/acres-to-hectares/' },
+    { title: 'Fertilizer Spreader Calibration', href: '/calculators/conversions/fertilizer-spreader-calibration/' },
+  ],
+};
+
 export const conversionConfigs: CalculatorConfig[] = [
   bushelsToTons, acresToHectares, lbsPerAcreToKgPerHectare, balesPerAcre, seedsPerPound,
   cubicYardsToTons, fertilizerSpreaderCalibration, gallonsPerAcreToLitersPerHectare,
   rowSpacingConverter, grainWeightPerBushel, livestockWeightConverter, temperatureConverter,
-  soilVolume, mulchCalculator,
+  soilVolume, mulchCalculator, dirtCalculator,
 ];
