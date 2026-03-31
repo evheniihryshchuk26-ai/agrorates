@@ -1024,9 +1024,107 @@ const landAreaCalculator: CalculatorConfig = {
   ],
 };
 
+const densityCalculator: CalculatorConfig = {
+  slug: 'density-calculator', cluster: 'conversions',
+  title: 'Soil Density Calculator',
+  description: 'Calculate soil bulk density, porosity, and weight from volume and mass measurements. Essential for compaction assessment, engineering, and soil health evaluation.',
+  fields: [
+    { id: 'method', label: 'Calculation Method', type: 'select', options: [
+      { value: 'mass-volume', label: 'I know Mass & Volume' },
+      { value: 'weight-area', label: 'I know Weight & Area × Depth' },
+    ] },
+    { id: 'mass', label: 'Dry Soil Mass', type: 'number', placeholder: '250', unit: 'lbs', min: 0.01, required: true, helpText: 'Oven-dry weight for mass-volume; total weight for weight-area' },
+    { id: 'volume', label: 'Sample Volume', type: 'number', placeholder: '2', unit: 'cu ft', min: 0.01, helpText: 'For mass-volume method' },
+    { id: 'area', label: 'Area (for weight-area method)', type: 'number', placeholder: '1', unit: 'sq ft', min: 0.01 },
+    { id: 'depth', label: 'Depth (for weight-area method)', type: 'number', placeholder: '6', unit: 'inches', min: 0.5, step: 0.5 },
+    { id: 'particleDensity', label: 'Particle Density', type: 'number', placeholder: '165', unit: 'lbs/cu ft', defaultValue: 165, helpText: 'Mineral soil default: 165 lbs/cu ft (2.65 g/cm³)' },
+  ],
+  calculate: (inputs) => {
+    const method = String(inputs.method || 'mass-volume');
+    const mass = Number(inputs.mass) || 0;
+    const volume = Number(inputs.volume) || 1;
+    const area = Number(inputs.area) || 1;
+    const depth = Number(inputs.depth) || 6;
+    const particleDensity = Number(inputs.particleDensity) || 165;
+
+    let bulkDensityLbsCuFt: number;
+    if (method === 'mass-volume') {
+      bulkDensityLbsCuFt = mass / volume;
+    } else {
+      const vol = area * (depth / 12);
+      bulkDensityLbsCuFt = mass / vol;
+    }
+
+    const bulkDensityGCm3 = bulkDensityLbsCuFt / 62.43;
+    const porosity = (1 - bulkDensityLbsCuFt / particleDensity) * 100;
+    const tonsPerAcreInch = (bulkDensityLbsCuFt * 43560 / 12) / 2000;
+
+    return {
+      results: [
+        { label: 'Bulk Density', value: Math.round(bulkDensityLbsCuFt * 100) / 100, unit: 'lbs/cu ft', color: 'blue' },
+        { label: 'Bulk Density', value: Math.round(bulkDensityGCm3 * 100) / 100, unit: 'g/cm³', color: 'orange' },
+        { label: 'Porosity', value: Math.round(porosity * 10) / 10, unit: '%', color: 'green' },
+        { label: 'Weight Per Acre-Inch', value: Math.round(tonsPerAcreInch), unit: 'tons', color: 'purple' },
+      ],
+      totalLabel: 'Bulk density', totalValue: Math.round(bulkDensityGCm3 * 100) / 100, totalUnit: 'g/cm³',
+    };
+  },
+  seo: {
+    title: 'Free Soil Density Calculator — Bulk Density, Porosity & Weight (2026)',
+    description: 'Free soil density calculator. Calculate bulk density in lbs/cu ft and g/cm³, porosity percentage, and weight per acre-inch from soil samples.',
+  },
+  quickFacts: [
+    { label: 'Ideal Bulk Density', value: '1.1-1.4 g/cm³ (most crops)' },
+    { label: 'Compaction Threshold', value: '>1.6 g/cm³ (root-limiting)' },
+    { label: 'Sandy Soil Density', value: '1.5-1.7 g/cm³ typical' },
+    { label: 'Clay Soil Density', value: '1.0-1.3 g/cm³ typical' },
+  ],
+  tips: [
+    'Bulk density above 1.6 g/cm³ restricts root growth for most crops — consider deep tillage or cover crops.',
+    'Sandy soils naturally have higher bulk density than clay soils but compact less under traffic.',
+    'Take bulk density samples from undisturbed soil using a core sampler for accurate results.',
+    'Increasing soil organic matter by 1% can reduce bulk density by 0.05-0.10 g/cm³ over time.',
+    'No-till farming may increase surface density initially but improves deeper soil structure over 3-5 years.',
+  ],
+  faqs: [
+    { question: 'What is soil bulk density?', answer: 'Bulk density is the dry weight of soil per unit volume, including pore spaces. It indicates how compacted a soil is. Lower bulk density generally means better structure, more pore space for air and water, and easier root penetration.' },
+    { question: 'What is a good bulk density for farming?', answer: 'For most crops, ideal bulk density is 1.1-1.4 g/cm³ (69-87 lbs/cu ft). Sandy soils are naturally higher (1.5-1.7) and clay soils lower (1.0-1.3). Root growth becomes restricted above 1.6 g/cm³ for clay and 1.8 g/cm³ for sand.' },
+    { question: 'How do I measure soil bulk density?', answer: 'Use a soil core sampler to collect an undisturbed sample of known volume. Dry the sample in an oven at 105°C (221°F) for 24 hours, then weigh it. Bulk density = dry weight / core volume.' },
+  ],
+  howToSteps: [
+    'Select your calculation method — mass & volume, or weight & area with depth.',
+    'Enter the dry soil mass (weight after oven drying) in pounds.',
+    'Enter the sample volume in cubic feet, or the area and depth for the weight-area method.',
+    'Click Calculate to see bulk density, porosity, and weight per acre-inch.',
+  ],
+  nextSteps: [
+    { title: 'Soil Volume Calculator', href: '/calculators/conversions/soil-volume/' },
+    { title: 'Dirt Calculator', href: '/calculators/conversions/dirt-calculator/' },
+    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+    { title: 'Lime Calculator', href: '/calculators/fertilizer/lime/' },
+  ],
+  howToUse: 'Choose your measurement method. The mass-volume method requires weighing an oven-dried soil core of known volume — this is the standard lab method. The weight-area method estimates density from the weight of soil excavated from a known area and depth. Enter the particle density (default 165 lbs/cu ft for mineral soil) to calculate porosity. Results show both US (lbs/cu ft) and metric (g/cm³) units.',
+  whyItMatters: 'Soil bulk density directly affects root growth, water infiltration, and crop productivity. Compacted soil restricts roots, reduces water movement, and limits nutrient uptake — leading to yield losses of 10-30%. Measuring bulk density helps you identify compaction problems, evaluate the effectiveness of tillage practices, and track soil health improvements from cover cropping and organic matter additions.',
+  methodology: 'Bulk density = Dry soil mass / Total volume (including pore space). Porosity (%) = (1 - Bulk density / Particle density) × 100. Standard particle density for mineral soil is 2.65 g/cm³ (165 lbs/cu ft). Weight per acre-inch = Bulk density × 43,560 sq ft / 12 inches / 2,000 lbs per ton. The mass-volume method (USDA standard) uses a core sampler to collect undisturbed soil of precisely known volume.',
+  commonMistakes: [
+    'Using field-moist weight instead of oven-dry weight — moisture inflates the density reading significantly.',
+    'Disturbing the soil core during sampling — compressing or loosening the sample gives inaccurate volume.',
+    'Taking only one sample per field — bulk density varies with depth, traffic patterns, and soil type. Take 5-10 samples.',
+    'Comparing sandy and clay soil densities directly — different soil textures have different ideal density ranges.',
+  ],
+  relatedCalculators: [
+    { title: 'Soil Volume Calculator', href: '/calculators/conversions/soil-volume/' },
+    { title: 'Dirt Calculator', href: '/calculators/conversions/dirt-calculator/' },
+    { title: 'Cubic Yards to Tons', href: '/calculators/conversions/cubic-yards-to-tons/' },
+    { title: 'Compost Calculator', href: '/calculators/fertilizer/compost/' },
+    { title: 'Lime Calculator', href: '/calculators/fertilizer/lime/' },
+    { title: 'NPK Fertilizer Calculator', href: '/calculators/fertilizer/npk/' },
+  ],
+};
+
 export const conversionConfigs: CalculatorConfig[] = [
   bushelsToTons, acresToHectares, lbsPerAcreToKgPerHectare, balesPerAcre, seedsPerPound,
   cubicYardsToTons, fertilizerSpreaderCalibration, gallonsPerAcreToLitersPerHectare,
   rowSpacingConverter, grainWeightPerBushel, livestockWeightConverter, temperatureConverter,
-  soilVolume, mulchCalculator, dirtCalculator, acreageCalculator, landAreaCalculator,
+  soilVolume, mulchCalculator, dirtCalculator, acreageCalculator, landAreaCalculator, densityCalculator,
 ];
