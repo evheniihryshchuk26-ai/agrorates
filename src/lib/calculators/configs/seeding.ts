@@ -54,8 +54,8 @@ const seedRate: CalculatorConfig = {
     { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
     { title: 'Plan Planting Date', href: '/calculators/planting-date/' },
   ],
-  howToUse: 'Enter your field size in acres, then input the desired plant population per acre and the seeds per pound for your crop variety. Set the germination rate from your seed tag. The calculator adjusts for germination losses and converts to total pounds and bags needed.',
-  whyItMatters: 'Planting the correct seeding rate is critical for achieving optimal plant stands. Too few plants reduce yield potential, while too many cause competition for water, light, and nutrients. Accounting for germination rate ensures you purchase enough seed to hit your target population.',
+  howToUse: 'This seeding rate calculator shows how much seed per acre you need. Enter your field size in acres, then input the desired plant population per acre and the seeds per pound for your crop variety. Set the germination rate from your seed tag. The calculator adjusts for germination losses and converts to total pounds and bags needed.',
+  whyItMatters: 'Using the correct planting rate is critical for achieving optimal plant stands. Too few plants reduce yield potential, while too many cause competition for water, light, and nutrients. Accounting for germination rate ensures you purchase enough seed to hit your target population.',
   methodology: 'Seeds needed = (Desired population / Germination rate) × Acres. Seed weight (lbs) = Seeds needed / Seeds per pound. Bags = Seed weight / 50, rounded up. This formula compensates for seeds that fail to germinate so the final stand matches your target.',
   commonMistakes: [
     'Using the germination rate from a previous year\'s seed tag instead of testing current seed viability.',
@@ -115,7 +115,7 @@ const plantSpacing: CalculatorConfig = {
     { title: 'Calculate NPK Fertilizer Rates', href: '/calculators/fertilizer/npk/' },
     { title: 'Estimate Crop Yield', href: '/calculators/yield/yield-per-acre/' },
   ],
-  howToUse: 'Enter your row spacing and in-row plant spacing in inches, then input the total area in square feet. The calculator determines how many plants fit in your field and the resulting plant population per acre, helping you plan transplant orders or seed purchases.',
+  howToUse: 'Enter your row spacing and in-row plant spacing in inches, then input the total area in square feet. This plant population calculator determines how many plants per acre fit in your field, helping you plan transplant orders or seed purchases.',
   whyItMatters: 'Plant spacing directly affects light interception, air circulation, and competition for water and nutrients. Proper spacing maximizes yield per acre while reducing disease pressure from overcrowding. It also determines how many transplants or seeds to order.',
   methodology: 'Square feet per plant = (Row spacing / 12) × (Plant spacing / 12). Total plants = Area / Sq ft per plant. Plants per acre = 43,560 / Sq ft per plant. This assumes uniform spacing across the field with no skips or end rows.',
   commonMistakes: [

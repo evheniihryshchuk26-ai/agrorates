@@ -20,6 +20,17 @@ export const metadata: Metadata = {
   },
   description:
     'Free farming calculators for fertilizer rates, seed rates, crop yields, livestock, and more. Plan smarter, farm better.',
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: 'AgroRates — Free Agricultural Calculators for Farmers',
     description:

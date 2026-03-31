@@ -51,8 +51,8 @@ const farmProfitLoss: CalculatorConfig = {
     { title: 'Farm ROI Calculator', href: '/calculators/economics/farm-roi' },
     { title: 'Yield Per Acre Calculator', href: '/calculators/yield/yield-per-acre/' },
   ],
-  howToUse: 'Enter your total gross revenue from all farm sales. Then break down your costs into variable costs (inputs that change with production) and fixed costs (expenses you pay regardless of production level). The calculator shows net profit, margin, and total expenses.',
-  whyItMatters: 'Most farm failures are financial, not agronomic. Knowing your true profit margin helps you make better decisions about land expansion, equipment purchases, and crop selection. A 15-25% margin is considered healthy for crop farming.',
+  howToUse: 'Use this farm budget tool by entering your total gross farm income from all sales. Then break down your costs into variable costs (inputs that change with production) and fixed costs (expenses you pay regardless of production level). The calculator shows net profit, margin, and total expenses.',
+  whyItMatters: 'Most farm failures are financial, not agronomic. This farm profit calculator shows your true margin, helping you make better decisions about land expansion, equipment purchases, and crop selection. A 15-25% margin is considered healthy for crop farming.',
   methodology: 'Net profit = Gross revenue - (Variable costs + Fixed costs). Profit margin = Net profit / Gross revenue × 100. Variable costs include seed, fertilizer, chemicals, fuel, and hired labor. Fixed costs include land rent, insurance, depreciation, and interest.',
   commonMistakes: [
     'Forgetting to include depreciation as a real cost — equipment wears out.',
@@ -414,8 +414,8 @@ const farmLoan: CalculatorConfig = {
     { title: 'Equipment Depreciation', href: '/calculators/economics/equipment-depreciation' },
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss' },
   ],
-  howToUse: 'Enter the total loan amount, the annual interest rate from your lender, and the loan term in years. The calculator uses standard amortization to show your monthly payment, total interest paid over the life of the loan, and total amount paid.',
-  whyItMatters: 'Farm debt is a major factor in cash flow planning. Understanding your monthly payment obligation helps you ensure operating income covers debt service. Comparing different terms and rates reveals how much interest you save with shorter loans or better rates.',
+  howToUse: 'Enter the total agricultural loan amount, the annual interest rate from your lender, and the loan term in years. This calculator works for any farm mortgage or operating loan, using standard amortization to show your monthly payment, total interest, and total amount paid.',
+  whyItMatters: 'Farm loan payment planning is a major factor in cash flow management. Understanding your monthly payment obligation helps you ensure operating income covers debt service. Comparing different terms and rates reveals how much interest you save with shorter loans or better rates.',
   methodology: 'Monthly payment = P × [r(1+r)^n] / [(1+r)^n - 1], where P = principal, r = monthly interest rate, n = total months. Total interest = (Monthly payment × Total months) - Principal. This is standard fixed-rate amortization used by most agricultural lenders.',
   commonMistakes: [
     'Not comparing FSA loan rates, which are often 1-2% lower than commercial lenders.',

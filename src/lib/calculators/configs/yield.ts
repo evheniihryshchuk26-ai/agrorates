@@ -56,8 +56,8 @@ const yieldPerAcre: CalculatorConfig = {
     { title: 'Break-Even Price Calculator', href: '/calculators/economics/break-even-price/' },
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss/' },
   ],
-  howToUse: 'Enter your total field size in acres and the total weight harvested in pounds. Select your grain type so the calculator uses the correct test weight per bushel. Results show yield in bushels, pounds, and tons per acre.',
-  whyItMatters: 'Knowing your exact yield per acre is essential for evaluating seed performance, planning next year\'s inputs, and making marketing decisions. Yield data also determines your Actual Production History (APH) for crop insurance.',
+  howToUse: 'This crop yield calculator takes your total field size in acres and the total weight harvested in pounds. Select your grain type so the bushels per acre calculator uses the correct test weight per bushel. Results show yield in bushels, pounds, and tons per acre.',
+  whyItMatters: 'Knowing your exact farm yield per acre is essential for evaluating seed performance, planning next year\'s inputs, and making marketing decisions. An accurate yield estimate also determines your Actual Production History (APH) for crop insurance.',
   methodology: 'Yield is calculated as: Bushels/acre = (Total lbs / Test weight) / Acres. Standard test weights are defined by the USDA: corn 56 lbs/bu, wheat and soybeans 60 lbs/bu, oats 32 lbs/bu.',
   commonMistakes: [
     'Not accounting for moisture shrink when comparing to standard yields.',
@@ -303,8 +303,8 @@ const plantsPerAcre: CalculatorConfig = {
     { title: 'Seeding Rate Calculator', href: '/calculators/seeding/seeding-rate/' },
     { title: 'Row Spacing Converter', href: '/calculators/conversions/row-spacing-converter/' },
   ],
-  howToUse: 'Enter row spacing in inches (e.g., 30 inches for standard corn rows) and the in-row plant spacing in inches. The calculator converts these measurements into plants per acre, plants per 1000 feet of row, and square feet per plant.',
-  whyItMatters: 'Plant population directly affects yield potential and competition for light, water, and nutrients. Too few plants leave yield on the table; too many increase lodging risk and reduce individual plant performance.',
+  howToUse: 'This plant population calculator takes row spacing in inches (e.g., 30 inches for standard corn rows) and the in-row plant spacing in inches. The plant density calculator converts these measurements into plants per acre, plants per 1000 feet of row, and square feet per plant.',
+  whyItMatters: 'Plant population directly affects yield potential and competition for light, water, and nutrients. Using the right spacing calculator ensures you do not leave yield on the table with too few plants or increase lodging risk with too many.',
   methodology: 'Plants per acre = 43,560 sq ft / (Row spacing in ft × Plant spacing in ft). This formula assumes uniform spacing. Actual field stands should be verified by counting plants in measured row lengths at multiple locations.',
   commonMistakes: [
     'Confusing row spacing with plant spacing — row spacing is between rows, plant spacing is within a row.',
@@ -470,8 +470,8 @@ function createCropYieldConfig(slug: string, data: CropYieldData): CalculatorCon
     ],
     relatedCrops: others.slice(0, 6).map(s => ({ title: cropYieldData[s].name, href: `/calculators/yield/${s}/` })),
     faqs: data.faqs.map(([q, a]) => ({ question: q, answer: a })),
-    howToUse: `Enter the total acres planted with ${data.name.toLowerCase()}, the estimated plants per acre, and expected yield per plant in pounds. The calculator estimates total harvest in pounds and tons per acre so you can compare against the US average of ${data.avgYield.toLocaleString()} ${data.yieldUnit}.`,
-    whyItMatters: `Accurate ${data.name.toLowerCase()} yield estimation helps with harvest planning, storage logistics, and marketing decisions. Comparing your projected yield to the US average of ${data.avgYield.toLocaleString()} ${data.yieldUnit} reveals whether your management practices are on track or need adjustment.`,
+    howToUse: `Enter the total acres planted with ${data.name.toLowerCase()}, the estimated plants per acre, and expected yield per plant in pounds. The calculator estimates total ${data.name.toLowerCase()} yield per acre in pounds and tons so you can compare against the US average of ${data.avgYield.toLocaleString()} ${data.yieldUnit}.`,
+    whyItMatters: `Accurate ${data.name.toLowerCase()} yield estimation helps with harvest planning, storage logistics, and marketing decisions. Comparing your projected ${data.name.toLowerCase()} bushels per acre to the US average of ${data.avgYield.toLocaleString()} ${data.yieldUnit} reveals whether your management practices are on track or need adjustment.`,
     methodology: `Yield is estimated as: Plants per acre × Yield per plant = Pounds per acre. Total harvest = Pounds per acre × Acres. This approach works best when combined with field scouting during the ${data.harvestWindow} harvest window to validate per-plant yield assumptions.`,
     commonMistakes: [
       `Using a single plant sample to estimate per-plant yield instead of averaging across multiple field locations.`,

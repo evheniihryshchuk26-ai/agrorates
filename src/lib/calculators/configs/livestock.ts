@@ -46,8 +46,8 @@ const cattleWeight: CalculatorConfig = {
     { title: 'Hay Bale Calculator', href: '/calculators/livestock/hay-bale/' },
     { title: 'Livestock Weight Converter', href: '/calculators/conversions/livestock-weight-converter/' },
   ],
-  howToUse: 'Measure the heart girth by wrapping a tape measure around the animal just behind the front legs. Then measure body length from the point of shoulder to the pin bone. Enter both measurements in inches.',
-  whyItMatters: 'Accurate weight estimation is essential for calculating feed rations, medication dosages, and market readiness. A scale is ideal but not always available — the heart girth method provides estimates within 3-5% accuracy for mature cattle.',
+  howToUse: 'Use this cow weight calculator by measuring the heart girth — wrap a tape measure around the animal just behind the front legs. Then measure body length from the point of shoulder to the pin bone. Enter both measurements in inches for an instant livestock weight estimate.',
+  whyItMatters: 'Accurate weight estimation is essential for calculating feed rations, medication dosages, and market readiness. This tool lets you estimate cattle weight without a scale — the heart girth method provides estimates within 3-5% accuracy for mature cattle.',
   methodology: 'Weight (lbs) = (Heart Girth² × Body Length) / 300. This formula, known as the Schaeffer formula, is widely used by veterinarians and livestock producers. It is most accurate for mature cattle between 400-1400 lbs.',
   commonMistakes: [
     'Measuring heart girth too loosely — pull the tape snug but not tight.',
@@ -162,8 +162,8 @@ const stockingRate: CalculatorConfig = {
     { title: 'Hay Storage', href: '/calculators/livestock/hay-storage/' },
     { title: 'Bales Per Acre', href: '/calculators/conversions/bales-per-acre/' },
   ],
-  howToUse: 'Enter your total pasture acreage, estimated annual forage yield in pounds of dry matter per acre, and the utilization rate (typically 50% for continuous grazing). Then enter daily intake per animal and the length of your grazing season.',
-  whyItMatters: 'Overstocking degrades pastures, reduces forage productivity, and increases supplemental feed costs. Understocking leaves forage unused and reduces revenue. Calculating the correct stocking rate balances animal performance with long-term pasture health.',
+  howToUse: 'Use this grazing calculator to find how many cattle per acre your land supports. Enter your total pasture acreage, estimated annual forage yield in pounds of dry matter per acre, and the utilization rate (typically 50% for continuous grazing). Then enter daily intake per animal and the length of your grazing season.',
+  whyItMatters: 'Overstocking degrades pastures, reduces forage productivity, and increases supplemental feed costs. Understocking leaves forage unused and reduces revenue. This pasture calculator helps you find the correct carrying capacity to balance animal performance with long-term pasture health.',
   methodology: 'Carrying capacity = (Forage yield × Acres × Utilization rate) / (Daily intake × Grazing days). Utilization rate accounts for trampling, fouling, and the need to leave residual forage for plant recovery and soil protection.',
   commonMistakes: [
     'Using 100% utilization rate — never graze more than 50-60% of available forage to maintain pasture health.',
@@ -226,8 +226,8 @@ const hayBale: CalculatorConfig = {
     { title: 'Bales Per Acre', href: '/calculators/conversions/bales-per-acre/' },
     { title: 'Farm Profit & Loss', href: '/calculators/economics/farm-profit-loss/' },
   ],
-  howToUse: 'Enter the number of animals, daily hay consumption per animal in pounds, and the feeding period length in days. Set the bale weight for your bale type and adjust the waste percentage based on your feeding method.',
-  whyItMatters: 'Running out of hay mid-winter forces emergency purchases at premium prices. Overbuying ties up capital and risks spoilage. Accurate hay budgeting ensures you have enough feed while minimizing waste and storage costs.',
+  howToUse: 'Use this hay calculator to determine how many bales you need per cow or per herd. Enter the number of animals, daily hay consumption per animal in pounds, and the feeding period length in days. Set the bale weight for your bale type and adjust the waste percentage based on your feeding method.',
+  whyItMatters: 'Running out of hay for winter forces emergency purchases at premium prices. Overbuying ties up capital and risks spoilage. A hay needs calculator like this ensures you budget enough feed while minimizing waste and storage costs.',
   methodology: 'Total hay needed = (Animals × Daily intake × Days) / (1 - Waste%). Bales needed = Total hay / Bale weight. Waste percentages vary by feeder type: hay rings 15-20%, unprotected ground feeding 30-40%, rack feeders 5-10%.',
   commonMistakes: [
     'Underestimating waste — round bales fed on the ground without a ring can lose 30-40%.',

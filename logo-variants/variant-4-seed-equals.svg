@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Variant 4: Grain seed with calculation symbol -->
+  <!-- Squircle background with gradient feel (two-tone green) -->
+  <rect width="512" height="512" rx="112" fill="#16a34a"/>
+  <rect x="8" y="8" width="496" height="496" rx="108" fill="none" stroke="white" stroke-width="4" opacity="0.15"/>
+
+  <!-- Wheat/grain seed shape (white, centered) -->
+  <ellipse cx="220" cy="256" rx="65" ry="110" fill="white" transform="rotate(-15, 220, 256)"/>
+  <!-- Seed line detail -->
+  <path d="M200 170 C210 220, 215 300, 205 350" stroke="#16a34a" stroke-width="5" fill="none" opacity="0.4"/>
+
+  <!-- Equals sign (representing calculation) -->
+  <line x1="320" y1="225" x2="410" y2="225" stroke="white" stroke-width="22" stroke-linecap="round"/>
+  <line x1="320" y1="287" x2="410" y2="287" stroke="white" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- Small dots representing results -->
+  <circle cx="340" cy="350" r="10" fill="white" opacity="0.5"/>
+  <circle cx="370" cy="350" r="10" fill="white" opacity="0.5"/>
+  <circle cx="400" cy="350" r="10" fill="white" opacity="0.5"/>
+</svg>

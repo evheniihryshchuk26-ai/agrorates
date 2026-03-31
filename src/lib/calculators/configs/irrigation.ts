@@ -59,8 +59,8 @@ const irrigationWaterNeed: CalculatorConfig = {
     { title: 'Rainfall Deficit Calculator', href: '/calculators/irrigation/rainfall-deficit' },
     { title: 'Fuel Cost Per Acre', href: '/calculators/economics/fuel-cost' },
   ],
-  howToUse: 'Enter your field size in acres and the daily evapotranspiration rate from your local weather station or crop ET table. Select your irrigation system type to account for application efficiency. Subtract any recent rainfall to see net irrigation needs.',
-  whyItMatters: 'Under-irrigating reduces crop yield and quality, while over-irrigating wastes water, increases pumping costs, and can cause nutrient leaching and root diseases. Matching irrigation to actual crop water demand saves 20-40% on water costs.',
+  howToUse: 'Use this irrigation calculator to determine crop water needs for your fields. Enter your field size in acres and the daily evapotranspiration rate from your local weather station or crop ET table. Select your irrigation system type to account for application efficiency. Subtract any recent rainfall to see net irrigation needs.',
+  whyItMatters: 'Under-irrigating reduces crop yield and quality, while over-irrigating wastes water, increases pumping costs, and can cause nutrient leaching and root diseases. Proper irrigation scheduling matched to actual crop water demand saves 20-40% on water costs.',
   methodology: 'Net irrigation need = (ET × days) - effective rainfall. Gross need = Net / system efficiency. One acre-inch equals 27,154 gallons. Drip systems are 90-95% efficient, sprinklers 75-85%, and flood/furrow 50-70%.',
   commonMistakes: [
     'Using a fixed irrigation schedule instead of adjusting for actual ET and rainfall.',

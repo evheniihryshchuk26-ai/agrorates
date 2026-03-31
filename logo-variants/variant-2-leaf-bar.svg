@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Variant 2: Leaf that forms a rising bar chart -->
+  <!-- Circle background -->
+  <circle cx="256" cy="256" r="240" fill="#16a34a"/>
+
+  <!-- Rising bars (white, representing growth/yield) -->
+  <rect x="120" y="300" width="50" height="100" rx="8" fill="white"/>
+  <rect x="190" y="250" width="50" height="150" rx="8" fill="white"/>
+  <rect x="260" y="190" width="50" height="210" rx="8" fill="white"/>
+  <rect x="330" y="140" width="50" height="260" rx="8" fill="white"/>
+
+  <!-- Leaf overlay on the tallest bar -->
+  <path d="M355 100 C355 100, 400 80, 410 110 C420 140, 380 150, 355 140 C355 140, 370 120, 355 100Z" fill="white" opacity="0.9"/>
+  <path d="M355 140 L365 115" stroke="#16a34a" stroke-width="2.5" fill="none"/>
+
+  <!-- Base line -->
+  <line x1="105" y1="410" x2="395" y2="410" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+</svg>
